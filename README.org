@@ -35,10 +35,10 @@ There are some features you will have with my config.
 
 * Installation
 
-- 1. Clone this repo and go to =plunne_dotfiles= directory.
+- 1. Clone this repo and go to =Dotfiles= directory.
 #+begin_src shell
-git clone https://gitlab.com/Plunne/plunne_dotfiles ~/.gitlab/plunne_dotfiles
-cd .gitlab/plunne_dotfiles
+git clone https://github.com/Plunne/Dotfiles ~/.github/Dotfiles
+cd .github/Dotfiles
 #+end_src
 
 - 2. Check the =Makefile= and =install.sh= and change something you want. 
