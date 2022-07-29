@@ -1,1 +1,14 @@
-/home/plunne/.Xressources
+! =============================================================================
+!       Xressources
+! =============================================================================
+
+! =================
+!       Xft
+! =================
+
+Xft.dpi:            96
+Xft.antialias:     	true
+Xft.rgba:	        subpixel
+Xft.hinting:       	true
+Xft.hintstyle:	    hintslight
+xcursor.theme:      "Flatery"
