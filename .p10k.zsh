@@ -1,0 +1,1 @@
+/home/plunne/.p10k.zsh
