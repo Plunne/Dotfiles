@@ -3,7 +3,9 @@
 
 There are my AwesomeWM dotfiles.
 
-[[https://raw.githubusercontent.com/Plunne/Dotfiles/screenshots/DotsDualPreview.png][Screenshots here.]]
+https://raw.githubusercontent.com/Plunne/Dotfiles/screenshots/DotsDualPreview.png
+
+[[https://github.com/Plunne/Dotfiles/tree/screenshots][Screenshots here.]]
 
 * TABLE OF CONTENT :toc:
 - [[#softwares-i-use][Softwares I use]]
