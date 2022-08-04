@@ -1,76 +1,68 @@
 #+TITLE: PLUNNE DOTFILES
 #+AUTHOR: Lena SAVY
 
-There are my AwesomeWM dotfiles.
+Screenshots of my AwesomeWM dotfiles.
 
 * TABLE OF CONTENT :toc:
-- [[#softwares-i-use][Softwares I use]]
-- [[#environment][Environment]]
-- [[#features][Features]]
-- [[#installation][Installation]]
-- [[#thanks-to][Thanks to]]
+- [[#dark][DARK]]
+  - [[#awesomewmplunnemacsstrofi][AWESOMEWM/PLUNNEMACS/ST/ROFI]]
+  - [[#firefox][FIREFOX]]
+  - [[#discord][DISCORD]]
+  - [[#spotify][SPOTIFY]]
+  - [[#zathura][ZATHURA]]
+- [[#light][LIGHT]]
+  - [[#awesomewmplunnemacsstrofi-1][AWESOMEWM/PLUNNEMACS/ST/ROFI]]
+  - [[#firefox-1][FIREFOX]]
+  - [[#discord-1][DISCORD]]
+  - [[#spotify-1][SPOTIFY]]
+  - [[#zathura-1][ZATHURA]]
 
-* Softwares I use
+* DARK
 
-- *Terminal* : St
-- *Editor* : EMACS (Plunnemacs)
-- *Filemanager* : Ranger & Thunar
-- *Web browser* : Firefox
-- *PDF Reader* :Zathura
-- *Screenshots* : Flameshot
+** AWESOMEWM/PLUNNEMACS/ST/ROFI
 
-* Environment
+[[https://raw.githubusercontent.com/Plunne/Dotfiles/screenshots/awm3_preview_dark.png]]
+[[https://raw.githubusercontent.com/Plunne/Dotfiles/screenshots/awm3_tiling_dark.png]]
 
-- *WM* : AwesomeWM (Git version)
-- *Bar* :
-- *Keybinds* :
-- *Compositor* :Picom (Jonaburg fork)
-- *Launcher* : Rofi
-- *Notifications* :
-- *Wallpaper* :
+** FIREFOX
 
-* Features
+[[https://raw.githubusercontent.com/Plunne/Dotfiles/screenshots/awm3_firefox_nighttab_dark.png]]
+[[https://raw.githubusercontent.com/Plunne/Dotfiles/screenshots/awm3_firefox_duckduckgo_dark.png]]
 
-There are some features you will have with my config.
+** DISCORD
 
-* Installation
+[[https://raw.githubusercontent.com/Plunne/Dotfiles/screenshots/awm3_discord_dark.png]]
 
-- 1. Clone this repo and go to =Dotfiles= directory.
-#+begin_src shell
-git clone https://github.com/Plunne/Dotfiles ~/.github/Dotfiles
-cd .github/Dotfiles
-#+end_src
+** SPOTIFY
 
-- 2. Check the =Makefile= and =install.sh= and change something you want. 
+[[https://raw.githubusercontent.com/Plunne/Dotfiles/screenshots/awm3_spotify_dark.png]]
 
-- 3. Install yay
-#+begin_src shell
-./install.sh yay
-#+end_src
+** ZATHURA
 
-- 4. Run the =Makefile=
-#+begin_src shell
-make all
-#+end_src
+[[https://raw.githubusercontent.com/Plunne/Dotfiles/screenshots/awm3_zathura_view_dark.png]]
+[[https://raw.githubusercontent.com/Plunne/Dotfiles/screenshots/awm3_zathura_index_dark.png]]
 
-- 5. Run the shell script =install.sh=
-#+begin_src shell
-./install.sh
-#+end_src
+* LIGHT
 
-- 6. Reboot your system.
+** AWESOMEWM/PLUNNEMACS/ST/ROFI
 
-- 7. Enjoy!
+[[https://raw.githubusercontent.com/Plunne/Dotfiles/screenshots/awm3_preview_light.png]]
+[[https://raw.githubusercontent.com/Plunne/Dotfiles/screenshots/awm3_tiling_light.png]]
 
-* Thanks to
+** FIREFOX
 
-- *Siduck76 (for awesome nvim tips)* : https://github.com/siduck76/neovim-dotfiles
-- *Spectra (for awesome betterdiscord theme editor)* : https://github.com/codedotspectra/themes
-- *Spectra's theme editor that i used* : https://limeshark.dev/editor/Nocturnal
+[[https://raw.githubusercontent.com/Plunne/Dotfiles/screenshots/awm3_firefox_nighttab_light.png]]
+[[https://raw.githubusercontent.com/Plunne/Dotfiles/screenshots/awm3_firefox_duckduckgo_light.png]]
 
-*People that inspired me.*
-- *Elenapan* : https://github.com/elenapan/dotfiles
-- *JavaCafe01* : https://github.com/JavaCafe01/dotfiles
-- *Many others from the Unixporn community.*
+** DISCORD
 
-Thanks you for watching/using my dots, have nice moments with my config! <3
+[[https://raw.githubusercontent.com/Plunne/Dotfiles/screenshots/awm3_discord_light.png]]
+
+** SPOTIFY
+
+[[https://raw.githubusercontent.com/Plunne/Dotfiles/screenshots/awm3_spotify_light.png]]
+
+** ZATHURA
+
+[[https://raw.githubusercontent.com/Plunne/Dotfiles/screenshots/awm3_zathura_view_light.png]]
+[[https://raw.githubusercontent.com/Plunne/Dotfiles/screenshots/awm3_zathura_index_light.png]]
