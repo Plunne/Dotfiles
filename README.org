@@ -135,6 +135,10 @@ make all
 
 * Thanks to
 
+- *ImalouArt* : An awesome artist that made the My Little Pony wallpaper and allowed me to use it.
+  - *Twitter* : https://twitter.com/ImalouArt
+  - *Ko-fi* : https://ko-fi.com/imalou
+
 - *Siduck76 (for awesome nvim tips)* : https://github.com/siduck76/neovim-dotfiles
 - *Spectra (for awesome betterdiscord theme editor)* : https://github.com/codedotspectra/themes
 - *Spectra's theme editor that i used* : https://limeshark.dev/editor/Nocturnal
