@@ -135,7 +135,7 @@ make all
 
 * Thanks to
 
-*ImalouArt* : An awesome artist that made the My Little Pony wallpaper and allowed me to use it.
+*ImalouArt* : An awesome artist that made the [[https://twitter.com/ImalouArt/status/1470128516410847232][My Little Pony wallpaper]] and allowed me to use it.
 - *Twitter* : https://twitter.com/ImalouArt
 - *Ko-fi* : https://ko-fi.com/imalou
 
