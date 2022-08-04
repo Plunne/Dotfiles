@@ -3,6 +3,8 @@
 
 There are my AwesomeWM dotfiles.
 
+[[https://raw.githubusercontent.com/Plunne/Dotfiles/screenshots/DotsDualPreview.png]]
+
 * TABLE OF CONTENT :toc:
 - [[#softwares-i-use][Softwares I use]]
 - [[#environment][Environment]]
