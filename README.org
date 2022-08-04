@@ -3,7 +3,7 @@
 
 There are my AwesomeWM dotfiles.
 
-https://raw.githubusercontent.com/Plunne/Dotfiles/screenshots/DotsDualPreview.png
+[[https://raw.githubusercontent.com/Plunne/Dotfiles/screenshots/DotsDualPreview.png]]
 
 [[https://github.com/Plunne/Dotfiles/tree/screenshots][Screenshots here.]]
 
