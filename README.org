@@ -11,6 +11,13 @@ There are my AwesomeWM dotfiles.
 - [[#softwares-i-use][Softwares I use]]
 - [[#environment][Environment]]
 - [[#features][Features]]
+  - [[#awesomewm][AwesomeWM]]
+  - [[#betterdiscord][BetterDiscord]]
+  - [[#firefox][Firefox]]
+  - [[#picom][Picom]]
+  - [[#rofi][Rofi]]
+  - [[#terminal][Terminal]]
+  - [[#zathura][Zathura]]
 - [[#installation][Installation]]
 - [[#thanks-to][Thanks to]]
 
@@ -37,6 +44,64 @@ There are my AwesomeWM dotfiles.
 
 There are some features you will have with my config.
 
+** AwesomeWM
+
+- Pretty simple modular configuration (easier than i3!)
+- 2 themes (Dark/Light)
+- Configuration written in Org
+- Beautiful title bars
+- Volume/Brightness popup
+- Calendar/Date/Powermenu popup panel
+- Useful top bar with an awesome integration with titlebars
+- Light and fast, no animations, everything for performance with a great look
+- Easy way to find active window with a little line under title bars which acts like KDE
+- All theming properties in one file.
+- Notifications
+
+** BetterDiscord
+
+- Feather theme base on Spectra theme
+    - Rounded avatars
+    - Top server list
+
+** Firefox
+
+- Feather theme available as Firefox extension (Plunne Dark/Light).
+- DuckDuckGo Feather theme.
+- NightTab Feather theme.
+
+** Picom
+
+- Transparency support
+- Rounder corners except in fullscreen/monowindow
+- Little animations when switching windows order
+
+** Rofi
+
+- Drun
+- Window switcher
+- Shell commands
+- Emojis finder
+
+** Terminal
+
+- Simple Terminal
+  - Feather theme
+  - Ligatures
+  - Transparency
+  - Cursor blinking and dynamic color
+  - Vertical bar
+  - Clipboard
+- Ranger
+- Zsh
+  - Plunne aliases
+  - Powerlevel10k
+  - OhMyZsh
+
+** Zathura
+
+- Feather Theme Switcher
+  
 * Installation
 
 - 1. Clone this repo and go to =Dotfiles= directory.
@@ -45,7 +110,7 @@ git clone https://github.com/Plunne/Dotfiles ~/.github/Dotfiles
 cd .github/Dotfiles
 #+end_src
 
-- 2. Check the =Makefile= and =install.sh= and change something you want. 
+- 2. Check the =Makefile= and =install.sh= and change something you want. /(Work In Progress...)/ 
 
 - 3. Install yay
 #+begin_src shell
@@ -62,9 +127,11 @@ make all
 ./install.sh
 #+end_src
 
-- 6. Reboot your system.
+- 6. Check the monitors settings in =.script/monitors.sh= and =.config/awesome/vars.lua= .
 
-- 7. Enjoy!
+- 7. Reboot your system.
+
+- 8. Enjoy!
 
 * Thanks to
 
