@@ -3,7 +3,7 @@
 
 Screenshots of my AwesomeWM [[https://github.com/Plunne/Dotfiles/tree/main][dotfiles]].
 
-I really want to thanks *ImalouArt* for allowing me to use this awesome wallpaper.
+I really want to thanks *ImalouArt* for allowing me to use this awesome [[https://twitter.com/ImalouArt/status/1470128516410847232][wallpaper]].
 - *Twitter* : https://twitter.com/ImalouArt
 - *Ko-fi* : https://ko-fi.com/imalou
 
