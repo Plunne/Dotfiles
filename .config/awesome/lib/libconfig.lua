@@ -107,3 +107,7 @@ end
 function run(myapp, mytag)
     awful.spawn.single_instance( myapp, { tag = mytag } ) 
 end
+
+function run_sh(script)
+	awful.spawn.with_shell(script)
+end

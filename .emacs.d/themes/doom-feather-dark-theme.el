@@ -1,6 +1,6 @@
 ;;; doom-feather-dark-theme.el --- Based on Doom One Dark -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
-;; Date: July 24, 2022
+;; Date: July 30, 2022
 ;; Author: Lena SAVY-LARIGALDIE <https://github.com/Plunne> mainly on Gitlab
 ;; Original: Henrik Lissner <https://github.com/hlissner>
 ;; Source: https://github.com/Plunne/doom-feather-themes

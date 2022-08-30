@@ -20,7 +20,7 @@ alias z='zip -r' # z <archive_compress> <file_list>
 alias uz='unzip' # uz <archive_decompress> -d <dir>
 
 # Editors
-alias em='emacsclient -n -c -a="Emacs"'
+alias em='emacsclient -n -c -a=""'
 alias na='nano'
 alias v='nvim'
 alias vs='codium'
@@ -63,7 +63,6 @@ alias gp='git push'
 alias gl='git pull'
 alias gu='git add . && git commit -m'
 alias gc='git clone'
-alias gb='git checkout'
 
 # Network
 alias net-h='https://linuxhint.com/arch_linux_network_manager/'

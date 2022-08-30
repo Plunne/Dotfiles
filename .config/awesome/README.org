@@ -29,10 +29,10 @@ all the above features.
   - [[#keys][Keys]]
 - [[#configuration][CONFIGURATION]]
   - [[#import-modules][Import modules]]
+  - [[#daemons][Daemons]]
   - [[#layouts][Layouts]]
   - [[#desktops][Desktops]]
   - [[#rules][Rules]]
-  - [[#daemons][Daemons]]
   - [[#autostart][Autostart]]
   - [[#bars][Bars]]
 - [[#organisation][ORGANISATION]]
@@ -157,6 +157,21 @@ require("keys")                                                 -- KEYS : Loads 
 require("lib.libconfig")                                        -- CONFIG : Loads config library
 #+end_src
 
+** Daemons
+
+Set daemons initialisations at startup : =run_deamons({deamon1, deamons2})=
+
+#+begin_src lua :tangle rc.lua :comments org
+run_daemons({
+    "picom",
+    "udiskie",
+    "nm-applet",
+    "flameshot",
+    "xrdb .Xressources",
+    "sh -c ~/.apps/OpenTabletDriver/bin/OpenTabletDriver.Daemon",
+})
+#+end_src
+
 ** Layouts
 
  Uncomment the layouts you want to use.
@@ -209,27 +224,11 @@ Apply some rules for multiple apps : =rules_Multiple(apps, props)=
 #+begin_src lua :tangle rc.lua :comments org
 rules_All()
 rules_Titlebars(true)
-rules_NoTitlebars({"firefox", "codium", "discord", "Spotify", "spotify"})
+rules_NoTitlebars({"firefox", "codium", "discord", "Spotify", "spotify", "Ankama Launcher", "com-ankamagames-wakfu-client-WakfuClient"})
 rules_Multiple({"arandr", "Qalculate-gtk"}, { floating = true })
 rules_Multiple({"discord", "Spotify", "spotify"}, { screen = screen3 })
 #+end_src
  
-** Daemons
-
-Set daemons initialisations at startup : =run_deamons({deamon1, deamons2})=
-
-#+begin_src lua :tangle rc.lua :comments org
-run_daemons({
-    "picom",
-    "udiskie",
-    "nm-applet",
-    "flameshot",
-    "xrdb .Xressources",
-    "sh -c ~/.apps/OpenTabletDriver/bin/OpenTabletDriver.Daemon",
-    "emacs --daemon"
-})
-#+end_src
-
 ** Autostart
 
 Launch app at startup : =run(myapp, mytag)=
@@ -237,7 +236,7 @@ Launch app at startup : =run(myapp, mytag)=
 #+begin_src lua :tangle rc.lua :comments org
 run("firefox", " 4/ ")
 run("discord", " 9/ ")
-run("emacsclient -c -n -a='emacs' --eval '(load-file \"~/.emacs.d/config.el\")'", " 1/ ")
+run_sh("~/.scripts/emacs.sh")
 #+end_src
 
 ** Bars

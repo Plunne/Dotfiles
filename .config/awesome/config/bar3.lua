@@ -63,7 +63,7 @@ local function bar2(scr)
                 myvolume,
                 --mylight,
                 mydate,
-                mysystray,
+                -- mysystray,
                 myclock,
                 mylauncher
             }

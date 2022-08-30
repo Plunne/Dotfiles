@@ -496,11 +496,12 @@ Some miscellaneous patches.
 
 #+begin_src emacs-lisp
 (global-auto-revert-mode t) ; Refresh buffer instantly after a save.
-(set-fringe-mode 10)        ; Set a little space for side indicators.
+(set-fringe-mode 10) ; Set a little space for side indicators.
 
-(setq use-short-answers t ; Replace yes/no prompts with y/n
+(setq-default use-short-answers t ; Replace yes/no prompts with y/n
       frame-resize-pixelwise t ; Patching the bottom empty space glitch
       make-backup-files nil ; Disable the anoying backup~
+      truncate-lines t ; Disable lines wrapping
       initial-buffer-choice (lambda () (get-buffer-create "*dashboard*")) ; Dashboard at startup
       scroll-conservatively 10000) ; Smooth scrolling
 #+end_src
@@ -519,7 +520,7 @@ _Notice :_
 To get my theme works, you have to copy them from =./themes= to =./elpa/doom-themes= .
 
 If you prefer the light theme, change =doom-feather-dark= to =doom-feather-light= .
-With *solaire-mode* change the dashboard banner logo to =plunnemacs-light.png= . 
+With *solaire-mode* change the dashboard banner logo to =plunnemacs-dark.png= . 
 
 #+begin_src emacs-lisp
 (use-package doom-themes

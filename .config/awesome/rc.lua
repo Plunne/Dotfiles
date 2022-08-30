@@ -21,6 +21,20 @@ require("system")(s)                                            -- SYSTEM : Load
 require("keys")                                                 -- KEYS : Loads keybindings
 require("lib.libconfig")                                        -- CONFIG : Loads config library
 
+-- Daemons
+
+-- Set daemons initialisations at startup : =run_deamons({deamon1, deamons2})=
+
+
+run_daemons({
+    "picom",
+    "udiskie",
+    "nm-applet",
+    "flameshot",
+    "xrdb .Xressources",
+    "sh -c ~/.apps/OpenTabletDriver/bin/OpenTabletDriver.Daemon",
+})
+
 -- Layouts
 
 --  Uncomment the layouts you want to use.
@@ -71,24 +85,9 @@ add_desktop(" 9/ ",    screen3,    l.max,          0.5,    false,  true,   ni
 
 rules_All()
 rules_Titlebars(true)
-rules_NoTitlebars({"firefox", "codium", "discord", "Spotify", "spotify"})
+rules_NoTitlebars({"firefox", "codium", "discord", "Spotify", "spotify", "Ankama Launcher", "com-ankamagames-wakfu-client-WakfuClient"})
 rules_Multiple({"arandr", "Qalculate-gtk"}, { floating = true })
 rules_Multiple({"discord", "Spotify", "spotify"}, { screen = screen3 })
-
--- Daemons
-
--- Set daemons initialisations at startup : =run_deamons({deamon1, deamons2})=
-
-
-run_daemons({
-    "picom",
-    "udiskie",
-    "nm-applet",
-    "flameshot",
-    "xrdb .Xressources",
-    "sh -c ~/.apps/OpenTabletDriver/bin/OpenTabletDriver.Daemon",
-    "emacs --daemon"
-})
 
 -- Autostart
 
@@ -97,7 +96,7 @@ run_daemons({
 
 run("firefox", " 4/ ")
 run("discord", " 9/ ")
-run("emacsclient -c -n -a='emacs' --eval '(load-file \"~/.emacs.d/config.el\")'", " 1/ ")
+run_sh("~/.scripts/emacs.sh")
 
 -- Bars
 

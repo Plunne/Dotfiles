@@ -24,7 +24,7 @@ local function bar2(scr)
     local myvolume = require("modules.bar.volume")(scr)
     local mylight = require("modules.bar.brightness")(scr)
     local mydate = require("modules.bar.date")(scr)
-    local mysystray = require("modules.bar.systray")(scr)
+    --local mysystray = require("modules.bar.systray")(scr)
     local myclock = require("modules.bar.clock")(scr)
     local mylauncher = require("modules.bar.launcher")(scr)
 
@@ -63,7 +63,7 @@ local function bar2(scr)
                 myvolume,
                 --mylight,
                 mydate,
-                mysystray,
+                -- mysystray,
                 myclock,
                 mylauncher
             }
