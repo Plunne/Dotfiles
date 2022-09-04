@@ -81,8 +81,9 @@ function keyboard.init() awful.keyboard.append_global_keybindings({
 
 #+begin_src lua :tangle keyboard.lua :comments org
 bindApp(super,          enter,  "Terminal",                     terminal),
-bindApp(super,          "p",    "File Manager",                 fm_cmd),
-bindApp(super,          "c",  	"Calulator",               		calc),
+bindApp(super,          "p",    "File Manager",                 filemanager),
+bindApp(super,          "e",    "Editor",                       editor),
+bindApp(super,          "c",    "Calulator",                    calc),
 bindApp(alt,            space,  "Rofi Launcher",                rofi_launcher),
 bindApp({},             print,  "Screenshot (Screen)",          screenshot),
 bindApp(super_shift,    print,  "Screenshot (Screen + Delay)",  screenshot_delay),
@@ -223,7 +224,8 @@ function keyboard.clientkeys()
             -- Client Close
             bind(super, "F4",   "Client", "Close window",       function(c) c:kill() end),
             bind(super, "o",    "Client", "Move to screen",     function(c) c:move_to_screen() end),
-            bind(super, "f",    "Client", "Fullscreen window",  function(c) c.fullscreen = not c.fullscreen c:raise() end),
+            bind(super, "F11",    "Client", "Fullscreen window",  function(c) c.fullscreen = not c.fullscreen c:raise() end),
+            bind(super, "f",    "Client", "Floating window",  function(c) c.floating = not c.floating c:raise() end),
 
         })
     end)

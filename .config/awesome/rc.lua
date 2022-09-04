@@ -16,7 +16,7 @@
 
 pcall(require, "luarocks.loader")                               -- LUAROCKS : Needed
 require("awful.autofocus")                                      -- AUTOFOCUS : Focus windows when created
-require("beautiful").init("~/.config/awesome/themes/feather-dark/theme.lua")  -- THEME : Set theme path
+require("beautiful").init("~/.config/awesome/themes/feather-light/theme.lua")  -- THEME : Set theme path
 require("system")(s)                                            -- SYSTEM : Loads system
 require("keys")                                                 -- KEYS : Loads keybindings
 require("lib.libconfig")                                        -- CONFIG : Loads config library

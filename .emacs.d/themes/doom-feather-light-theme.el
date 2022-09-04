@@ -178,6 +178,8 @@ Can be an integer to determine the exact padding."
    (outline-7 :height 1.0 :foreground (doom-darken teal 0.5) :weight 'bold)
    (outline-8 :height 1.0 :foreground (doom-darken violet 0.8) :weight 'bold)
    ;;;; org <built-in>
+   (org-document-title :height 2.0 :foreground teal :weight 'bold)
+   (org-document-info :foreground teal)
    ((org-block &override) :background base1)
    ((org-block-begin-line &override) :foreground comments)
    (org-ellipsis :underline nil :background bg     :foreground red)
