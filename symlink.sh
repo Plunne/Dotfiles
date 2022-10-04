@@ -25,10 +25,10 @@ tabDots=(\
 .config/rofi \
 .config/spicetify \
 .config/st \
-.config/xfce4 \
 .config/zathura \
 .config/zsh \
 .config/kritarc \
+.config/dolphinrc \
 .config/picom.conf \
 #emacs
 .emacs.d/lisp \
