@@ -9,7 +9,7 @@
 # |_|  |_|\__,_|_|\_\___|_| |_|_|\___| 
 #
 # creator : Lena aka Plunne
-# more infos : https://gitlab.com/Plunne/plunne_dotfiles
+# more infos : https://github.com/Plunne/Dotfiles
 #
 # Everyone can use and edit this file #ShareYourCode <3
 #________________________________________________________#
@@ -26,13 +26,12 @@ PkgUpdate = sudo pacman -Syu
 ########################
 
 # Main Apps
-Browser = firefox
-FileManager = ranger ueberzug $(Thunar)
-Thunar = thunar thunar-archive-plugin thunar-media-tags-plugin thunar-shares-plugin thunar-volman tumbler ffmpegthumbnailer
+Browser = librewolf-bin
+FileManager = ranger ueberzug dolphin
 Archiver = file-roller
-PdfViewer = zathura zathura-pdf-poppler qpdfview
+PdfViewer = zathura zathura-pdf-poppler
 ImageViewer = sxiv
-VideoViewer = celluloid
+VideoViewer = haruna
 Screenshot = flameshot dbus
 MAIN_APPS = \
 	+= $(Terminal) \
@@ -108,7 +107,7 @@ wm: xorg awesome
 
 # Xorg
 xorg:
-	$(PkgInstall) xf86-video-amdgpu xorg-server xorg-xinit xorg-xrandr xsel
+	$(PkgInstall) xf86-video-amdgpu xorg-server xorg-xinit xorg-xrandr xsel lxappearance qt5ct breeze breeze-gtk breeze-icons
 
 # Window Managers
 awesome:

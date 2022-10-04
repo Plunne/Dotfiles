@@ -16,7 +16,7 @@
 
 pcall(require, "luarocks.loader")                               -- LUAROCKS : Needed
 require("awful.autofocus")                                      -- AUTOFOCUS : Focus windows when created
-require("beautiful").init("~/.config/awesome/themes/feather-light/theme.lua")  -- THEME : Set theme path
+require("beautiful").init("~/.config/awesome/themes/feather-dark/theme.lua")  -- THEME : Set theme path
 require("system")(s)                                            -- SYSTEM : Loads system
 require("keys")                                                 -- KEYS : Loads keybindings
 require("lib.libconfig")                                        -- CONFIG : Loads config library
@@ -86,7 +86,7 @@ add_desktop(" 9/ ",    screen3,    l.max,          0.5,    false,  true,   ni
 rules_All()
 rules_Titlebars(true)
 rules_NoTitlebars({"firefox", "codium", "discord", "Spotify", "spotify", "Ankama Launcher", "com-ankamagames-wakfu-client-WakfuClient"})
-rules_Multiple({"arandr", "Qalculate-gtk"}, { floating = true })
+rules_Multiple({"arandr", "Qalculate-gtk", "dolphin"}, { floating = true })
 rules_Multiple({"discord", "Spotify", "spotify"}, { screen = screen3 })
 
 -- Autostart
@@ -96,7 +96,7 @@ rules_Multiple({"discord", "Spotify", "spotify"}, { screen = screen3 })
 
 run("firefox", " 4/ ")
 run("discord", " 9/ ")
-run_sh("~/.scripts/emacs.sh")
+run_sh("~/.scripts/emacsdaemon.sh")
 
 -- Bars
 

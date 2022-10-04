@@ -61,7 +61,7 @@ bindApp(super_ctrl,     print,  "Screenshot (Region + Delay)",  screenshot_regio
 
 bind(super,         "s",    "Awesome", "Help",              hotkeys_popup.show_help),
 bind(super,         "w",    "Awesome", "Menu",              function() mymainmenu:show() end),
-bind(super_ctrl,    "r",    "Awesome", "Reload Awesome",    awesome.restart),
+bind(super_shift,   "r",    "Awesome", "Reload Awesome",    awesome.restart),
 bind(super_shift,   "q",    "Awesome", "Quit Awesome",      awesome.quit),
 
 -- Controls
@@ -91,16 +91,13 @@ bind(super_ctrl,    "k", "Screen", "Focus next screen",        function() awful.
 
 
 -- Next layout
-bind(super,         tab,    "Layout", "Next layout",                      function() awful.layout.inc( 1) end),
+bind(super,         tab,    "Layout", "Next layout",                function() awful.layout.inc( 1) end),
 -- Master width factor
-bind(super,         "h",    "Layout", "Master width factor -",   function() awful.tag.incmwfact(-0.05) end),
-bind(super,         "l",    "Layout", "Master width factor +",   function() awful.tag.incmwfact( 0.05) end),
+bind(super_ctrl,    left,   "Layout", "Master width factor -",      function() awful.tag.incmwfact(-0.05) end),
+bind(super_ctrl,    right,  "Layout", "Master width factor +",      function() awful.tag.incmwfact( 0.05) end),
 -- Master client number
-bind(super_shift,   "h",    "Layout", "Master clients number -",      function() awful.tag.incnmaster(-1, nil, true) end),
-bind(super_shift,   "l",    "Layout", "Master clients number +",      function() awful.tag.incnmaster( 1, nil, true) end),
--- Column number
-bind(super_ctrl,    "h",    "Layout", "Columns number -",             function() awful.tag.incncol(-1, nil, true) end),
-bind(super_ctrl,    "l",    "Layout", "Columns number +",             function() awful.tag.incncol( 1, nil, true) end),
+bind(super_ctrl,    down,   "Layout", "Master clients number -",    function() awful.tag.incnmaster(-1, nil, true) end),
+bind(super_ctrl,    up,     "Layout", "Master clients number +",    function() awful.tag.incnmaster( 1, nil, true) end),
 
 -- Client
 

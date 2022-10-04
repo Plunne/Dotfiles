@@ -7,8 +7,8 @@ export PATH=$PATH:~/.platformio/penv/bin:~/.emacs.d/bin:/bin/gdb
 
 # APPS
 export TERMINAL="st"
-export EDITOR="nvim"
-export VISUAL="emacsclient -n -c -a='emacs'"
+export EDITOR="~/.scripts/emacsclient.sh"
+export VISUAL="~/.scripts/emacsclient.sh"
 export READER="zathura"
 export IMAGE="sxiv"
 export VIDEO="vlc"
@@ -20,6 +20,9 @@ export WM="awesome"
 export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
 export XDG_CACHE_HOME=${XDG_CACHE_HOME:="$HOME/.cache"}
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
+
+# QT
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 # LANG
 export LC_ALL=en_US.UTF-8

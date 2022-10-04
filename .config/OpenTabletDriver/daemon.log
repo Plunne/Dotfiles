@@ -1,4 +1,4 @@
-9/2/2022 12:38:36 AM
+10/3/2022 6:56:28 PM
 System.IO.IOException
 Input/output error
 System.Console
@@ -8,10 +8,7 @@ System.Console
    at System.IO.StreamWriter.WriteLine(String value)
    at System.IO.TextWriter.SyncTextWriter.WriteLine(String value)
    at System.Console.WriteLine(String value)
-   at OpenTabletDriver.Daemon.DriverDaemon.<.ctor>b__0_0(Object sender, LogMessage message) in /home/plunne/.apps/OpenTabletDriver/OpenTabletDriver.Daemon/DriverDaemon.cs:line 40
-   at OpenTabletDriver.Plugin.Log.Write(LogMessage message) in /home/plunne/.apps/OpenTabletDriver/OpenTabletDriver.Plugin/Log.cs:line 20
-   at OpenTabletDriver.Plugin.Log.Write(String group, String text, LogLevel level, Boolean createStackTrace, Boolean notify) in /home/plunne/.apps/OpenTabletDriver/OpenTabletDriver.Plugin/Log.cs:line 55
-   at OpenTabletDriver.Plugin.Log.Debug(String group, String text) in /home/plunne/.apps/OpenTabletDriver/OpenTabletDriver.Plugin/Log.cs:line 77
+   at OpenTabletDriver.Daemon.DriverDaemon.<.ctor>b__0_0(Object sender, LogMessage message) in /home/plunne/.apps/OpenTabletDriver/OpenTabletDriver.Daemon/DriverDaemon.cs:line 39
    at OpenTabletDriver.Devices.RootHub.HandleHubDeviceNotification(Object sender, DevicesChangedEventArgs eventArgs) in /home/plunne/.apps/OpenTabletDriver/OpenTabletDriver/Devices/RootHub.cs:line 143
    at OpenTabletDriver.Devices.HidSharpBackend.HidSharpDeviceRootHub.<.ctor>b__0_0(Object sender, DeviceListChangedEventArgs e) in /home/plunne/.apps/OpenTabletDriver/OpenTabletDriver/Devices/HidSharpBackend/HidSharpDeviceRoot.cs:line 21
    at HidSharp.DeviceList.RaiseChanged()

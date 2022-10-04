@@ -17,7 +17,6 @@ tabDots=(\
 .config/BetterDiscord \
 .config/firefox \
 .config/flameshot \
-.config/Kvantum \
 .config/neofetch \
 .config/nvim \
 .config/OpenTabletDriver \

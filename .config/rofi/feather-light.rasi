@@ -1,0 +1,124 @@
+/***************************************************************************************
+ * 
+ * ██████╗ ██╗     ██╗   ██╗███╗   ██╗███╗   ██╗███████╗    ██████╗  ██████╗ ███████╗██╗
+ * ██╔══██╗██║     ██║   ██║████╗  ██║████╗  ██║██╔════╝    ██╔══██╗██╔═══██╗██╔════╝██║
+ * ██████╔╝██║     ██║   ██║██╔██╗ ██║██╔██╗ ██║█████╗      ██████╔╝██║   ██║█████╗  ██║
+ * ██╔═══╝ ██║     ██║   ██║██║╚██╗██║██║╚██╗██║██╔══╝      ██╔══██╗██║   ██║██╔══╝  ██║
+ * ██║     ███████╗╚██████╔╝██║ ╚████║██║ ╚████║███████╗    ██║  ██║╚██████╔╝██║     ██║
+ * ╚═╝     ╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═══╝╚══════╝    ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝
+ *
+ * Repo : https://github.com/Plunne/plunne_rofi
+ *
+ ***************************************************************************************/
+
+configuration {
+	icon-theme: 			"Flatery";
+    show-icons:             true;
+    display-drun: 			" ";
+    display-window: 		" ";
+    display-run: 			" ";
+    display-ssh: 			" ";
+    display-emoji: 			" ";
+	display-calc: 			" ";
+    drun-display-format:    "{name}";
+    disable-history:        false;
+    fullscreen:             true;
+	hide-scrollbar: 		true;
+	sidebar-mode: 			false;
+	modi: "drun,window,run,emoji";
+}
+
+@theme "/dev/null"
+
+* {
+    font: "JetBrainsMono NerdFont 12";
+
+    background-color: transparent;
+
+    margin:     0px;
+    padding:    0px;
+    spacing:    0px;
+
+    color01:    #e1dbe9;
+    color02:    #b4a5c7;
+    color-dark:    #9783b1;
+    color-darker:    #e8e4ee;
+    color-black:    #2a2236;
+    color-light:    #4a3b5e;
+    color-dark-transparent:     #9783b1e5;
+    color-darker-transparent:   #e8e4eee5;
+    color-black-transparent:    #2a2236e5;
+
+}
+
+window {
+    background-color:   @color-darker;
+    location:           center;
+    width:              580;
+    y-offset:           -100;
+    border-radius:      4px;
+}
+
+inputbar {
+    background-color:   @color01;
+    padding:            18px 30px;
+    spacing:            16px;
+    children:           [ prompt, entry ];
+}
+
+prompt {
+    font:               "JetBrainsMono NerdFont 20";
+    text-color:         @color-dark;
+    vertical-align:     0.5;
+}
+
+entry {
+    font:               "JetBrainsMono NerdFont 14";
+    text-color:         @color-dark;
+    placeholder:        "Search";
+    placeholder-color:  @color02;
+    vertical-align:     0.5;
+}
+
+message {
+    text-color:         @color-dark;
+    border-color:       @color01;
+    background-color:   @color01;
+}
+
+textbox {
+    padding:            8px 24px;
+}
+
+listview {
+    margin:             18px;
+    lines:              5;
+    columns:            1;
+    fixed-height:       false;
+}
+
+element {
+    text-color:         @color02;
+    padding:            6px;
+    spacing:            20px;
+}
+
+element normal active {
+    text-color:         @color-light;
+}
+
+element selected normal, element selected active {
+    text-color:         @color-light;
+}
+
+element-icon {
+    size:               36px;
+    vertical-align:     0.5;
+}
+
+element-text {
+    text-color:         inherit;
+    vertical-align:     0.5;
+}
+
+/* vim:ft=css
