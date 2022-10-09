@@ -65,7 +65,7 @@ editor          = "~/.scripts/emacsclient.sh"
 filemanager     = "dolphin"
 editor_cmd      = terminal .. " -e " .. "nvim"
 fm_cmd          = terminal .. " -e " .. "ranger"
-rofi_launcher   = "rofi -no-lazy-grab -show drun -theme feather-dark"
+rofi_launcher   = "rofi -no-lazy-grab -show drun -theme feather-light"
 rofi_calc       = "rofi -show calc -no-show-match -no-sort -terse -modi calc"
 calc            = "qalculate-gtk"
 
@@ -151,7 +151,7 @@ Import all modules that are required for the config.
 #+begin_src lua :tangle rc.lua :comments org
 pcall(require, "luarocks.loader")                               -- LUAROCKS : Needed
 require("awful.autofocus")                                      -- AUTOFOCUS : Focus windows when created
-require("beautiful").init("~/.config/awesome/themes/feather-dark/theme.lua")  -- THEME : Set theme path
+require("beautiful").init("~/.config/awesome/themes/feather-light/theme.lua")  -- THEME : Set theme path
 require("system")(s)                                            -- SYSTEM : Loads system
 require("keys")                                                 -- KEYS : Loads keybindings
 require("lib.libconfig")                                        -- CONFIG : Loads config library
@@ -224,7 +224,7 @@ Apply some rules for multiple apps : =rules_Multiple(apps, props)=
 #+begin_src lua :tangle rc.lua :comments org
 rules_All()
 rules_Titlebars(true)
-rules_NoTitlebars({"firefox", "codium", "discord", "Spotify", "spotify", "Ankama Launcher", "com-ankamagames-wakfu-client-WakfuClient"})
+rules_NoTitlebars({"firefox", "LibreWolf", "codium", "discord", "Spotify", "spotify", "Ankama Launcher", "com-ankamagames-wakfu-client-WakfuClient"})
 rules_Multiple({"arandr", "Qalculate-gtk", "dolphin"}, { floating = true })
 rules_Multiple({"discord", "Spotify", "spotify"}, { screen = screen3 })
 #+end_src
@@ -234,7 +234,7 @@ rules_Multiple({"discord", "Spotify", "spotify"}, { screen = screen3 })
 Launch app at startup : =run(myapp, mytag)=
 
 #+begin_src lua :tangle rc.lua :comments org
-run("firefox", " 4/ ")
+run("librewolf", " 4/ ")
 run("discord", " 9/ ")
 run_sh("~/.scripts/emacsdaemon.sh")
 #+end_src

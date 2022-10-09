@@ -20,7 +20,7 @@ editor          = "~/.scripts/emacsclient.sh"
 filemanager     = "dolphin"
 editor_cmd      = terminal .. " -e " .. "nvim"
 fm_cmd          = terminal .. " -e " .. "ranger"
-rofi_launcher   = "rofi -no-lazy-grab -show drun -theme feather-dark"
+rofi_launcher   = "rofi -no-lazy-grab -show drun -theme feather-light"
 rofi_calc       = "rofi -show calc -no-show-match -no-sort -terse -modi calc"
 calc            = "qalculate-gtk"
 
