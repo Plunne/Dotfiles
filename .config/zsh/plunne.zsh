@@ -8,7 +8,7 @@
 # General
 
 
-alias clr='clear && echo -e "\n"'
+alias clr='clear'
 alias ls='ls -la --color'
 alias neo='clear && echo -e "\n" && neofetch'
 alias xr='xrdb .Xressources'

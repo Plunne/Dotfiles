@@ -27,6 +27,9 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # LANG
 export LC_ALL=en_US.UTF-8
 
+# MbedOS
+export MBED_GCC_ARM_PATH=/usr/bin/arm-none-eabi-gcc
+
 # LF_ICONS
 export LF_ICONS="\
 di=:\
