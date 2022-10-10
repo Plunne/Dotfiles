@@ -6,14 +6,14 @@ path=("$HOME/.scripts" "$path[@]")
 export PATH=$PATH:~/.platformio/penv/bin:~/.emacs.d/bin:/bin/gdb
 
 # APPS
-export TERMINAL="st"
+export TERMINAL="konsole"
 export EDITOR="~/.scripts/emacsclient.sh"
 export VISUAL="~/.scripts/emacsclient.sh"
-export READER="zathura"
+export READER="librewolf"
 export IMAGE="sxiv"
-export VIDEO="vlc"
+export VIDEO="haruna"
 export PAGER="less"
-export BROWSER="firefox"
+export BROWSER="librewolf"
 export WM="awesome"
 
 # XDG

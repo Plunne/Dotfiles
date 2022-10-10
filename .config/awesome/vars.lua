@@ -15,7 +15,7 @@
 
 
 -- Apps
-terminal        = "st"
+terminal        = "konsole"
 editor          = "~/.scripts/emacsclient.sh"
 filemanager     = "dolphin"
 editor_cmd      = terminal .. " -e " .. "nvim"

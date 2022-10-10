@@ -1,0 +1,26 @@
+[Desktop Entry]
+DefaultProfile=Feather-Dark.profile
+
+[General]
+ConfigVersion=1
+
+[KonsoleWindow]
+ShowWindowTitleOnTitleBar=true
+
+[MainWindow]
+DisplayPort-2 HDMI-A-0 DVI-D-0 Height 1920x1080=1016
+DisplayPort-2 HDMI-A-0 DVI-D-0 Width 1920x1080=1920
+DisplayPort-2 HDMI-A-0 DVI-D-0 XPosition 1920x1080=1920
+DisplayPort-2 HDMI-A-0 DVI-D-0 YPosition 1920x1080=64
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAQAAAAAAAAAAAAAAAPwCAAAAAvsAAAAcAFMAUwBIAE0AYQBuAGEAZwBlAHIARABvAGMAawAAAAAA/////wAAANEBAAAD+wAAACIAUQB1AGkAYwBrAEMAbwBtAG0AYQBuAGQAcwBEAG8AYwBrAAAAAAD/////AAABSAEAAAMAAAOgAAAD6AAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAACAAAAFgBtAGEAaQBuAFQAbwBvAGwAQgBhAHIAAAAAAP////8AAAAAAAAAAAAAABwAcwBlAHMAcwBpAG8AbgBUAG8AbwBsAGIAYQByAAAAAOD/////AAAAAAAAAAA=
+ToolBarsMovable=Disabled
+
+[Notification Messages]
+CloseAllTabs=true
+
+[TabBar]
+NewTabBehavior=PutNewTabAfterCurrentTab
+
+[UiSettings]
+ColorScheme=Breeze Classic

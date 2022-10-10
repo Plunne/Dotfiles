@@ -24,11 +24,11 @@ tabDots=(\
 .config/ranger \
 .config/rofi \
 .config/spicetify \
-.config/st \
 .config/zathura \
 .config/zsh \
-.config/kritarc \
 .config/dolphinrc \
+.config/konsolerc \
+.config/kritarc \
 .config/picom.conf \
 #emacs
 .emacs.d/lisp \
@@ -44,6 +44,7 @@ tabDots=(\
 .local/share/applications/emacsdaemon.desktop \
 .local/share/applications/emacsinit.desktop \
 .local/share/fonts \
+.local/share/konsole \
 #scripts
 .scripts \
 #themes

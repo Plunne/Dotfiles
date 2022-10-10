@@ -5,10 +5,11 @@ ShowSortBy=false
 ShowViewMode=false
 
 [DetailsMode]
-PreviewSize=16
+PreviewSize=22
 UseShortRelativeDates=false
 
 [General]
+RememberOpenedTabs=false
 ShowFullPath=true
 Version=202
 ViewPropsTimestamp=2022,9,30,17,24,53.091
@@ -18,8 +19,8 @@ Places Icons Auto-resize=false
 Places Icons Static Size=22
 
 [KPropertiesDialog]
-DisplayPort-2 HDMI-A-0 DVI-D-0 Height 1920x1080=455
-DisplayPort-2 HDMI-A-0 DVI-D-0 Width 1920x1080=389
+DisplayPort-2 HDMI-A-0 DVI-D-0 Height 1920x1080=603
+DisplayPort-2 HDMI-A-0 DVI-D-0 Width 1920x1080=413
 
 [MainWindow]
 MenuBar=Disabled
@@ -27,3 +28,6 @@ ToolBarsMovable=Disabled
 
 [PreviewSettings]
 Plugins=appimagethumbnail,audiothumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,svgthumbnail
+
+[VersionControl]
+enabledPlugins=Git

@@ -26,9 +26,11 @@ PkgUpdate = sudo pacman -Syu
 ########################
 
 # Main Apps
+Terminal = konsole
+Editor = emacs
 Browser = librewolf-bin
-FileManager = ranger ueberzug dolphin
-Archiver = file-roller
+FileManager = ranger ueberzug dolphin dolphin-plugins kompare
+Archiver = ark
 PdfViewer = zathura zathura-pdf-poppler
 ImageViewer = sxiv
 VideoViewer = haruna

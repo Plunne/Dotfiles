@@ -60,7 +60,7 @@ This section regroup all my custom commands for differents applications like ter
 
 #+begin_src lua :tangle vars.lua :comments org
 -- Apps
-terminal        = "st"
+terminal        = "konsole"
 editor          = "~/.scripts/emacsclient.sh"
 filemanager     = "dolphin"
 editor_cmd      = terminal .. " -e " .. "nvim"
