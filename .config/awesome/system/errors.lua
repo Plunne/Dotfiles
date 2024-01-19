@@ -15,3 +15,9 @@ naughty.connect_signal("request::display_error", function(message, startup)
         message = message
     }
 end)
+
+--[[--------------------------------------------------------
+
+EOF
+
+--]]--------------------------------------------------------

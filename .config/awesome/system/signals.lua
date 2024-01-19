@@ -12,7 +12,9 @@ local modules = require("lib.libmodules")
 --]]--------------------------------------------------------
 
 --[[--------------------------------------------------------
-        CLIENT
+
+CLIENTS
+
 --]]--------------------------------------------------------
 
 client.connect_signal("manage", function (c)
@@ -30,7 +32,9 @@ client.connect_signal("manage", function (c)
 end)
 
 --[[--------------------------------------------------------
-        TITLEBAR
+
+TITLEBARS
+
 --]]--------------------------------------------------------
 
 -- Dynamic titlebars
@@ -41,7 +45,9 @@ client.connect_signal("unfocus", 	function(c) c.border_color = beautiful.border_
 require("custom.titlebar")
 
 --[[--------------------------------------------------------
-        WINDOW
+
+WINDOWS
+
 --]]--------------------------------------------------------
 
 -- Windows corners
@@ -60,3 +66,9 @@ end
 client.connect_signal("property::fullscreen",	function(c) set_window_corners(c) end)
 client.connect_signal("property::maximized", 	function(c) set_window_corners(c) end)
 client.connect_signal("property::floating", 	function(c) set_window_corners(c) end)
+
+--[[--------------------------------------------------------
+
+EOF
+
+--]]--------------------------------------------------------

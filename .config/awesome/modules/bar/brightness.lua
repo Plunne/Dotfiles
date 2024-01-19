@@ -21,7 +21,9 @@ brightness_icon.font = beautiful.modules_brightness_icon_font
 brightness_text.font = beautiful.modules_brightness_text_font
 
 --[[--------------------------------------------------------
-        BAR BRIGHTNESS
+
+BAR BRIGHTNESS
+
 --]]--------------------------------------------------------
 
 return function(scr)
@@ -38,3 +40,9 @@ return function(scr)
         require("keys.mouse").light_mouse())
     
 end
+
+--[[--------------------------------------------------------
+
+EOF
+
+--]]--------------------------------------------------------

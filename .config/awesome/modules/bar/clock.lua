@@ -22,7 +22,9 @@ local clock_text = wibox.widget {
 }
 
 --[[--------------------------------------------------------
-        BAR CLOCK
+
+BAR CLOCK
+
 --]]--------------------------------------------------------
 
 return function(scr)
@@ -30,3 +32,9 @@ return function(scr)
     return modules.new(scr, 4, nil, beautiful.fg_modules_clock, 8, 8, 0, 0, nil, 0, 8, clock_text)
     
 end
+
+--[[--------------------------------------------------------
+
+EOF
+
+--]]--------------------------------------------------------

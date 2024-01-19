@@ -1,15 +1,18 @@
---[[--------------------------------------------------------
+--[[ keyboard.lua
    __ ________  _____  ____  ___   ___  ___ 
   / //_/ __/\ \/ / _ )/ __ \/ _ | / _ \/ _ \
  / ,< / _/   \  / _  / /_/ / __ |/ , _/ // /
 /_/|_/___/   /_/____/\____/_/ |_/_/|_/____/ 
 
+--]]-- by Lena SAVY-LARIGALDIE aka Plunne
+
+--[[--------------------------------------------------------
+
+IMPORT MODULES
+
+Import all modules required for the Keyboard configuration.
+
 --]]--------------------------------------------------------
-
--- Import modules
-
--- Import all modules required for the Keyboard configuration.
-
 
 local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
@@ -17,32 +20,44 @@ local brightness = require("keys.control.brightness")
 local player = require("keys.control.player")
 local volume = require("keys.control.volume")
 
--- Import variables
+--[[--------------------------------------------------------
 
---  Because I use some variables from my config.
+IMPORT VARIABLES
+
+Because I use some variables from my config.
+
+--]]--------------------------------------------------------
 
 
 require("vars")
 require("lib.libkeys")
 require("custom.menu")
 
--- Keyboard
+--[[--------------------------------------------------------
 
---  Keyboard object instance.
+KEYBOARD
+
+Keyboard object instance.
+
+--]]--------------------------------------------------------
 
 
 local keyboard = {}
 
--- General Keybindings
+--[[--------------------------------------------------------
 
--- Main keybindings function. This is where I set all my general keybindings.
+GENERAL KEYBINDINGS
+
+Main keybindings function. This is where I set all my general keybindings.
+
+--]]--------------------------------------------------------
 
 
 keyboard.init = function() awful.keyboard.append_global_keybindings({
 
--- Apps
-
-
+------------------
+--     Apps     --
+------------------
 bindApp(super,          enter,  "Terminal",                     terminal),
 bindApp(super,          "p",    "File Manager",                 filemanager),
 bindApp(super,          "e",    "Editor",                       editor),
@@ -53,16 +68,17 @@ bindApp(super_shift,    print,  "Screenshot (Screen + Delay)",  screenshot_delay
 bindApp(super,          print,  "Screenshot (Region)",          screenshot_region),
 bindApp(super_ctrl,     print,  "Screenshot (Region + Delay)",  screenshot_region_delay),
 
--- Awesome
-
-
+---------------------
+--     Awesome     --
+---------------------
 bind(super,         "s",    "Awesome", "Help",              hotkeys_popup.show_help),
 bind(super,         "w",    "Awesome", "Menu",              function() mymainmenu:show() end),
 bind(super_shift,   "r",    "Awesome", "Reload Awesome",    awesome.restart),
 bind(super_shift,   "q",    "Awesome", "Quit Awesome",      awesome.quit),
 
--- Controls
-
+----------------------
+--     Controls     --
+----------------------
 
 -- Brightness
 bindCtl("XF86MonBrightnessUp",     "Brightness Up",     function() brightness.up() end),
@@ -77,15 +93,16 @@ bindCtl("XF86AudioPause",          "Pause",             function() player.play_p
 bindCtl("XF86AudioNext",           "Next",              function() player.next() end),
 bindCtl("XF86AudioPrev",           "Previous",          function() player.prev() end),
 
--- Screen
-
+--------------------
+--     Screen     --
+--------------------
 
 bind(super_ctrl,    "j", "Screen", "Focus previous screen",    function() awful.screen.focus_relative(-1) end),
 bind(super_ctrl,    "k", "Screen", "Focus next screen",        function() awful.screen.focus_relative( 1) end),
--- bind(super, 		"e", "Screen", "Toggle side screens", 	   function() toggleScreen.visible = not toggleScreen.visible end),
 
--- Layout
-
+--------------------
+--     Layout     --
+--------------------
 
 -- Next layout
 bind(super,         tab,    "Layout", "Next layout",                function() awful.layout.inc( 1) end),
@@ -96,8 +113,9 @@ bind(super_ctrl,    right,  "Layout", "Master width factor +",      function() a
 bind(super_ctrl,    down,   "Layout", "Master clients number -",    function() awful.tag.incnmaster(-1, nil, true) end),
 bind(super_ctrl,    up,     "Layout", "Master clients number +",    function() awful.tag.incnmaster( 1, nil, true) end),
 
--- Client
-
+--------------------
+--     Client     --
+--------------------
 
 -- Focus
 bind(super,         "u",    "Client Focus", "Focus urgent",         awful.client.urgent.jumpto ),
@@ -115,8 +133,9 @@ bind(super_shift,   right,  "Client Move", "Move with right",       function() a
 bind(super_shift,   up,     "Client Move", "Move with top",         function() awful.client.swap.global_bydirection("up") end),
 bind(super_shift,   down,   "Client Move", "Move with bottom",      function() awful.client.swap.global_bydirection("down") end),
 
--- Desktops
-
+----------------------
+--     Desktops     --
+----------------------
 
 -- Go to tag
 bindNum(super, "Tag", "Tag", 
@@ -164,9 +183,13 @@ bindNum(super_alt, "Tag", "Toggle client on",
 
 })end
 
--- Client Keys
+--[[--------------------------------------------------------
 
--- Bindings used for clients interactions.
+CLIENT KEYS
+
+Bindings used for clients interactions.
+
+--]]--------------------------------------------------------
 
 
 keyboard.clientkeys = function()
@@ -185,6 +208,10 @@ keyboard.clientkeys = function()
 
 end
 
--- EOF (End of Keyboard)
+--[[--------------------------------------------------------
+
+EOF
+
+--]]--------------------------------------------------------
 
 return keyboard

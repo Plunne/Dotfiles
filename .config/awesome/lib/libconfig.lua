@@ -13,7 +13,9 @@ ruled = require("ruled")
 require("vars")
 
 --[[--------------------------------------------------------
-        LAYOUTS
+
+LAYOUTS
+
 --]]--------------------------------------------------------
 
 l = awful.layout.suit
@@ -23,7 +25,9 @@ function set_layouts(args)
 end
 
 --[[--------------------------------------------------------
-        DESKTOPS
+
+DESKTOPS
+
 --]]--------------------------------------------------------
 
 function add_desktop(name, scr, lay, ratio, gap, sel, icon)
@@ -43,11 +47,14 @@ function add_desktop(name, scr, lay, ratio, gap, sel, icon)
 end
 
 --[[--------------------------------------------------------
-        RULES
+
+RULES
+
 --]]--------------------------------------------------------
 
 rules = {}
 
+-- All : Needed for generic rules
 rules.All = function()
     ruled.client.append_rule {
         rule = { },
@@ -65,6 +72,7 @@ rules.All = function()
     
 end
 
+-- Titlebars : Enable/Disable default titlebars
 rules.Titlebars = function(bool)
     ruled.client.append_rule {
         rule_any = { type = { "normal", "dialog" } },
@@ -72,6 +80,7 @@ rules.Titlebars = function(bool)
     }
 end
 
+-- NoTitlebars : Disable titlebars for some apps
 rules.NoTitlebars = function(apps)
     ruled.client.append_rule {
         rule_any = { class = apps },
@@ -79,6 +88,7 @@ rules.NoTitlebars = function(apps)
     }
 end
 
+-- Single : Apply some rules for a single app
 rules.Single = function(app, props)
     ruled.client.append_rule {
         rule = { class = app },
@@ -86,6 +96,7 @@ rules.Single = function(app, props)
     }
 end
 
+-- Multiple : Apply some rules for multiple apps
 rules.Multiple = function(apps, props)
     ruled.client.append_rule {
         rule_any = { class = apps },
@@ -94,7 +105,9 @@ rules.Multiple = function(apps, props)
 end
 
 --[[--------------------------------------------------------
-        AUTOSTART
+
+AUTOSTART
+
 --]]--------------------------------------------------------
 
 run = {}
@@ -112,6 +125,13 @@ run.app = function(myapp, mytag)
     awful.spawn.single_instance( myapp, { tag = mytag } ) 
 end
 
+-- Scripts
 run.sh = function(script)
 	awful.spawn.with_shell(script)
 end
+
+--[[--------------------------------------------------------
+
+EOF
+
+--]]--------------------------------------------------------

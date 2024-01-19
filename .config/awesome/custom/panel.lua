@@ -43,3 +43,9 @@ return awful.popup {
     y = beautiful.panel_y,
     shape = modules.rounded(beautiful.panel_rounded)
 }
+
+--[[--------------------------------------------------------
+
+EOF
+
+--]]--------------------------------------------------------

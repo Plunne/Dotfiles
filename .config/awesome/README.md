@@ -24,11 +24,13 @@ all the above features.
 - [Plunne's Awesome WM](#plunnes-awesome-wm)
 - [WHY I CHOSE AWESOME WM?](#why-i-chose-awesome-wm)
 - [TABLE OF CONTENT](#table-of-content)
+- [CONFIGURATION](#configuration)
 - [VARIABLES](#variables)
+  - [Theme](#theme)
   - [Applications](#applications)
   - [Monitors](#monitors)
   - [Keys](#keys)
-- [CONFIGURATION](#configuration)
+- [CONFIGURATION](#configuration-1)
   - [Import modules](#import-modules)
   - [Daemons](#daemons)
   - [Layouts](#layouts)
@@ -36,14 +38,25 @@ all the above features.
   - [Rules](#rules)
   - [Autostart](#autostart)
   - [Bars](#bars)
-- [ORGANISATION](#organisation)
+
+# CONFIGURATION
+
+The configuration is organised in different folders.
+
+- **bar :** Bars configurations
+- **custom :** Custom modules configurations
+- **keys :** Keybindings
+- **lib :** Wrapping libraries
+- **modules :** Modules widgets implementations
+- **system :** System settings
+- **theme :** Theming configuration and icons
 
 # VARIABLES
 
 I decided to put all my Awesome WM environement variables into `.config/awesome/vars.lua` .
 
 ``` lua
---[[
+--[[ vars.lua
 
 ██╗   ██╗ █████╗ ██████╗ ███████╗       ██╗     ██╗   ██╗ █████╗ 
 ██║   ██║██╔══██╗██╔══██╗██╔════╝       ██║     ██║   ██║██╔══██╗
@@ -52,7 +65,15 @@ I decided to put all my Awesome WM environement variables into `.config/awesome/
  ╚████╔╝ ██║  ██║██║  ██║███████║    ██╗███████╗╚██████╔╝██║  ██║
   ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝    ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
 
---]]
+--]]-- by Lena SAVY-LARIGALDIE aka Plunne
+```
+
+## Theme
+
+Select the theme by setting this powerful global variable.
+
+```lua
+theme_name = "feather-dark"
 ```
 
 ## Applications
@@ -66,7 +87,7 @@ editor          = "~/.scripts/emacsclient.sh"
 filemanager     = "dolphin"
 editor_cmd      = terminal .. " -e " .. "nvim"
 fm_cmd          = terminal .. " -e " .. "ranger"
-rofi_launcher   = "rofi -no-lazy-grab -show drun -theme feather-light"
+rofi_launcher   = "rofi -no-lazy-grab -show drun -theme " .. theme_name
 rofi_calc       = "rofi -show calc -no-show-match -no-sort -terse -modi calc"
 calc            = "qalculate-gtk"
 
@@ -92,12 +113,16 @@ screenshot_region_delay = "flameshot gui -d 3000"
 
 ## Monitors
 
-I created a variable for each monitors I use.
+I created a variable for each monitor I use.
 
 ```lua
+-- Screens that I use
 screen1 = "DisplayPort-2"   -- Primary
 screen2 = "DVI-D-0"         -- Right
 screen3 = "HDMI-A-0"        -- Left
+
+-- Screen that will display notifications
+notiscreen = screen3
 ```
 
 ## Keys
@@ -133,7 +158,7 @@ My main configuration file is my `rc.lua` , so I splitted my entire config into 
 settings functions I made that I need to setup my WM.
 
 ```lua
---[[
+--[[ rc.lua
 
 ██████╗  ██████╗       ██╗     ██╗   ██╗ █████╗ 
 ██╔══██╗██╔════╝       ██║     ██║   ██║██╔══██╗
@@ -142,7 +167,7 @@ settings functions I made that I need to setup my WM.
 ██║  ██║╚██████╗    ██╗███████╗╚██████╔╝██║  ██║
 ╚═╝  ╚═╝ ╚═════╝    ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
 
---]]
+--]]-- by Lena SAVY-LARIGALDIE aka Plunne
 ```
 
 ## Import modules
@@ -160,10 +185,10 @@ require("lib.libconfig")                                        -- CONFIG : Load
 
 ## Daemons
 
-Set daemons initialisations at startup : `run_deamons({deamon1, deamons2})`
+Set daemons initialisations at startup : `run.deamons({deamon1, deamons2})`
 
 ```lua
-run_daemons({
+run.daemons({
     "picom",
     "udiskie",
     "nm-applet",
@@ -203,41 +228,41 @@ set_layouts({
  To set a desktop use : `add_desktop(name, screen, layout, ratio, gap, selected, icon_path)`
 
 ```lua
-add_desktop(" 1/ ",    screen1,    l.tile,         0.5,    false,  true,   nil)
-add_desktop(" 2 ",      screen1,    l.tile,         0.6,    false,  false,  nil)
-add_desktop(" 3 ",      screen1,    l.tile,         0.6,    false,  false,  nil)
-add_desktop(" 4/ ",    screen2,    l.max,          0.7,    false,  true,   nil)
-add_desktop(" 5 ",      screen2,    l.tile,         0.6,    false,  false,  nil)
-add_desktop(" 6 ",      screen2,    l.tile,         0.5,    false,  false,  nil)
-add_desktop(" 7 ",      screen3,    l.tile,         0.5,    false,  false,  nil)
-add_desktop(" 8 ",      screen3,    l.tile,         0.5,    false,  false,  nil)
-add_desktop(" 9/ ",    screen3,    l.max,          0.5,    false,  true,   nil)
+add_desktop(" 1 ",  screen1,    l.tile,         0.5,    false,  true,   nil)
+add_desktop(" 2 ",  screen1,    l.tile,         0.6,    false,  false,  nil)
+add_desktop(" 3 ",  screen1,    l.tile,         0.6,    false,  false,  nil)
+add_desktop(" 4 ",  screen2,    l.max,          0.7,    false,  true,   nil)
+add_desktop(" 5 ",  screen2,    l.tile,         0.6,    false,  false,  nil)
+add_desktop(" 6 ",  screen2,    l.tile,         0.5,    false,  false,  nil)
+add_desktop(" 7 ",  screen3,    l.tile,         0.5,    false,  false,  nil)
+add_desktop(" 8 ",  screen3,    l.tile,         0.5,    false,  false,  nil)
+add_desktop(" 9 ",  screen3,    l.max,          0.5,    false,  true,   nil)
 ```
 
 ## Rules
 
-Needed for generic rules : `rules_All()`
-Enable/Disable default titlebars : `rules_Titlebars(bool)`
-Disable titlebars for some apps : `rules_NoTitlebars(apps)`
-Apply some rules for a single app : `rules_Single(app, props)`
-Apply some rules for multiple apps : `rules_Multiple(apps, props)`
+Needed for generic rules : `rules.All()`
+Enable/Disable default titlebars : `rules.Titlebars(bool)`
+Disable titlebars for some apps : `rules.NoTitlebars(apps)`
+Apply some rules for a single app : `rules.Single(app, props)`
+Apply some rules for multiple apps : `rules.Multiple(apps, props)`
 
 ```lua
-rules_All()
-rules_Titlebars(true)
-rules_NoTitlebars({"firefox", "LibreWolf", "codium", "discord", "Spotify", "spotify", "Ankama Launcher", "com-ankamagames-wakfu-client-WakfuClient"})
-rules_Multiple({"arandr", "Qalculate-gtk", "dolphin"}, { floating = true })
-rules_Multiple({"discord", "Spotify", "spotify"}, { screen = screen3 })
+rules.All()
+rules.Titlebars(true)
+rules.NoTitlebars({"firefox", "LibreWolf", "codium", "discord", "Spotify", "spotify", "Ankama Launcher", "com-ankamagames-wakfu-client-WakfuClient"})
+rules.Multiple({"arandr", "Qalculate-gtk", "dolphin"}, { floating = true })
+rules.Multiple({"discord", "Spotify", "spotify"}, { screen = screen3 })
 ```
  
 ## Autostart
 
-Launch app at startup : `run(myapp, mytag)`
+Launch app at startup : `run.app(myapp, mytag)`
 
 ```lua
-run("librewolf", " 4/ ")
-run("discord", " 9/ ")
-run_sh("~/.scripts/emacsdaemon.sh")
+run.app("librewolf", " 4 ")
+run.app("discord", " 9 ")
+run.app("~/.scripts/emacsdaemon.sh")
 ```
 
 ## Bars
@@ -245,17 +270,8 @@ run_sh("~/.scripts/emacsdaemon.sh")
 Load bars for each screens.
 
 ```lua
-require("config.bar1")(screen[screen1])
-require("config.bar2")(screen[screen2])
-require("config.bar3")(screen[screen3])
+require("bar.primary")      (screen[screen1])
+require("bar.secondary")    (screen[screen2])
+require("bar.secondary")    (screen[screen3])
 ```
 
-# ORGANISATION
-
-- **bar :** Bars configurations
-- **custom :** Custom modules configurations
-- **keys :** Keybindings
-- **lib :** Wrapping library
-- **modules :** Modules widgets implementations
-- **system :** System settings
-- **theme :** Theming configuration and icons

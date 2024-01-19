@@ -14,7 +14,9 @@ local wibox = require("wibox")
 --]]--------------------------------------------------------
 
 --[[--------------------------------------------------------
-        BAR SYSTRAY
+
+BAR SYSTRAY
+
 --]]--------------------------------------------------------
 
 return function(scr)
@@ -25,3 +27,9 @@ return function(scr)
     return modules.new(scr, 4, beautiful.bg_systray, nil, 8, 8, 4, 4, beautiful.systray_border, 1, beautiful.systray_rounded, mysystray)
 
 end
+
+--[[--------------------------------------------------------
+
+EOF
+
+--]]--------------------------------------------------------

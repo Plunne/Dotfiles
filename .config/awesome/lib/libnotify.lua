@@ -15,7 +15,9 @@ local wibox = require("wibox")
 local notify = {}
 
 --[[--------------------------------------------------------
-        TIMER
+
+TIMER
+
 --]]--------------------------------------------------------
 
 notify.set_timer = function(noti, time)
@@ -36,7 +38,9 @@ notify.noti_timer = function(timer)
 end
 
 --[[--------------------------------------------------------
-        UPDATE PROGRESSBAR
+
+UPDATE PROGRESSBAR
+
 --]]--------------------------------------------------------
 
 notify.update_progressbar = function(w, out)
@@ -45,7 +49,9 @@ notify.update_progressbar = function(w, out)
 end
 
 --[[--------------------------------------------------------
-        MODULES
+
+MODULES
+
 --]]--------------------------------------------------------
 
 -- Set icon
@@ -78,7 +84,9 @@ notify.set_bar = function(cmd)
 end
 
 --[[--------------------------------------------------------
-        NOTIFY
+
+NOTIFY
+
 --]]--------------------------------------------------------
 
 -- Middle
@@ -119,7 +127,9 @@ notify.middle = function(icon, num, bar)
 end
 
 --[[--------------------------------------------------------
-        EOF
+
+EOF
+
 --]]--------------------------------------------------------
 
 return notify

@@ -16,7 +16,9 @@ require("lib.libkeys")
 require("vars")
 
 --[[--------------------------------------------------------
-        LOGOUT BUTTON
+
+LOGOUT BUTTON
+
 --]]--------------------------------------------------------
 
 local logout_button = wibox.widget {
@@ -29,7 +31,9 @@ local logout_button = wibox.widget {
 }
 
 --[[--------------------------------------------------------
-        RESTART BUTTON
+
+RESTART BUTTON
+
 --]]--------------------------------------------------------
 
 local restart_button = wibox.widget {
@@ -42,7 +46,9 @@ local restart_button = wibox.widget {
 }
 
 --[[--------------------------------------------------------
-        POWER BUTTON
+
+POWER BUTTON
+
 --]]--------------------------------------------------------
 
 local power_button = wibox.widget {
@@ -55,14 +61,22 @@ local power_button = wibox.widget {
 }
 
 --[[--------------------------------------------------------
-        RETURN
+
+PANPOWERMENU
+
 --]]--------------------------------------------------------
 
-return wibox.widget {
+local panpowermenu = wibox.widget {
     logout_button,
     restart_button,
     power_button, 
     layout = wibox.layout.fixed.horizontal
 }
 
--- EOF
+--[[--------------------------------------------------------
+
+EOF
+
+--]]--------------------------------------------------------
+
+return panpowermenu
