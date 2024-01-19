@@ -19,7 +19,9 @@ local cr  = cairo.Context(img) -- Create a context
 local modules = {}
 
 --[[--------------------------------------------------------
-        SHAPES
+
+SHAPES
+
 --]]--------------------------------------------------------
 
 modules.circle = function()
@@ -31,7 +33,9 @@ modules.rounded = function(round)
 end
 
 --[[--------------------------------------------------------
-        MODULES
+
+MODULES
+
 --]]--------------------------------------------------------
 
 modules.new = function(scr, margin_bar, module_bg, module_fg, l, r, t, b, border_col, border_w, round, module_widget)
@@ -73,7 +77,9 @@ modules.new_dual = function(scr, module_color, border_color, module_icon, bg_ico
 end
 
 --[[--------------------------------------------------------
-        EOF
+
+EOF
+
 --]]--------------------------------------------------------
 
 return modules

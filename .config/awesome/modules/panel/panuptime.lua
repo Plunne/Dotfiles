@@ -14,10 +14,12 @@ local wibox = require("wibox")
 --]]
 
 --[[--------------------------------------------------------
-        UPTIME
+
+PANUPTIME
+
 --]]--------------------------------------------------------
 
-return wibox.widget {
+local panuptime = wibox.widget {
     {
         font = beautiful.panel_uptime_font,
         align = 'center',
@@ -28,4 +30,10 @@ return wibox.widget {
     widget = wibox.container.background
 }
 
--- EOF
+--[[--------------------------------------------------------
+
+EOF
+
+--]]--------------------------------------------------------
+
+return panuptime

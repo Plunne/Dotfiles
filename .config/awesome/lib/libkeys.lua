@@ -11,7 +11,9 @@ local awful = require("awful")
 require("vars")
 
 --[[--------------------------------------------------------
-        KEYS COMBINAISONS
+
+KEYS COMBINAISONS
+
 --]]--------------------------------------------------------
 
 super   = {modkey,}
@@ -29,7 +31,9 @@ super_alt_shift   = {modkey, altkey, "Shift"}
 super_ctrl_shift  = {modkey, "Control", "Shift"}
 
 --[[--------------------------------------------------------
-        KEYBOARD FUNCTIONS
+
+KEYBOARD FUNCTIONS
+
 --]]--------------------------------------------------------
 
 function bind(mod, key, g, d, action)       
@@ -55,7 +59,9 @@ function bindNum(mod, g, d, action)
 end
 
 --[[--------------------------------------------------------
-        MOUSE FUNCTIONS
+
+MOUSE FUNCTIONS
+
 --]]--------------------------------------------------------
 
 function click(click, action)       
@@ -69,3 +75,9 @@ end
 function clickShell(click, app)      
     return awful.button( {}, click, function() awful.spawn.easy_async_with_shell(app) end )
 end
+
+--[[--------------------------------------------------------
+
+EOF
+
+--]]--------------------------------------------------------

@@ -20,7 +20,9 @@ volume_icon.font = beautiful.modules_volume_icon_font
 volume_text.font = beautiful.modules_volume_text_font
 
 --[[--------------------------------------------------------
-        BAR VOLUME
+
+BAR VOLUME
+
 --]]--------------------------------------------------------
 
 return function(scr)
@@ -37,3 +39,9 @@ return function(scr)
         require("keys.mouse").volume_mouse())
     
 end
+
+--[[--------------------------------------------------------
+
+EOF
+
+--]]--------------------------------------------------------

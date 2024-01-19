@@ -14,7 +14,9 @@ local wibox = require("wibox")
 --]]
 
 --[[--------------------------------------------------------
-        STYLES
+
+STYLES
+
 --]]--------------------------------------------------------
 
 local styles = {}
@@ -39,7 +41,9 @@ styles.focus   = {  markup      = function(t) return '<span font="'.. beautiful.
 }
 
 --[[--------------------------------------------------------
-        DECORATE
+
+DECORATE
+
 --]]--------------------------------------------------------
 
 local function decorate_cell(widget, flag, date)
@@ -76,13 +80,21 @@ local function decorate_cell(widget, flag, date)
 end
 
 --[[--------------------------------------------------------
-        RETURN
+
+PANCALENDAR
+
 --]]--------------------------------------------------------
 
-return wibox.widget {
+local pancalendar = wibox.widget {
     date     = os.date("*t"),
     fn_embed = decorate_cell,
     widget   = wibox.widget.calendar.month
 }
 
--- EOF
+--[[--------------------------------------------------------
+
+EOF
+
+--]]--------------------------------------------------------
+
+return pancalendar

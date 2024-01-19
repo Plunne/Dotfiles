@@ -1,32 +1,43 @@
---[[--------------------------------------------------------
+--[[ mouse.lua
    __  _______  __  __________
   /  |/  / __ \/ / / / __/ __/
  / /|_/ / /_/ / /_/ /\ \/ _/  
 /_/  /_/\____/\____/___/___/  
 
+--]]-- by Lena SAVY-LARIGALDIE aka Plunne
+
+--[[--------------------------------------------------------
+
+IMPORT MODULES
+
+Import all modules required for the Mouse configuration.
+
 --]]--------------------------------------------------------
-
--- Import modules
-
--- Import all modules required for the Mouse configuration.
-
 
 local awful = require("awful")
 local panel = require("custom.panel")
 local hotkeys_popup = require("awful.hotkeys_popup")
 
--- Import variables
 
--- Because I use some variables from my config.
+--[[--------------------------------------------------------
 
+IMPORT VARIABLES
+
+Because I use some variables from my config.
+
+--]]--------------------------------------------------------
 
 require("vars")
 require("lib.libkeys")
 require("custom.menu")
 
--- Hide popup
+--[[--------------------------------------------------------
 
--- Function used to close popups everywhere outside of them.
+HIDE POPUP
+
+Function used to close popups everywhere outside of them.
+
+--]]--------------------------------------------------------
 
 
 local function hide_popup()
@@ -34,16 +45,24 @@ local function hide_popup()
     panel.visible = false
 end
 
--- Mouse
+--[[--------------------------------------------------------
 
--- Mouse object instance.
+MOUSE
+
+Mouse object instance.
+
+--]]--------------------------------------------------------
 
 
 local mouse = {}
 
--- General Mouse Bindings
+--[[--------------------------------------------------------
 
--- Main mouse bindings function. This is where I set all my general mouse bindings.
+GENERAL MOUSE BINDINGS
+
+Main mouse bindings function. This is where I set all my general mouse bindings.
+
+--]]--------------------------------------------------------
 
 
 mouse.init = function() awful.mouse.append_global_mousebindings({
@@ -53,9 +72,13 @@ click(right_click, function() mymainmenu:toggle() end)
 
 })end
 
--- Client Buttons
+--[[--------------------------------------------------------
 
--- Bindings used for clients interactions.
+CLIENT BUTTONS
+
+Bindings used for clients interactions.
+
+--]]--------------------------------------------------------
 
 
 mouse.clientbuttons = function() 
@@ -72,9 +95,13 @@ mouse.clientbuttons = function()
 
 end
 
--- Taglist Buttons
+--[[--------------------------------------------------------
 
--- Bindings used for taglist interactions.
+TAGLIST BUTTONS
+
+Bindings used for taglist interactions.
+
+--]]--------------------------------------------------------
 
 
 mouse.taglist_mouse = function() return {
@@ -110,9 +137,13 @@ mouse.taglist_mouse = function() return {
 
 }end
 
--- Tasklist Buttons
+--[[--------------------------------------------------------
 
--- Bindings used for tasklist interactions.
+TASKLIST BUTTONS
+
+Bindings used for tasklist interactions.
+
+--]]--------------------------------------------------------
 
 
 mouse.tasklist_mouse = function() return {
@@ -140,10 +171,13 @@ mouse.tasklist_mouse = function() return {
 
 }end
 
--- Volume Buttons
+--[[--------------------------------------------------------
 
--- Bindings used for volume controls.
+VOLUME BUTTONS
 
+Bindings used for volume controls.
+
+--]]--------------------------------------------------------
 
 local volume = require("keys.control.volume")
 
@@ -158,10 +192,13 @@ mouse.volume_mouse = function() return {
 
 }end
 
--- Brightness Buttons
+--[[--------------------------------------------------------
 
--- Bindings used for brightness controls.
+BRIGHTNESS BUTTONS
 
+Bindings used for brightness controls.
+
+--]]--------------------------------------------------------
 
 local brightness = require("keys.control.brightness")
 
@@ -173,7 +210,10 @@ mouse.light_mouse = function() return {
 
 }end
 
--- EOF (End of Keyboard)
+--[[--------------------------------------------------------
 
+EOF
+
+--]]--------------------------------------------------------
 
 return mouse

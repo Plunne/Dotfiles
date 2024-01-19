@@ -1,4 +1,4 @@
---[[
+--[[ vars.lua
 
 ██╗   ██╗ █████╗ ██████╗ ███████╗       ██╗     ██╗   ██╗ █████╗ 
 ██║   ██║██╔══██╗██╔══██╗██╔════╝       ██║     ██║   ██║██╔══██╗
@@ -7,14 +7,26 @@
  ╚████╔╝ ██║  ██║██║  ██║███████║    ██╗███████╗╚██████╔╝██║  ██║
   ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝    ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
 
---]]
+--]]-- by Lena SAVY-LARIGALDIE aka Plunne
 
--- Theme
+--[[--------------------------------------------------------
+
+THEME
+
+Select the theme by setting this powerful global variable.
+
+--]]--------------------------------------------------------
+
 theme_name = "feather-dark"
 
--- Applications
+--[[--------------------------------------------------------        
 
--- This section regroup all my custom commands for differents applications like terminal, file manager, etc.
+APPLICATIONS
+
+This section regroup all my custom commands for
+differents applications like terminal, file manager, etc.
+
+--]]--------------------------------------------------------
 
 -- Apps
 terminal        = "konsole"
@@ -45,9 +57,15 @@ screenshot_delay        = "flameshot screen -n 1 -c -p ~/Screenshots -d 3000"
 screenshot_region       = "flameshot gui"
 screenshot_region_delay = "flameshot gui -d 3000"
 
--- Monitors
+--[[--------------------------------------------------------        
 
--- I created a variable for each monitors I use.
+MONITORS
+
+I created a variable for each monitor I use.
+
+--]]--------------------------------------------------------
+
+-- Screens that I use
 screen1 = "DisplayPort-2"   -- Primary
 screen2 = "DVI-D-0"         -- Right
 screen3 = "HDMI-A-0"        -- Left
@@ -55,9 +73,14 @@ screen3 = "HDMI-A-0"        -- Left
 -- Screen that will display notifications
 notiscreen = screen3
 
--- Keys
+--[[--------------------------------------------------------        
 
--- For an easier configuration and better readability I decided to aliases some keys in my config.
+KEYS
+
+For an easier configuration and better readability, 
+I decided to alias some keys in my config.
+
+--]]--------------------------------------------------------        
 
 -- Keys Aliases
 modkey  = "Mod4"

@@ -70,3 +70,9 @@ client.connect_signal("request::titlebars", function(c)
     awful.titlebar(c, {size=beautiful.titlebar_size}).widget = bottom_line
 
 end)
+
+--[[--------------------------------------------------------
+
+EOF
+
+--]]--------------------------------------------------------

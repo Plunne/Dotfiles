@@ -15,7 +15,9 @@ local wibox = require("wibox")
 --]]
 
 --[[--------------------------------------------------------
-        FILTER TAG w/ TASKLIST
+
+FILTER TAG w/ TASKLIST
+
 --]]--------------------------------------------------------
 
 local function filter_tag_with_tasklist(in_tag)
@@ -32,7 +34,9 @@ local function filter_tag_with_tasklist(in_tag)
 end
 
 --[[--------------------------------------------------------
-        GET TAG's TASKLIST
+
+GET TAG's TASKLIST
+
 --]]--------------------------------------------------------
 
 local function get_tag_tasklist(in_scr, in_tag)
@@ -67,7 +71,9 @@ local function get_tag_tasklist(in_scr, in_tag)
 end
 
 --[[--------------------------------------------------------
-        TAGSKLIST
+
+TAGSKLIST
+
 --]]--------------------------------------------------------
 
 return function(scr)
@@ -105,3 +111,9 @@ return function(scr)
     })
 
 end
+
+--[[--------------------------------------------------------
+
+EOF
+
+--]]--------------------------------------------------------

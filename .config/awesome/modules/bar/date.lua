@@ -29,7 +29,9 @@ date_icon.font = beautiful.modules_date_icon_font
 date_text.font = beautiful.modules_date_text_font
 
 --[[--------------------------------------------------------
-        BAR DATE
+
+BAR DATE
+
 --]]--------------------------------------------------------
 
 return function(scr)
@@ -46,3 +48,9 @@ return function(scr)
         nil)
     
 end
+
+--[[--------------------------------------------------------
+
+EOF
+
+--]]--------------------------------------------------------

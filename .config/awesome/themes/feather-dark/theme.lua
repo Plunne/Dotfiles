@@ -1,4 +1,4 @@
---[[
+--[[ feather-dark.lua
 
 ████████╗██╗  ██╗███████╗███╗   ███╗███████╗
 ╚══██╔══╝██║  ██║██╔════╝████╗ ████║██╔════╝
@@ -7,11 +7,15 @@
    ██║   ██║  ██║███████╗██║ ╚═╝ ██║███████╗
    ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚══════╝
 
---]]
+--]]-- by Lena SAVY-LARIGALDIE aka Plunne
 
--- Import Modules
+--[[--------------------------------------------------------
 
--- Import all modules requiered for theming.
+IMPORT MODULES
+
+Import all modules requiered for theming.
+
+--]]--------------------------------------------------------
 
 require("vars")
 
@@ -21,29 +25,39 @@ local dpi = xresources.apply_dpi
 local gfs = require("gears.filesystem")
 local modules = require("lib.libmodules")
 
--- Paths
+--[[--------------------------------------------------------
 
--- Theming paths.
+PATHS
+
+Theming paths.
+
+--]]--------------------------------------------------------
+
 local default_path  = gfs.get_themes_dir()
 local wall_path     = os.getenv("HOME").."/.wallpapers/"
 local theme_path    = os.getenv("HOME").."/.config/awesome/themes/".. theme_name .. "/"
 local layouts_path  = theme_path .. "layouts/"
 local titlebar_path = theme_path .. "titlebar/"
 
--- Theme
+--[[--------------------------------------------------------
 
--- Theme object instance.
+THEME
+
+Theme object instance.
+
+--]]--------------------------------------------------------
+
 local theme = {}
 
 -- Wallpaper
 theme.wallpaper = wall_path.."1196934.jpg"
 
 -- Fonts
-theme.fontname          = "JetBrainsMono NerdFont " -- let the last space IMPORTANT!
-theme.font              = theme.fontname .. 12
+theme.fontname  = "JetBrainsMono NerdFont " -- let the last space IMPORTANT!
+theme.font      = theme.fontname .. 12
 
 -- Config
-theme.bar_size  = dpi(32)
+theme.bar_size      = dpi(32)
 theme.useless_gap   = dpi(4)
 theme.border_width  = dpi(0)
 theme.maximized_hide_border = true
@@ -354,6 +368,10 @@ theme.awesome_icon = theme_assets.awesome_icon(
 -- Icon theme
 theme.icon_theme = nil
 
--- EOF (Theme)
+--[[--------------------------------------------------------
+
+EOF
+
+--]]--------------------------------------------------------
 
 return theme

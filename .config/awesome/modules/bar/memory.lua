@@ -25,7 +25,9 @@ memory_icon.font = beautiful.modules_memory_icon_font
 memory_text.font = beautiful.modules_memory_text_font
 
 --[[--------------------------------------------------------
-        BAR MEMORY
+
+BAR MEMORY
+
 --]]--------------------------------------------------------
 
 return function(scr)
@@ -42,3 +44,9 @@ return function(scr)
         nil)
     
 end
+
+--[[--------------------------------------------------------
+
+EOF
+
+--]]--------------------------------------------------------

@@ -26,7 +26,9 @@ local noti = notify.middle(notibright_icon, notibright_level, notibright_bar)
 local timer = notify.set_timer(noti, 2)
 
 --[[--------------------------------------------------------
-        FUNCTIONS
+
+FUNCTIONS
+
 --]]--------------------------------------------------------
 
 notibright.up = function()
@@ -44,7 +46,9 @@ notibright.down = function()
 end
 
 --[[--------------------------------------------------------
-        EOF
+
+EOF
+
 --]]--------------------------------------------------------
 
 return notibright

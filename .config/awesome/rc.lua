@@ -1,4 +1,4 @@
---[[
+--[[ rc.lua
 
 ██████╗  ██████╗       ██╗     ██╗   ██╗ █████╗ 
 ██╔══██╗██╔════╝       ██║     ██║   ██║██╔══██╗
@@ -7,13 +7,17 @@
 ██║  ██║╚██████╗    ██╗███████╗╚██████╔╝██║  ██║
 ╚═╝  ╚═╝ ╚═════╝    ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
 
---]]
+--]]-- by Lena SAVY-LARIGALDIE aka Plunne
 
 require("vars")
 
--- Import modules
+--[[--------------------------------------------------------
 
--- Import all modules that are required for the config.
+IMPORT MODULES
+
+Import all modules that are required for the config.
+
+--]]--------------------------------------------------------
 
 pcall(require, "luarocks.loader")                               -- LUAROCKS : Needed
 require("awful.autofocus")                                      -- AUTOFOCUS : Focus windows when created
@@ -22,9 +26,13 @@ require("system")(s)                                            -- SYSTEM : Load
 require("keys")                                                 -- KEYS : Loads keybindings
 require("lib.libconfig")                                        -- CONFIG : Loads config library
 
--- Daemons
+--[[--------------------------------------------------------
 
--- Set daemons initialisations at startup : =run_deamons({deamon1, deamons2})=
+DAEMONS
+
+Set daemons initialisations at startup : `run.deamons({deamon1, deamons2})`
+
+--]]--------------------------------------------------------
 
 run.daemons({
     "picom",
@@ -35,9 +43,13 @@ run.daemons({
     "sh -c ~/.apps/OpenTabletDriver/bin/OpenTabletDriver.Daemon",
 })
 
--- Layouts
+--[[--------------------------------------------------------
 
---  Uncomment the layouts you want to use.
+LAYOUTS
+
+Uncomment the layouts you want to use.
+
+--]]--------------------------------------------------------
 
 set_layouts({
     l.floating,
@@ -58,9 +70,13 @@ set_layouts({
     --l.corner.se,
 })
 
--- Desktops
+--[[--------------------------------------------------------
 
---  To set a desktop use : =add_desktop(name, screen, layout, ratio, gap, selected, icon_path)=
+DESKTOPS
+
+To set a desktop use : `add_desktop(name, screen, layout, ratio, gap, selected, icon_path)`
+
+--]]--------------------------------------------------------
 
 add_desktop(" 1 ",  screen1,    l.tile,         0.5,    false,  true,   nil)
 add_desktop(" 2 ",  screen1,    l.tile,         0.6,    false,  false,  nil)
@@ -72,13 +88,17 @@ add_desktop(" 7 ",  screen3,    l.tile,         0.5,    false,  false,  nil)
 add_desktop(" 8 ",  screen3,    l.tile,         0.5,    false,  false,  nil)
 add_desktop(" 9 ",  screen3,    l.max,          0.5,    false,  true,   nil)
 
--- Rules
+--[[--------------------------------------------------------
 
--- Needed for generic rules : =rules_All()=
--- Enable/Disable default titlebars : =rules_Titlebars(bool)=
--- Disable titlebars for some apps : =rules_NoTitlebars(apps)=
--- Apply some rules for a single app : =rules_Single(app, props)=
--- Apply some rules for multiple apps : =rules_Multiple(apps, props)=
+RULES
+
+Needed for generic rules : `rules.All()`
+Enable/Disable default titlebars : `rules.Titlebars(bool)`
+Disable titlebars for some apps : `rules.NoTitlebars(apps)`
+Apply some rules for a single app : `rules.Single(app, props)`
+Apply some rules for multiple apps : `rules.Multiple(apps, props)`
+
+--]]--------------------------------------------------------
 
 rules.All()
 rules.Titlebars(true)
@@ -86,17 +106,25 @@ rules.NoTitlebars({"firefox", "LibreWolf", "codium", "discord", "Spotify", "spot
 rules.Multiple({"arandr", "Qalculate-gtk", "dolphin"}, { floating = true })
 rules.Multiple({"discord", "Spotify", "spotify"}, { screen = screen3 })
 
--- Autostart
+--[[--------------------------------------------------------
 
--- Launch app at startup : =run(myapp, mytag)=
+AUTOSTART
+
+Launch app at startup : `run.app(myapp, mytag)`
+
+--]]--------------------------------------------------------
 
 run.app("firefox", " 4 ")
 run.app("discord", " 9 ")
 -- run_sh("~/.scripts/emacsdaemon.sh")
 
--- Bars
+--[[--------------------------------------------------------
 
--- Load bars for each screens.
+BARS
+
+Load bars for each screens.
+
+--]]--------------------------------------------------------
 
 require("bar.primary")      (screen[screen1])
 require("bar.secondary")    (screen[screen2])

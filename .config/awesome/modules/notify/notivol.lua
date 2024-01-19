@@ -26,7 +26,9 @@ local noti = notify.middle(notivol_icon, notivol_level, notivol_bar)
 local timer = notify.set_timer(noti, 2)
 
 --[[--------------------------------------------------------
-        FUNCTIONS
+
+FUNCTIONS
+
 --]]--------------------------------------------------------
 
 notivol.up = function()
@@ -51,7 +53,9 @@ notivol.toggle = function()
 end
 
 --[[--------------------------------------------------------
-        EOF
+
+EOF
+
 --]]--------------------------------------------------------
 
 return notivol
