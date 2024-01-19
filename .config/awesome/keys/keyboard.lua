@@ -16,9 +16,6 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 local brightness = require("keys.control.brightness")
 local player = require("keys.control.player")
 local volume = require("keys.control.volume")
--- local toggleScreenLeft = require("modules.panel.panelscreentoggle").left()
--- local toggleScreenRight = require("modules.panel.panelscreentoggle").right()
--- local toggleScreen = require("modules.panel.panelscreentoggle")
 
 -- Import variables
 
@@ -27,7 +24,7 @@ local volume = require("keys.control.volume")
 
 require("vars")
 require("lib.libkeys")
-require("config.menu")
+require("custom.menu")
 
 -- Keyboard
 
@@ -41,7 +38,7 @@ local keyboard = {}
 -- Main keybindings function. This is where I set all my general keybindings.
 
 
-function keyboard.init() awful.keyboard.append_global_keybindings({
+keyboard.init = function() awful.keyboard.append_global_keybindings({
 
 -- Apps
 
@@ -172,7 +169,7 @@ bindNum(super_alt, "Tag", "Toggle client on",
 -- Bindings used for clients interactions.
 
 
-function keyboard.clientkeys()
+keyboard.clientkeys = function()
     
     client.connect_signal("request::default_keybindings", function()
         awful.keyboard.append_client_keybindings({
@@ -189,6 +186,5 @@ function keyboard.clientkeys()
 end
 
 -- EOF (End of Keyboard)
-
 
 return keyboard

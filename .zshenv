@@ -7,13 +7,13 @@ export PATH=$PATH:~/.platformio/penv/bin:~/.emacs.d/bin:/bin/gdb
 
 # APPS
 export TERMINAL="konsole"
-export EDITOR="~/.scripts/emacsclient.sh"
-export VISUAL="~/.scripts/emacsclient.sh"
-export READER="librewolf"
+export EDITOR="vim"
+export VISUAL="vim"
+export READER="firefox"
 export IMAGE="sxiv"
 export VIDEO="haruna"
 export PAGER="less"
-export BROWSER="librewolf"
+export BROWSER="firefox"
 export WM="awesome"
 
 # XDG

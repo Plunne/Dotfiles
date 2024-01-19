@@ -28,7 +28,11 @@ local datetime_text = wibox.widget {
 datetime_icon.font = beautiful.modules_datetime_icon_font
 datetime_text.font = beautiful.modules_datetime_text_font
 
-local function datetime(scr)
+--[[--------------------------------------------------------
+        BAR DATETIME
+--]]--------------------------------------------------------
+
+return function(scr)
 
     return modules.new_dual(scr,
         beautiful.bg_modules_datetime,
@@ -42,5 +46,3 @@ local function datetime(scr)
         require("keys.mouse").light_mouse())
     
 end
-
-return datetime

@@ -5,26 +5,26 @@ local wibox = require("wibox")
 
 --[[--------------------------------------------------------
 
-██████╗  █████╗ ██████╗     ██████╗ 
-██╔══██╗██╔══██╗██╔══██╗    ╚════██╗
-██████╔╝███████║██████╔╝     █████╔╝
-██╔══██╗██╔══██║██╔══██╗    ██╔═══╝ 
-██████╔╝██║  ██║██║  ██║    ███████╗
-╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝    ╚══════╝
-       
+███████╗███████╗ ██████╗ ██████╗ ███╗   ██╗██████╗  █████╗ ██████╗ ██╗   ██╗
+██╔════╝██╔════╝██╔════╝██╔═══██╗████╗  ██║██╔══██╗██╔══██╗██╔══██╗╚██╗ ██╔╝
+███████╗█████╗  ██║     ██║   ██║██╔██╗ ██║██║  ██║███████║██████╔╝ ╚████╔╝ 
+╚════██║██╔══╝  ██║     ██║   ██║██║╚██╗██║██║  ██║██╔══██║██╔══██╗  ╚██╔╝  
+███████║███████╗╚██████╗╚██████╔╝██║ ╚████║██████╔╝██║  ██║██║  ██║   ██║   
+╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   
+
 --]]--------------------------------------------------------
 
-local function bar2(scr)
+return function(scr)
 
     -- Modules
     local mylayoutbox = require("modules.bar.layoutbox")(scr)
     local mytaglist = require("modules.bar.taglist")(scr)
     local mytasklist = require("modules.bar.tasklist")(scr)
+    local mytagsklist = require("modules.bar.tagsklist")(scr)
     local mymemory = require("modules.bar.memory")(scr)
     local myvolume = require("modules.bar.volume")(scr)
     local mylight = require("modules.bar.brightness")(scr)
     local mydate = require("modules.bar.date")(scr)
-    --local mysystray = require("modules.bar.systray")(scr)
     local myclock = require("modules.bar.clock")(scr)
     local mylauncher = require("modules.bar.launcher")(scr)
 
@@ -47,7 +47,7 @@ local function bar2(scr)
             -------------------------
             {   layout = wibox.layout.fixed.horizontal,
                 mylayoutbox,
-                mytaglist
+                mytagsklist
             },
             -------------------------
             --    Middle widgets   --
@@ -61,14 +61,10 @@ local function bar2(scr)
             {   layout = wibox.layout.fixed.horizontal,
                 mymemory,
                 myvolume,
-                --mylight,
                 mydate,
-                -- mysystray,
                 myclock,
                 mylauncher
             }
         }
     }
 end
-
-return bar2

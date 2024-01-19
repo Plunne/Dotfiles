@@ -5,21 +5,22 @@ local wibox = require("wibox")
 
 --[[--------------------------------------------------------
 
-██████╗  █████╗ ██████╗      ██╗
-██╔══██╗██╔══██╗██╔══██╗    ███║
-██████╔╝███████║██████╔╝    ╚██║
-██╔══██╗██╔══██║██╔══██╗     ██║
-██████╔╝██║  ██║██║  ██║     ██║
-╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝     ╚═╝
-   
+██████╗ ██████╗ ██╗███╗   ███╗ █████╗ ██████╗ ██╗   ██╗
+██╔══██╗██╔══██╗██║████╗ ████║██╔══██╗██╔══██╗╚██╗ ██╔╝
+██████╔╝██████╔╝██║██╔████╔██║███████║██████╔╝ ╚████╔╝ 
+██╔═══╝ ██╔══██╗██║██║╚██╔╝██║██╔══██║██╔══██╗  ╚██╔╝  
+██║     ██║  ██║██║██║ ╚═╝ ██║██║  ██║██║  ██║   ██║   
+╚═╝     ╚═╝  ╚═╝╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   
+                                                       
 --]]--------------------------------------------------------
 
-local function bar1(scr)
+return function(scr)
 
     -- Modules
     local mylayoutbox = require("modules.bar.layoutbox")(scr)
     local mytaglist = require("modules.bar.taglist")(scr)
     local mytasklist = require("modules.bar.tasklist")(scr)
+    local mytagsklist = require("modules.bar.tagsklist")(scr)
     local mymemory = require("modules.bar.memory")(scr)
     local myvolume = require("modules.bar.volume")(scr)
     local mylight = require("modules.bar.brightness")(scr)
@@ -47,7 +48,7 @@ local function bar1(scr)
             -------------------------
             {   layout = wibox.layout.fixed.horizontal,
                 mylayoutbox,
-                mytaglist
+                mytagsklist
             },
             -------------------------
             --    Middle widgets   --
@@ -61,7 +62,6 @@ local function bar1(scr)
             {   layout = wibox.layout.fixed.horizontal,
                 mymemory,
                 myvolume,
-                --mylight,
                 mydate,
                 mysystray,
                 myclock,
@@ -70,5 +70,3 @@ local function bar1(scr)
         }
     }
 end
-
-return bar1

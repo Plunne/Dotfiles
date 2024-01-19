@@ -18,7 +18,7 @@ local notify = {}
         TIMER
 --]]--------------------------------------------------------
 
-function notify.set_timer(noti, time)
+notify.set_timer = function(noti, time)
     return gears.timer {
         timeout = time,
         callback = function()
@@ -27,7 +27,7 @@ function notify.set_timer(noti, time)
     }
 end
 
-function notify.noti_timer(timer)
+notify.noti_timer = function(timer)
     if timer.started then
 		timer:again()
 	else
@@ -39,7 +39,7 @@ end
         UPDATE PROGRESSBAR
 --]]--------------------------------------------------------
 
-function notify.update_progressbar(w, out)
+notify.update_progressbar = function(w, out)
     local val = tonumber(out)
     w.value = val
 end
@@ -49,17 +49,17 @@ end
 --]]--------------------------------------------------------
 
 -- Set icon
-function notify.set_icon(cmd) 
-    return awful.widget.watch('sh -c \''..cmd..'\'', 0.1, function(widget, stdout) widget:set_text(stdout:gsub("[\n]+$", "")) end)
+notify.set_icon = function(cmd) 
+    return awful.widget.watch('sh -c \'' .. cmd .. '\'', 0.1, function(widget, stdout) widget:set_text(stdout:gsub("[\n]+$", "")) end)
 end
 
 -- Set level
-function notify.set_level(cmd)
-    return awful.widget.watch('sh -c \''..cmd..'\'', 0.1, function(widget, stdout) widget:set_text(stdout:gsub("[\n]+$", "")) end)
+notify.set_level = function(cmd)
+    return awful.widget.watch('sh -c \'' .. cmd .. '\'', 0.1, function(widget, stdout) widget:set_text(stdout:gsub("[\n]+$", "")) end)
 end
 
 -- Set progress bar
-function notify.set_bar(cmd)
+notify.set_bar = function(cmd)
 
     local bar = wibox.widget {
         color               = beautiful.fg_notify_middle_bar,
@@ -82,9 +82,16 @@ end
 --]]--------------------------------------------------------
 
 -- Middle
-function notify.middle(icon, num, bar)
+notify.middle = function(icon, num, bar)
     
     return awful.popup {
+        screen = awful.screen.focused(),
+        fg = beautiful.fg_notify_middle,
+        bg = beautiful.bg_notify_middle,
+        ontop = true,
+        visible = false,
+        shape = beautiful.notification_shape,
+        placement = awful.placement.centered,
         widget = {
             {
                 {
@@ -107,13 +114,7 @@ function notify.middle(icon, num, bar)
                 layout = wibox.layout.fixed.vertical,
             },
             widget = wibox.container.margin(self, 30, 30, 4, 4),
-        },
-        fg = beautiful.fg_notify_middle,
-        bg = beautiful.bg_notify_middle,
-        ontop = true,
-        visible = false,
-        shape = beautiful.notification_shape,
-        placement = awful.placement.centered,
+        }
     }
 end
 

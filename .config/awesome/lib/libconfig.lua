@@ -12,11 +12,11 @@ ruled = require("ruled")
 
 require("vars")
 
-l = awful.layout.suit
-
 --[[--------------------------------------------------------
         LAYOUTS
 --]]--------------------------------------------------------
+
+l = awful.layout.suit
 
 function set_layouts(args)
         awful.layout.append_default_layouts(args)
@@ -46,7 +46,9 @@ end
         RULES
 --]]--------------------------------------------------------
 
-function rules_All()
+rules = {}
+
+rules.All = function()
     ruled.client.append_rule {
         rule = { },
         properties = {
@@ -63,28 +65,28 @@ function rules_All()
     
 end
 
-function rules_Titlebars(bool)
+rules.Titlebars = function(bool)
     ruled.client.append_rule {
         rule_any = { type = { "normal", "dialog" } },
         properties = { titlebars_enabled = bool }
     }
 end
 
-function rules_NoTitlebars(apps)
+rules.NoTitlebars = function(apps)
     ruled.client.append_rule {
         rule_any = { class = apps },
         properties = { titlebars_enabled = false }
     }
 end
 
-function rules_Single(app, props)
+rules.Single = function(app, props)
     ruled.client.append_rule {
         rule = { class = app },
         properties = props
     }
 end
 
-function rules_Multiple(apps, props)
+rules.Multiple = function(apps, props)
     ruled.client.append_rule {
         rule_any = { class = apps },
         properties = props
@@ -95,8 +97,10 @@ end
         AUTOSTART
 --]]--------------------------------------------------------
 
+run = {}
+
 -- Daemons
-function run_daemons(daemons)
+run.daemons = function(daemons)
 
     for app = 1, #daemons do
         awful.spawn.single_instance(daemons[app], awful.rules.rules)
@@ -104,10 +108,10 @@ function run_daemons(daemons)
 end
 
 -- Apps
-function run(myapp, mytag)
+run.app = function(myapp, mytag)
     awful.spawn.single_instance( myapp, { tag = mytag } ) 
 end
 
-function run_sh(script)
+run.sh = function(script)
 	awful.spawn.with_shell(script)
 end

@@ -20,21 +20,21 @@ local volume = {}
         Functions
 --]]--------------------------------------------------------
 
-function volume.up()
+volume.up = function()
 
     awful.spawn.with_shell(volume_up)
     notivol.up()
 
 end
 
-function volume.down()
+volume.down = function()
 
     awful.spawn.with_shell(volume_down)
     notivol.down()
 
 end
 
-function volume.toggle()
+volume.toggle = function()
 
     awful.spawn.with_shell(volume_toggle)
     notivol.toggle()

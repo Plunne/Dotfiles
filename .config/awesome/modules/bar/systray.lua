@@ -13,7 +13,11 @@ local wibox = require("wibox")
    
 --]]--------------------------------------------------------
 
-local function systray(scr)
+--[[--------------------------------------------------------
+        BAR SYSTRAY
+--]]--------------------------------------------------------
+
+return function(scr)
 
     local mysystray = wibox.widget.systray()
     mysystray.set_screen(scr)
@@ -21,5 +25,3 @@ local function systray(scr)
     return modules.new(scr, 4, beautiful.bg_systray, nil, 8, 8, 4, 4, beautiful.systray_border, 1, beautiful.systray_rounded, mysystray)
 
 end
-
-return systray

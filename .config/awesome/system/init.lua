@@ -1,6 +1,6 @@
 -- init.lua (System)
 
-local function sys(scr)
+return function(scr)
 
     require("system.errors")
     require("system.wallpaper")(scr)
@@ -8,5 +8,3 @@ local function sys(scr)
     require("system.notify")
 
 end
-
-return sys

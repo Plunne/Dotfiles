@@ -19,7 +19,11 @@ local volume_text = awful.widget.watch('sh -c \'~/.scripts/volume.sh level\'' , 
 volume_icon.font = beautiful.modules_volume_icon_font
 volume_text.font = beautiful.modules_volume_text_font
 
-local function volume(scr)
+--[[--------------------------------------------------------
+        BAR VOLUME
+--]]--------------------------------------------------------
+
+return function(scr)
 
     return modules.new_dual(scr,
         beautiful.bg_modules_volume,
@@ -33,5 +37,3 @@ local function volume(scr)
         require("keys.mouse").volume_mouse())
     
 end
-
-return volume

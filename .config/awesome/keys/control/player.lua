@@ -19,19 +19,19 @@ local player = {}
         Functions
 --]]--------------------------------------------------------
 
-function player.play_pause()
+player.play_pause = function()
 
     awful.spawn.with_shell(player_toggle)
 
 end
 
-function player.next()
+player.next = function()
 
     awful.spawn.with_shell(player_next)
 
 end
 
-function player.prev()
+player.prev = function()
 
     awful.spawn.with_shell(player_prev)
 

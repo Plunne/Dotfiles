@@ -3,7 +3,7 @@ local beautiful = require("beautiful")
 local modules = require("lib.libmodules")
 local wibox = require("wibox")
 
---[[
+--[[--------------------------------------------------------
 
 ██████╗  █████╗ ███╗   ██╗███████╗██╗     
 ██╔══██╗██╔══██╗████╗  ██║██╔════╝██║     
@@ -12,44 +12,34 @@ local wibox = require("wibox")
 ██║     ██║  ██║██║ ╚████║███████╗███████╗
 ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚══════╝
 
---]]
-local M = {}
+--]]--------------------------------------------------------
 
-M.left = wibox.widget {
-	bg = "#000000",
-	ontop = true,
-	visible = false,
-	x = 0,
-	y = 0,
-	forced_width = 1920,
-	forced_height = 1080,
-	widget = wibox.container.background
-}
-
-M.right = wibox.widget {
-	bg = "#000000",
-	ontop = true,
-	visible = false,
-	x = 3840,
-	y = 0,
-	forced_width = 1920,
-	forced_height = 1080,
-	widget = wibox.container.background
-}
+local calendar = require("modules.panel.pancalendar")
+local clock = require("modules.panel.panclock")
+local uptime = require("modules.panel.panuptime")
+local powermenu = require("modules.panel.panpowermenu")
 
 return awful.popup {
 
     widget = {
         {
-            M.left,
-            M.right,
+            calendar,
+            {
+                wibox.container.margin(clock, 30, 28, 20, 0),
+                uptime,
+                wibox.container.margin(powermenu, 16, 30, 30, 0),
+                layout = wibox.layout.fixed.vertical,
+
+            },
+            spacing = 30,
             layout = wibox.layout.fixed.horizontal,
         },
-        widget = wibox.container.margin(self, 0, 0, 0, 0),
+        widget = wibox.container.margin(self, 30, 30, 30, 30),
     },
-    bg = "#000000",
+    bg = beautiful.bg_panel,
     ontop = true,
     visible = false,
-    x = 0,
-    y = 0,
+    x = beautiful.panel_x,
+    y = beautiful.panel_y,
+    shape = modules.rounded(beautiful.panel_rounded)
 }

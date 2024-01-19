@@ -21,21 +21,21 @@ local styles = {}
 
 styles.month   = {}
 
-styles.header  = {  fg_color = beautiful.fg_panel_calendar_header,
-                    markup   = function(t) return '<span font="'.. beautiful.panel_calendar_header_font .. '">' .. t .. '</span>' end,
+styles.header  = {  markup      = function(t) return '<span font="'.. beautiful.panel_calendar_header_font .. '">' .. t .. '</span>' end,
+                    fg_color    = beautiful.fg_panel_calendar_header
 }
 
-styles.weekday = {  fg_color = beautiful.fg_panel_calendar_weekday,
-                    markup   = function(t) return '<span font="'.. beautiful.panel_calendar_weekday_font .. '"> ' .. t .. ' </span>' end,
+styles.weekday = {  markup      = function(t) return '<span font="'.. beautiful.panel_calendar_weekday_font .. '"> ' .. t .. ' </span>' end,
+                    fg_color    = beautiful.fg_panel_calendar_weekday
 }
 
-styles.normal  = {  markup   = function(t) return '<span font="'.. beautiful.panel_calendar_normal_font .. '"> ' .. t .. ' </span>' end,
+styles.normal  = {  markup      = function(t) return '<span font="'.. beautiful.panel_calendar_normal_font .. '"> ' .. t .. ' </span>' end,
 }
 
-styles.focus   = {  fg_color = beautiful.fg_panel_calendar_focus,
-                    bg_color = beautiful.bg_panel_calendar_focus,
-                    markup   = function(t) return '<span font="'.. beautiful.panel_calendar_focus_font .. '"> ' .. t .. ' </span>' end,
-                    shape    = modules.circle()
+styles.focus   = {  markup      = function(t) return '<span font="'.. beautiful.panel_calendar_focus_font .. '"> ' .. t .. ' </span>' end,
+                    fg_color    = beautiful.fg_panel_calendar_focus,
+                    bg_color    = beautiful.bg_panel_calendar_focus,
+                    shape       = modules.circle()
 }
 
 --[[--------------------------------------------------------

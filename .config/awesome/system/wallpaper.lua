@@ -10,13 +10,12 @@ local gears = require("gears")
 
  --]]--------------------------------------------------------
 
-local function wall(scr)
+return function(scr)
     
     if beautiful.wallpaper then
         screen.connect_signal("request::wallpaper", function(scr)
             gears.wallpaper.maximized(beautiful.wallpaper, scr, true)
         end)
     end
-end
 
-return wall
+end

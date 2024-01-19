@@ -1,7 +1,7 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
 local modules = require("lib.libmodules")
-local panel = require("config.panel")
+local panel = require("custom.panel")
 local wibox = require("wibox")
 
 --[[--------------------------------------------------------
@@ -15,7 +15,11 @@ local wibox = require("wibox")
      
 --]]--------------------------------------------------------
 
-local function launcher(scr) 
+--[[--------------------------------------------------------
+        BAR LAUNCHER
+--]]--------------------------------------------------------
+
+return function(scr) 
 
     return modules.new(scr, 4, nil, nil, 0, 4, 2, 2, nil, 0, 4, wibox.widget {
 
@@ -32,5 +36,3 @@ local function launcher(scr)
     })
 
 end
-
-return launcher

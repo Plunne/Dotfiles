@@ -22,11 +22,11 @@ local modules = {}
         SHAPES
 --]]--------------------------------------------------------
 
-function modules.circle()
+modules.circle = function()
     return function(cr, w, h) return gears.shape.circle(cr, w, h) end
 end
 
-function modules.rounded(round)
+modules.rounded = function(round)
     return function(cr, w, h) return gears.shape.rounded_rect(cr, w, h, round) end
 end
 
@@ -34,7 +34,7 @@ end
         MODULES
 --]]--------------------------------------------------------
 
-function modules.new(scr, margin_bar, module_bg, module_fg, l, r, t, b, border_col, border_w, round, module_widget)
+modules.new = function(scr, margin_bar, module_bg, module_fg, l, r, t, b, border_col, border_w, round, module_widget)
     
     return wibox.widget {
 
@@ -60,7 +60,7 @@ function modules.new(scr, margin_bar, module_bg, module_fg, l, r, t, b, border_c
     }
 end
 
-function modules.new_dual(scr, module_color, border_color, module_icon, bg_icon, fg_icon, module_text, bg_text, fg_text, shortcuts)
+modules.new_dual = function(scr, module_color, border_color, module_icon, bg_icon, fg_icon, module_text, bg_text, fg_text, shortcuts)
 
     return modules.new(scr, 4, module_color, nil, 0, 0, 0, 0, border_color, 1, beautiful.rounded_modules,
     wibox.widget {

@@ -28,8 +28,11 @@ local date_text = wibox.widget {
 date_icon.font = beautiful.modules_date_icon_font
 date_text.font = beautiful.modules_date_text_font
 
+--[[--------------------------------------------------------
+        BAR DATE
+--]]--------------------------------------------------------
 
-local function date(scr)
+return function(scr)
 
     return modules.new_dual(scr,
         beautiful.bg_modules_date,
@@ -43,5 +46,3 @@ local function date(scr)
         nil)
     
 end
-
-return date

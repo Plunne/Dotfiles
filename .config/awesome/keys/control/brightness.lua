@@ -20,18 +20,17 @@ local brightness = {}
         Functions
 --]]--------------------------------------------------------
 
-function brightness.up()
+brightness.up = function()
 
     awful.spawn.with_shell(brightness_up)
     notibright.up()
 
 end
 
-function brightness.down()
+brightness.down = function()
 
     awful.spawn.with_shell(brightness_down)
     notibright.down()
-
 
 end
 

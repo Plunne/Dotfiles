@@ -10,23 +10,23 @@ local wibox = require("wibox")
    ██║   ██║   ██║   ██║     ██╔══╝  ██╔══██╗██╔══██║██╔══██╗
    ██║   ██║   ██║   ███████╗███████╗██████╔╝██║  ██║██║  ██║
    ╚═╝   ╚═╝   ╚═╝   ╚══════╝╚══════╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-    
+
 --]]--------------------------------------------------------
 
 require("lib.libkeys")
 
-local b = awful.titlebar.widget
+local titlebar = awful.titlebar.widget
 
 client.connect_signal("request::titlebars", function(c)
 
     -- Titlebar title
     local window_title = { 
         align  = "center",
-        widget = b.titlewidget(c)
+        widget = titlebar.titlewidget(c)
     }
 
     -- Titlebar Buttons
-    local move_window = {
+    local window_buttons = {
         click(left_click, function() c:activate { context = "titlebar", action = "mouse_move"  } end ),
         click(right_click, function() c:activate { context = "titlebar", action = "mouse_resize"} end )
     }
@@ -43,20 +43,23 @@ client.connect_signal("request::titlebars", function(c)
             --------------------
             --      Left      --
             --------------------
-            {   b.ontopbutton(c),
+            {
+                titlebar.ontopbutton(c),
                 layout  = wibox.layout.fixed.horizontal
             },
             --------------------
             --     Middle     --
             --------------------
-            {   window_title,
-                buttons = move_window,
+            {
+                window_title,
+                buttons = window_buttons,
                 layout  = wibox.layout.flex.horizontal
             },
             --------------------
             --      Right     --
             --------------------
-            {   b.minimizebutton(c), b.floatingbutton(c), b.closebutton(c),
+            {
+                titlebar.minimizebutton(c), titlebar.floatingbutton(c), titlebar.closebutton(c),
                 layout = wibox.layout.fixed.horizontal
             },
             layout = wibox.layout.align.horizontal

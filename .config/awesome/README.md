@@ -1,11 +1,10 @@
-#+TITLE: Plunne's Awesome WM
-#+AUTHOR: Lena SAVY
+# Plunne's Awesome WM
 
 Hi!
 
 I daily use Awesome WM as my window manager, it's the best for me.
 
-* WHY I CHOSE AWESOME WM?
+# WHY I CHOSE AWESOME WM?
 
 Awesome WM is the only one that i can get the perfect look at the same time of my workflow.
 
@@ -21,27 +20,29 @@ To talk about workflow, I have different layouts withs different master window s
 Some other window managers like BSPWM (which I am from) can do this but with all of them I don't have
 all the above features.
 
-* TABLE OF CONTENTS :toc:
-- [[#why-i-chose-awesome-wm][WHY I CHOSE AWESOME WM?]]
-- [[#variables][VARIABLES]]
-  - [[#applications][Applications]]
-  - [[#monitors][Monitors]]
-  - [[#keys][Keys]]
-- [[#configuration][CONFIGURATION]]
-  - [[#import-modules][Import modules]]
-  - [[#daemons][Daemons]]
-  - [[#layouts][Layouts]]
-  - [[#desktops][Desktops]]
-  - [[#rules][Rules]]
-  - [[#autostart][Autostart]]
-  - [[#bars][Bars]]
-- [[#organisation][ORGANISATION]]
+# TABLE OF CONTENT
+- [Plunne's Awesome WM](#plunnes-awesome-wm)
+- [WHY I CHOSE AWESOME WM?](#why-i-chose-awesome-wm)
+- [TABLE OF CONTENT](#table-of-content)
+- [VARIABLES](#variables)
+  - [Applications](#applications)
+  - [Monitors](#monitors)
+  - [Keys](#keys)
+- [CONFIGURATION](#configuration)
+  - [Import modules](#import-modules)
+  - [Daemons](#daemons)
+  - [Layouts](#layouts)
+  - [Desktops](#desktops)
+  - [Rules](#rules)
+  - [Autostart](#autostart)
+  - [Bars](#bars)
+- [ORGANISATION](#organisation)
 
-* VARIABLES
+# VARIABLES
 
-I decided to put all my Awesome WM environement variables into =.config/awesome/vars.lua= .
+I decided to put all my Awesome WM environement variables into `.config/awesome/vars.lua` .
 
-#+begin_src lua :tangle vars.lua
+``` lua
 --[[
 
 ██╗   ██╗ █████╗ ██████╗ ███████╗       ██╗     ██╗   ██╗ █████╗ 
@@ -52,13 +53,13 @@ I decided to put all my Awesome WM environement variables into =.config/awesome/
   ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝    ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
 
 --]]
-#+end_src
+```
 
-** Applications
+## Applications
 
 This section regroup all my custom commands for differents applications like terminal, file manager, etc.
 
-#+begin_src lua :tangle vars.lua :comments org
+```lua
 -- Apps
 terminal        = "konsole"
 editor          = "~/.scripts/emacsclient.sh"
@@ -87,23 +88,23 @@ screenshot              = "flameshot screen -n 1 -c -p ~/Screenshots"
 screenshot_delay        = "flameshot screen -n 1 -c -p ~/Screenshots -d 3000"
 screenshot_region       = "flameshot gui"
 screenshot_region_delay = "flameshot gui -d 3000"
-#+end_src
+```
 
-** Monitors
+## Monitors
 
 I created a variable for each monitors I use.
 
-#+begin_src lua :tangle vars.lua :comments org
+```lua
 screen1 = "DisplayPort-2"   -- Primary
 screen2 = "DVI-D-0"         -- Right
 screen3 = "HDMI-A-0"        -- Left
-#+end_src
+```
 
-** Keys
+## Keys
 
 For an easier configuration and better readability I decided to aliases some keys in my config.
 
-#+begin_src lua :tangle vars.lua :comments org
+```lua
 -- Keys Aliases
 modkey  = "Mod4"
 altkey  = "Mod1"
@@ -124,14 +125,14 @@ left_click  = 1
 right_click = 3
 scroll_up   = 4
 scroll_down = 5
-#+end_src
+```
 
-* CONFIGURATION
+# CONFIGURATION
 
-My main configuration file is my =rc.lua= , so I splitted my entire config into many organized files. I call only the
+My main configuration file is my `rc.lua` , so I splitted my entire config into many organized files. I call only the
 settings functions I made that I need to setup my WM.
 
-#+begin_src lua :tangle rc.lua
+```lua
 --[[
 
 ██████╗  ██████╗       ██╗     ██╗   ██╗ █████╗ 
@@ -142,26 +143,26 @@ settings functions I made that I need to setup my WM.
 ╚═╝  ╚═╝ ╚═════╝    ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
 
 --]]
-#+end_src
+```
 
-** Import modules
+## Import modules
 
 Import all modules that are required for the config.
 
-#+begin_src lua :tangle rc.lua :comments org
+```lua
 pcall(require, "luarocks.loader")                               -- LUAROCKS : Needed
 require("awful.autofocus")                                      -- AUTOFOCUS : Focus windows when created
 require("beautiful").init("~/.config/awesome/themes/feather-light/theme.lua")  -- THEME : Set theme path
 require("system")(s)                                            -- SYSTEM : Loads system
 require("keys")                                                 -- KEYS : Loads keybindings
 require("lib.libconfig")                                        -- CONFIG : Loads config library
-#+end_src
+```
 
-** Daemons
+## Daemons
 
-Set daemons initialisations at startup : =run_deamons({deamon1, deamons2})=
+Set daemons initialisations at startup : `run_deamons({deamon1, deamons2})`
 
-#+begin_src lua :tangle rc.lua :comments org
+```lua
 run_daemons({
     "picom",
     "udiskie",
@@ -170,13 +171,13 @@ run_daemons({
     "xrdb .Xressources",
     "sh -c ~/.apps/OpenTabletDriver/bin/OpenTabletDriver.Daemon",
 })
-#+end_src
+```
 
-** Layouts
+## Layouts
 
  Uncomment the layouts you want to use.
 
-#+begin_src lua :tangle rc.lua :comments org
+```lua
 set_layouts({
     l.floating,
     l.tile,
@@ -195,13 +196,13 @@ set_layouts({
     --l.corner.sw,
     --l.corner.se,
 })
-#+end_src
+```
 
-** Desktops
+## Desktops
 
- To set a desktop use : =add_desktop(name, screen, layout, ratio, gap, selected, icon_path)=
+ To set a desktop use : `add_desktop(name, screen, layout, ratio, gap, selected, icon_path)`
 
-#+begin_src lua :tangle rc.lua :comments org
+```lua
 add_desktop(" 1/ ",    screen1,    l.tile,         0.5,    false,  true,   nil)
 add_desktop(" 2 ",      screen1,    l.tile,         0.6,    false,  false,  nil)
 add_desktop(" 3 ",      screen1,    l.tile,         0.6,    false,  false,  nil)
@@ -211,49 +212,50 @@ add_desktop(" 6 ",      screen2,    l.tile,         0.5,    false,  false,  nil)
 add_desktop(" 7 ",      screen3,    l.tile,         0.5,    false,  false,  nil)
 add_desktop(" 8 ",      screen3,    l.tile,         0.5,    false,  false,  nil)
 add_desktop(" 9/ ",    screen3,    l.max,          0.5,    false,  true,   nil)
-#+end_src
+```
 
-** Rules
+## Rules
 
-Needed for generic rules : =rules_All()=
-Enable/Disable default titlebars : =rules_Titlebars(bool)=
-Disable titlebars for some apps : =rules_NoTitlebars(apps)=
-Apply some rules for a single app : =rules_Single(app, props)=
-Apply some rules for multiple apps : =rules_Multiple(apps, props)=
+Needed for generic rules : `rules_All()`
+Enable/Disable default titlebars : `rules_Titlebars(bool)`
+Disable titlebars for some apps : `rules_NoTitlebars(apps)`
+Apply some rules for a single app : `rules_Single(app, props)`
+Apply some rules for multiple apps : `rules_Multiple(apps, props)`
 
-#+begin_src lua :tangle rc.lua :comments org
+```lua
 rules_All()
 rules_Titlebars(true)
 rules_NoTitlebars({"firefox", "LibreWolf", "codium", "discord", "Spotify", "spotify", "Ankama Launcher", "com-ankamagames-wakfu-client-WakfuClient"})
 rules_Multiple({"arandr", "Qalculate-gtk", "dolphin"}, { floating = true })
 rules_Multiple({"discord", "Spotify", "spotify"}, { screen = screen3 })
-#+end_src
+```
  
-** Autostart
+## Autostart
 
-Launch app at startup : =run(myapp, mytag)=
+Launch app at startup : `run(myapp, mytag)`
 
-#+begin_src lua :tangle rc.lua :comments org
+```lua
 run("librewolf", " 4/ ")
 run("discord", " 9/ ")
 run_sh("~/.scripts/emacsdaemon.sh")
-#+end_src
+```
 
-** Bars
+## Bars
 
 Load bars for each screens.
 
-#+begin_src lua :tangle rc.lua :comments org
+```lua
 require("config.bar1")(screen[screen1])
 require("config.bar2")(screen[screen2])
 require("config.bar3")(screen[screen3])
-#+end_src
+```
 
-* ORGANISATION
+# ORGANISATION
 
-- *config* : Main modules configurations
-- *keys* : Keybindings
-- *lib* : Wrapping library
-- *modules* : Modules widgets implementations
-- *system* : System settings
-- *theme* : Theming configuration and icons
+- **bar :** Bars configurations
+- **custom :** Custom modules configurations
+- **keys :** Keybindings
+- **lib :** Wrapping library
+- **modules :** Modules widgets implementations
+- **system :** System settings
+- **theme :** Theming configuration and icons

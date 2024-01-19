@@ -29,14 +29,14 @@ local timer = notify.set_timer(noti, 2)
         FUNCTIONS
 --]]--------------------------------------------------------
 
-function notibright.up()
+notibright.up = function()
 
     noti.visible = true
     notify.noti_timer(timer)
 
 end
 
-function notibright.down()
+notibright.down = function()
 
     noti.visible = true
     notify.noti_timer(timer)

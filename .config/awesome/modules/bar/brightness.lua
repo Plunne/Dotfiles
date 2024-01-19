@@ -14,14 +14,17 @@ local wibox = require("wibox")
  
 --]]--------------------------------------------------------
 
-
 local brightness_icon = awful.widget.watch('sh -c \'~/.scripts/brightness.sh icon\'' , 0.1)
 local brightness_text = awful.widget.watch('sh -c \'~/.scripts/brightness.sh level\'' , 0.1)
 
 brightness_icon.font = beautiful.modules_brightness_icon_font
 brightness_text.font = beautiful.modules_brightness_text_font
 
-local function brightness(scr)
+--[[--------------------------------------------------------
+        BAR BRIGHTNESS
+--]]--------------------------------------------------------
+
+return function(scr)
 
     return modules.new_dual(scr,
         beautiful.bg_modules_brightness,
@@ -35,5 +38,3 @@ local function brightness(scr)
         require("keys.mouse").light_mouse())
     
 end
-
-return brightness

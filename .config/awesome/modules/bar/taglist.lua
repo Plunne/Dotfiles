@@ -13,7 +13,11 @@ local modules = require("lib.libmodules")
   
 --]]--------------------------------------------------------
 
-local function taglist(scr) 
+--[[--------------------------------------------------------
+        BAR TAGLIST
+--]]--------------------------------------------------------
+
+return function(scr) 
 
     return modules.new(scr, 4, beautiful.taglist_bg, nil, 1, 1, 1, 1, beautiful.taglist_border, 1, beautiful.rounded_modules, awful.widget.taglist {
         
@@ -24,5 +28,3 @@ local function taglist(scr)
     })
 
 end
-
-return taglist

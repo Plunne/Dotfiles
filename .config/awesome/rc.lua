@@ -9,14 +9,15 @@
 
 --]]
 
+require("vars")
+
 -- Import modules
 
 -- Import all modules that are required for the config.
 
-
 pcall(require, "luarocks.loader")                               -- LUAROCKS : Needed
 require("awful.autofocus")                                      -- AUTOFOCUS : Focus windows when created
-require("beautiful").init("~/.config/awesome/themes/feather-light/theme.lua")  -- THEME : Set theme path
+require("beautiful").init("~/.config/awesome/themes/" .. theme_name .. "/theme.lua")  -- THEME : Set theme path
 require("system")(s)                                            -- SYSTEM : Loads system
 require("keys")                                                 -- KEYS : Loads keybindings
 require("lib.libconfig")                                        -- CONFIG : Loads config library
@@ -25,8 +26,7 @@ require("lib.libconfig")                                        -- CONFIG : Load
 
 -- Set daemons initialisations at startup : =run_deamons({deamon1, deamons2})=
 
-
-run_daemons({
+run.daemons({
     "picom",
     "udiskie",
     "nm-applet",
@@ -38,7 +38,6 @@ run_daemons({
 -- Layouts
 
 --  Uncomment the layouts you want to use.
-
 
 set_layouts({
     l.floating,
@@ -63,16 +62,15 @@ set_layouts({
 
 --  To set a desktop use : =add_desktop(name, screen, layout, ratio, gap, selected, icon_path)=
 
-
-add_desktop(" 1/ ",    screen1,    l.tile,         0.5,    false,  true,   nil)
-add_desktop(" 2 ",      screen1,    l.tile,         0.6,    false,  false,  nil)
-add_desktop(" 3 ",      screen1,    l.tile,         0.6,    false,  false,  nil)
-add_desktop(" 4/ ",    screen2,    l.max,          0.7,    false,  true,   nil)
-add_desktop(" 5 ",      screen2,    l.tile,         0.6,    false,  false,  nil)
-add_desktop(" 6 ",      screen2,    l.tile,         0.5,    false,  false,  nil)
-add_desktop(" 7 ",      screen3,    l.tile,         0.5,    false,  false,  nil)
-add_desktop(" 8 ",      screen3,    l.tile,         0.5,    false,  false,  nil)
-add_desktop(" 9/ ",    screen3,    l.max,          0.5,    false,  true,   nil)
+add_desktop(" 1 ",  screen1,    l.tile,         0.5,    false,  true,   nil)
+add_desktop(" 2 ",  screen1,    l.tile,         0.6,    false,  false,  nil)
+add_desktop(" 3 ",  screen1,    l.tile,         0.6,    false,  false,  nil)
+add_desktop(" 4 ",  screen2,    l.max,          0.7,    false,  true,   nil)
+add_desktop(" 5 ",  screen2,    l.tile,         0.6,    false,  false,  nil)
+add_desktop(" 6 ",  screen2,    l.tile,         0.5,    false,  false,  nil)
+add_desktop(" 7 ",  screen3,    l.tile,         0.5,    false,  false,  nil)
+add_desktop(" 8 ",  screen3,    l.tile,         0.5,    false,  false,  nil)
+add_desktop(" 9 ",  screen3,    l.max,          0.5,    false,  true,   nil)
 
 -- Rules
 
@@ -82,27 +80,24 @@ add_desktop(" 9/ ",    screen3,    l.max,          0.5,    false,  true,   ni
 -- Apply some rules for a single app : =rules_Single(app, props)=
 -- Apply some rules for multiple apps : =rules_Multiple(apps, props)=
 
-
-rules_All()
-rules_Titlebars(true)
-rules_NoTitlebars({"firefox", "LibreWolf", "codium", "discord", "Spotify", "spotify", "Ankama Launcher", "com-ankamagames-wakfu-client-WakfuClient"})
-rules_Multiple({"arandr", "Qalculate-gtk", "dolphin"}, { floating = true })
-rules_Multiple({"discord", "Spotify", "spotify"}, { screen = screen3 })
+rules.All()
+rules.Titlebars(true)
+rules.NoTitlebars({"firefox", "LibreWolf", "codium", "discord", "Spotify", "spotify", "Ankama Launcher", "com-ankamagames-wakfu-client-WakfuClient"})
+rules.Multiple({"arandr", "Qalculate-gtk", "dolphin"}, { floating = true })
+rules.Multiple({"discord", "Spotify", "spotify"}, { screen = screen3 })
 
 -- Autostart
 
 -- Launch app at startup : =run(myapp, mytag)=
 
-
-run("librewolf", " 4/ ")
-run("discord", " 9/ ")
-run_sh("~/.scripts/emacsdaemon.sh")
+run.app("firefox", " 4 ")
+run.app("discord", " 9 ")
+-- run_sh("~/.scripts/emacsdaemon.sh")
 
 -- Bars
 
 -- Load bars for each screens.
 
-
-require("config.bar1")(screen[screen1])
-require("config.bar2")(screen[screen2])
-require("config.bar3")(screen[screen3])
+require("bar.primary")      (screen[screen1])
+require("bar.secondary")    (screen[screen2])
+require("bar.secondary")    (screen[screen3])

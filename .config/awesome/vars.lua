@@ -9,10 +9,12 @@
 
 --]]
 
+-- Theme
+theme_name = "feather-dark"
+
 -- Applications
 
 -- This section regroup all my custom commands for differents applications like terminal, file manager, etc.
-
 
 -- Apps
 terminal        = "konsole"
@@ -20,7 +22,7 @@ editor          = "~/.scripts/emacsclient.sh"
 filemanager     = "dolphin"
 editor_cmd      = terminal .. " -e " .. "nvim"
 fm_cmd          = terminal .. " -e " .. "ranger"
-rofi_launcher   = "rofi -no-lazy-grab -show drun -theme feather-light"
+rofi_launcher   = "rofi -no-lazy-grab -show drun -theme " .. theme_name
 rofi_calc       = "rofi -show calc -no-show-match -no-sort -terse -modi calc"
 calc            = "qalculate-gtk"
 
@@ -46,16 +48,16 @@ screenshot_region_delay = "flameshot gui -d 3000"
 -- Monitors
 
 -- I created a variable for each monitors I use.
-
-
 screen1 = "DisplayPort-2"   -- Primary
 screen2 = "DVI-D-0"         -- Right
 screen3 = "HDMI-A-0"        -- Left
 
+-- Screen that will display notifications
+notiscreen = screen3
+
 -- Keys
 
 -- For an easier configuration and better readability I decided to aliases some keys in my config.
-
 
 -- Keys Aliases
 modkey  = "Mod4"

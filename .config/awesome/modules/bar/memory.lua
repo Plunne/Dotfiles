@@ -24,7 +24,11 @@ local memory_text = awful.widget.watch('sh -c \'~/.scripts/system_monitor.sh ram
 memory_icon.font = beautiful.modules_memory_icon_font
 memory_text.font = beautiful.modules_memory_text_font
 
-local function memory(scr)
+--[[--------------------------------------------------------
+        BAR MEMORY
+--]]--------------------------------------------------------
+
+return function(scr)
 
     return modules.new_dual(scr,
         beautiful.bg_modules_memory,
@@ -38,5 +42,3 @@ local function memory(scr)
         nil)
     
 end
-
-return memory

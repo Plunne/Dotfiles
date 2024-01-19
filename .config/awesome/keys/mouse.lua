@@ -12,7 +12,7 @@
 
 
 local awful = require("awful")
-local panel = require("config.panel")
+local panel = require("custom.panel")
 local hotkeys_popup = require("awful.hotkeys_popup")
 
 -- Import variables
@@ -22,7 +22,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 
 require("vars")
 require("lib.libkeys")
-require("config.menu")
+require("custom.menu")
 
 -- Hide popup
 
@@ -46,7 +46,7 @@ local mouse = {}
 -- Main mouse bindings function. This is where I set all my general mouse bindings.
 
 
-function mouse.init() awful.mouse.append_global_mousebindings({
+mouse.init = function() awful.mouse.append_global_mousebindings({
 
 click(left_click, function() hide_popup() end),
 click(right_click, function() mymainmenu:toggle() end)
@@ -58,7 +58,7 @@ click(right_click, function() mymainmenu:toggle() end)
 -- Bindings used for clients interactions.
 
 
-function mouse.clientbuttons()
+mouse.clientbuttons = function() 
 
     client.connect_signal("request::default_mousebindings", function()
         awful.mouse.append_client_mousebindings({
@@ -77,7 +77,7 @@ end
 -- Bindings used for taglist interactions.
 
 
-function mouse.taglist_mouse() return {
+mouse.taglist_mouse = function() return {
 
     -- Hide popups
     click(left_click, function() hide_popup() end),
@@ -115,7 +115,7 @@ function mouse.taglist_mouse() return {
 -- Bindings used for tasklist interactions.
 
 
-function mouse.tasklist_mouse() return {
+mouse.tasklist_mouse = function() return {
 
     -- Hide popups
     click(left_click, function() hide_popup() end),
@@ -147,7 +147,7 @@ function mouse.tasklist_mouse() return {
 
 local volume = require("keys.control.volume")
 
-function mouse.volume_mouse() return {
+mouse.volume_mouse = function() return {
 
     -- Toggle audio
     click(left_click,   function() volume.toggle() end),
@@ -165,7 +165,7 @@ function mouse.volume_mouse() return {
 
 local brightness = require("keys.control.brightness")
 
-function mouse.light_mouse() return {
+mouse.light_mouse = function() return {
 
     -- Up/Down light
     click(scroll_up,    function() brightness.up() end),

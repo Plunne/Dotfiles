@@ -13,6 +13,7 @@
 
 -- Import all modules requiered for theming.
 
+require("vars")
 
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
@@ -27,14 +28,13 @@ local modules = require("lib.libmodules")
 
 local default_path = gfs.get_themes_dir()
 local wall_path = os.getenv("HOME").."/.wallpapers/"
-local theme_path = os.getenv("HOME").."/.config/awesome/themes/feather-light/"
+local theme_path = os.getenv("HOME").."/.config/awesome/themes/".. theme_name .. "/"
 local layouts_path = theme_path .. "layouts/"
 local titlebar_path = theme_path .. "titlebar/"
 
 -- Theme
 
 -- Theme object instance.
-
 
 local theme = {}
 

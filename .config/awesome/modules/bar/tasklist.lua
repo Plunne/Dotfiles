@@ -14,7 +14,11 @@ local wibox = require("wibox")
     
 --]]--------------------------------------------------------
 
-local function tasklist(scr) 
+--[[--------------------------------------------------------
+        BAR TASKLIST
+--]]--------------------------------------------------------
+
+return function(scr) 
 
     return modules.new(scr, 4, "#00000000", nil, 0, 0, 0, 0, nil, 0, beautiful.rounded_modules, awful.widget.tasklist {
 
@@ -47,5 +51,3 @@ local function tasklist(scr)
     })
 
 end
-
-return tasklist
