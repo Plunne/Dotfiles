@@ -27,11 +27,11 @@ PkgUpdate = sudo pacman -Syu
 
 # Main Apps
 Terminal = konsole
-Editor = emacs
-Browser = librewolf-bin
+Editor = emacs visual-studio-code-bin
+Browser = firefox
 FileManager = ranger ueberzug dolphin dolphin-plugins kde-cli-tools kompare
 Archiver = ark
-PdfViewer = zathura zathura-pdf-poppler
+#PdfViewer = zathura zathura-pdf-poppler
 ImageViewer = sxiv
 VideoViewer = haruna
 Screenshot = flameshot dbus
@@ -113,7 +113,7 @@ xorg:
 
 # Window Managers
 awesome:
-	$(PkgInstall) awesome-git picom-jonaburg-git rofi
+	$(PkgInstall) awesome-git picom rofi-emoji
 
 bspwm:
 	$(PkgInstall) bspwm sxhkd bsp-layout man-db picom-jonaburg-git polybar dunst rofi
