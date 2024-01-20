@@ -45,7 +45,7 @@ return function(scr)
         date_text,
         beautiful.bg_modules_date_text,
         beautiful.fg_modules_date_text,
-        nil)
+        require("keys.mouse").panel_mouse())
     
 end
 

@@ -28,7 +28,6 @@ Because I use some variables from my config.
 
 --]]--------------------------------------------------------
 
-
 require("vars")
 require("lib.libkeys")
 require("custom.menu")
@@ -41,7 +40,6 @@ Keyboard object instance.
 
 --]]--------------------------------------------------------
 
-
 local keyboard = {}
 
 --[[--------------------------------------------------------
@@ -51,7 +49,6 @@ GENERAL KEYBINDINGS
 Main keybindings function. This is where I set all my general keybindings.
 
 --]]--------------------------------------------------------
-
 
 keyboard.init = function() awful.keyboard.append_global_keybindings({
 
@@ -190,7 +187,6 @@ CLIENT KEYS
 Bindings used for clients interactions.
 
 --]]--------------------------------------------------------
-
 
 keyboard.clientkeys = function()
     

@@ -17,7 +17,7 @@ Select the theme by setting this powerful global variable.
 
 --]]--------------------------------------------------------
 
-theme_name = "feather-dark"
+theme_name = "feather-light"
 
 --[[--------------------------------------------------------        
 

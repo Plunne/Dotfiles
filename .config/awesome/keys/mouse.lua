@@ -18,7 +18,6 @@ local awful = require("awful")
 local panel = require("custom.panel")
 local hotkeys_popup = require("awful.hotkeys_popup")
 
-
 --[[--------------------------------------------------------
 
 IMPORT VARIABLES
@@ -39,10 +38,11 @@ Function used to close popups everywhere outside of them.
 
 --]]--------------------------------------------------------
 
-
 local function hide_popup()
+
     mymainmenu:hide()
     panel.visible = false
+
 end
 
 --[[--------------------------------------------------------
@@ -52,7 +52,6 @@ MOUSE
 Mouse object instance.
 
 --]]--------------------------------------------------------
-
 
 local mouse = {}
 
@@ -64,11 +63,10 @@ Main mouse bindings function. This is where I set all my general mouse bindings.
 
 --]]--------------------------------------------------------
 
-
 mouse.init = function() awful.mouse.append_global_mousebindings({
 
-click(left_click, function() hide_popup() end),
-click(right_click, function() mymainmenu:toggle() end)
+    click(left_click, function() hide_popup() end),
+    click(right_click, function() mymainmenu:toggle() end)
 
 })end
 
@@ -79,7 +77,6 @@ CLIENT BUTTONS
 Bindings used for clients interactions.
 
 --]]--------------------------------------------------------
-
 
 mouse.clientbuttons = function() 
 
@@ -102,7 +99,6 @@ TAGLIST BUTTONS
 Bindings used for taglist interactions.
 
 --]]--------------------------------------------------------
-
 
 mouse.taglist_mouse = function() return {
 
@@ -144,7 +140,6 @@ TASKLIST BUTTONS
 Bindings used for tasklist interactions.
 
 --]]--------------------------------------------------------
-
 
 mouse.tasklist_mouse = function() return {
 
@@ -207,6 +202,36 @@ mouse.light_mouse = function() return {
     -- Up/Down light
     click(scroll_up,    function() brightness.up() end),
     click(scroll_down,  function() brightness.down() end)
+
+}end
+
+--[[--------------------------------------------------------
+
+MENU BUTTONS
+
+Bindings used for the mainmenu.
+
+--]]--------------------------------------------------------
+
+mouse.menu_mouse = function() return {
+
+    click(left_click, function() panel.visible = false end),
+    click(left_click, function() mymainmenu:toggle() end)
+
+}end
+
+--[[--------------------------------------------------------
+
+PANEL BUTTONS
+
+Bindings used for the panel.
+
+--]]--------------------------------------------------------
+
+mouse.panel_mouse = function() return {
+
+    click(left_click, function() mymainmenu:hide() end),
+    click(left_click, function() panel.visible = not panel.visible end)
 
 }end
 
