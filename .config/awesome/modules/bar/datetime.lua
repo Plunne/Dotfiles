@@ -45,7 +45,7 @@ return function(scr)
         datetime_text,
         beautiful.bg_modules_datetime_text,
         beautiful.fg_modules_datetime_text,
-        require("keys.mouse").light_mouse())
+        require("keys.mouse").panel_mouse())
     
 end
 

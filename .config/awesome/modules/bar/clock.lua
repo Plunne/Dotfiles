@@ -18,6 +18,7 @@ local clock_text = wibox.widget {
     format = '%I:%M %p',
     font = beautiful.clock_font,
     refresh = 1,
+    buttons = require("keys.mouse").panel_mouse(),
     widget = wibox.widget.textclock
 }
 

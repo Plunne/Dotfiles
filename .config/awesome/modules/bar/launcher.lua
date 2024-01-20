@@ -1,7 +1,6 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
 local modules = require("lib.libmodules")
-local panel = require("custom.panel")
 local wibox = require("wibox")
 
 --[[--------------------------------------------------------
@@ -28,7 +27,8 @@ return function(scr)
         awful.widget.button {
             screen  = scr,
             image   = beautiful.awesome_icon,
-            buttons = { click(left_click, function() panel.visible = not panel.visible end ), nil }
+            buttons = require("keys.mouse").menu_mouse(),
+
         },
         shape  = modules.rounded(beautiful.rounded_modules),
         shape_clip = true,
