@@ -29,7 +29,7 @@ PkgUpdate = sudo pacman -Syu
 Terminal = konsole
 Editor = emacs visual-studio-code-bin
 Browser = firefox
-FileManager = ranger ueberzug dolphin dolphin-plugins kde-cli-tools kompare
+FileManager = ranger rofi-emoji ueberzug dolphin dolphin-plugins kde-cli-tools kompare
 Archiver = ark
 #PdfViewer = zathura zathura-pdf-poppler
 ImageViewer = sxiv
@@ -52,6 +52,7 @@ Audio = alsa-utils pulseaudio-alsa playerctl
 Archives = gzip zip unzip unrar
 Filetypes = gvfs exfat-utils ntfs-3g udiskie
 Network = net-tools
+Polkit = polkit-kde-agent
 Printer = cups cups-pdf system-config-printer brother-mfc-j6920dw lib32-glibc
 SYSTEM = \
 	+= $(Sysinfos) \
@@ -60,6 +61,7 @@ SYSTEM = \
 	+= $(Archives) \
 	+= $(Filetypes) \
 	+= $(Network) \
+	+= $(Polkit) \
 	+= $(Printer)
 
 # Softwares
@@ -113,7 +115,7 @@ xorg:
 
 # Window Managers
 awesome:
-	$(PkgInstall) awesome-git picom rofi-emoji
+	$(PkgInstall) awesome-git picom
 
 bspwm:
 	$(PkgInstall) bspwm sxhkd bsp-layout man-db picom-jonaburg-git polybar dunst rofi
