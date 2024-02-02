@@ -30,6 +30,7 @@ differents applications like terminal, file manager, etc.
 
 -- Apps
 terminal        = "konsole"
+browser         = "firefox"
 editor          = "~/.scripts/emacsclient.sh"
 filemanager     = "dolphin"
 editor_cmd      = terminal .. " -e " .. "nvim"

@@ -56,10 +56,11 @@ keyboard.init = function() awful.keyboard.append_global_keybindings({
 --     Apps     --
 ------------------
 bindApp(super,          enter,  "Terminal",                     terminal),
-bindApp(super,          "p",    "File Manager",                 filemanager),
-bindApp(super,          "e",    "Editor",                       editor),
+bindApp(super,          "b",    "Browser",                      browser),
 bindApp(super,          "c",    "Calulator",                    calc),
-bindApp(alt,            space,  "Rofi Launcher",                rofi_launcher),
+bindApp(super,          "e",    "Editor",                       editor),
+bindApp(super,          "p",    "File Manager",                 filemanager),
+bindApp(alt,            space,  "Launcher",                     rofi_launcher),
 bindApp({},             print,  "Screenshot (Screen)",          screenshot),
 bindApp(super_shift,    print,  "Screenshot (Screen + Delay)",  screenshot_delay),
 bindApp(super,          print,  "Screenshot (Region)",          screenshot_region),
@@ -68,8 +69,8 @@ bindApp(super_ctrl,     print,  "Screenshot (Region + Delay)",  screenshot_regio
 ---------------------
 --     Awesome     --
 ---------------------
-bind(super,         "s",    "Awesome", "Help",              hotkeys_popup.show_help),
-bind(super,         "w",    "Awesome", "Menu",              function() mymainmenu:show() end),
+bind(super,         "h",    "Awesome", "Help",              hotkeys_popup.show_help),
+bind(super,         "m",    "Awesome", "Menu",              function() mymainmenu:show() end),
 bind(super_shift,   "r",    "Awesome", "Reload Awesome",    awesome.restart),
 bind(super_shift,   "q",    "Awesome", "Quit Awesome",      awesome.quit),
 
@@ -196,8 +197,8 @@ keyboard.clientkeys = function()
             -- Client Close
             bind(super, "F4",   "Client", "Close window",       function(c) c:kill() end),
             bind(super, "o",    "Client", "Move to screen",     function(c) c:move_to_screen() end),
-            bind(super, "F11",    "Client", "Fullscreen window",  function(c) c.fullscreen = not c.fullscreen c:raise() end),
-            bind(super, "f",    "Client", "Floating window",  function(c) c.floating = not c.floating c:raise() end),
+            bind(super, "F11",  "Client", "Fullscreen window",  function(c) c.fullscreen = not c.fullscreen c:raise() end),
+            bind(super, "f",    "Client", "Floating window",    function(c) c.floating = not c.floating c:raise() end),
 
         })
     end)
