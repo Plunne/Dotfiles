@@ -1,0 +1,36 @@
+************************
+*     ARCH ALIASES     *
+************************
+
+# Pacman - https://wiki.archlinux.org/index.php/Pacman_Tips
+pasyu   : sudo pacman -Syu
+pas     : sudo pacman -S
+pau     : sudo pacman -U
+par     : sudo pacman -R
+parns   : sudo pacman -Rns
+pasi    : pacman -Si
+pass    : pacman -Ss
+paqi    : pacman -Qi
+paqs    : pacman -Qs
+paqdt   : sudo pacman -Qdt
+pasyy   : sudo pacman -Syy
+pars    : sudo pacman -Rs
+pafy    : sudo pacman -Fy
+paf     : pacman -F
+paql    : pacman -Ql
+paqo    : pacman -Qo
+
+# Yay - https://github.com/Jguer/yay
+yasyu   : yay -Syu
+yas     : yay -S
+yau     : yay -U
+yar     : yay -R
+yarns   : yay -Rns
+yasi    : yay -Si
+yass    : yay -Ss
+yaqi    : yay -Qi
+yaqs    : yay -Qs
+yaqe    : yay -Qe
+yaqdt   : yay -Qtd
+yasyy   : yay -Syy
+yapg    : yay -Pg

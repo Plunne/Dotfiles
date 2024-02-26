@@ -1,0 +1,30 @@
+*************************
+*     PATHS ALIASES     *
+*************************
+
+# Config files
+c-plunne    : $EDITOR ~/.config/zsh/plunne.zsh
+c-ala       : $EDITOR ~/.config/alacritty/alacritty.yml
+c-awm       : $EDITOR ~/.config/awesome/rc.lua
+c-bsp       : $EDITOR ~/.config/bspwm/bspwmrc
+c-em        : $EDITOR ~/.emacs.d/config.org
+c-i3        : $EDITOR ~/.config/i3/config
+c-zat       : $EDITOR ~/.config/zathura/zathurarc
+c-dunst     : $EDITOR ~/.config/dunst/dunstrc
+c-neo       : $EDITOR ~/.config/neofetch/config.conf
+c-pb        : $EDITOR ~/.config/polybar/config
+c-picom     : $EDITOR ~/.config/picom.conf
+c-sxhkd     : $EDITOR ~/.config/sxhkd/sxhkdrc
+c-xres      : $EDITOR ~/.Xressources
+c-xini      : $EDITOR ~/.xinitrc
+c-zsh       : $EDITOR ~/.zshrc
+c-p10k      : $EDITOR ~/.p10k
+c-nvpath    : cd ~/.config/nvim
+c-nvinit    : $EDITOR ~/.config/nvim/init.lua
+c-nvplug    : $EDITOR ~/.config/nvim/lua/plugins.lua
+c-nvset     : $EDITOR ~/.config/nvim/lua/settings.lua
+c-nvtheme   : $EDITOR ~/.config/nvim/lua/theme-paperplunne.lua
+
+# Script files
+s-polybar   : $EDITOR ~/.scripts/polybar.sh
+s-monitors  : $EDITOR ~/.scripts/monitors.sh

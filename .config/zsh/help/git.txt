@@ -1,0 +1,17 @@
+***********************
+*     GIT ALIASES     *
+***********************
+
+gs   : git status
+ga   : git add <FILES>
+gaa  : git add .
+gm   : git commit -m <MESSAGE>
+gp   : git push
+gpp  : git push origin <BRANCH>
+gf   : git fetch
+gl   : git pull
+gu   : git commit -m <MESSAGE> && git push
+guu  : git commit -m <MESSAGE> && git push origin <BRANCH>
+gc   : git clone <REPOSITORY>
+gb   : git checkout <BRANCH>
+gbb  : git checkout -b <NEW_BRANCH>

@@ -1,0 +1,51 @@
+**************************
+*     PLUNNE ALIASES     *
+**************************
+
+clr     : clear
+ls      : ls -la --color
+neo     : clear && echo -e "\n" && neofetch
+xr      : xrdb .Xressources
+r       : ranger
+py      : python3
+zat     : zathura
+
+# Help
+pgit    : Git
+ppath   : Paths
+parch   : Arch
+pdeb    : Debian
+
+# Archives
+mtar    : tar -zcvf # mtar <archive_compress>
+utar    : tar -zxvf # utar <archive_decompress> <file_list>
+z       : zip -r # z <archive_compress> <file_list>
+uz      : unzip # uz <archive_decompress> -d <dir>
+
+# Editors
+em      : ~/.scripts/emacsclient.sh
+na      : nano
+v       : nvim
+vs      : code
+suna    : sudo nano
+suvi    : sudo nvim
+suvs    : sudo code
+
+# Systemctl
+sctl    : systemctl
+sctle   : systemctl enable
+sctld   : systemctl disable
+sctls   : systemctl status
+
+# Wired
+net-h       : https://linuxhint.com/arch_linux_network_manager/
+net-show    : nmcli connection show
+net-dev     : nmcli device
+net-up      : nmcli connection up uuid
+net-deco    : nmcli device disconnect
+
+# Wi-fi
+wifi-list   : nmcli device wifi list
+wifi-co     : nmcli device wifi connect # + <SSID> password <passwd>
+wifi-on     : nmcli radio wifi on
+wifi-off    : nmcli radio wifi off
