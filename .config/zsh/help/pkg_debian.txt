@@ -1,0 +1,11 @@
+**************************
+*     DEBIAN ALIASES     *
+**************************
+
+agi     : sudo apt-get install
+agu     : sudo apt-get update
+agug    : sudo apt-get upgrade
+agr     : sudo apt-get remove
+agar    : sudo apt-get autoremove
+ags     : sudo apt-get search
+agl     : sudo apt-get list
