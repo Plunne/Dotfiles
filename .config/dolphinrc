@@ -1,18 +1,43 @@
 MenuBar=Disabled
 
+[CompactMode]
+IconSize=32
+PreviewSize=16
+
+[ContentDisplay]
+UseShortRelativeDates=false
+
 [ContextMenu]
+ShowCopyMoveMenu=true
 ShowSortBy=false
 ShowViewMode=false
 
 [DetailsMode]
-PreviewSize=22
+IconSize=32
+LeftPadding=0
+PreviewSize=16
+RightPadding=0
 UseShortRelativeDates=false
 
 [General]
+DoubleClickViewAction=CUSTOM_COMMAND
+OpenExternallyCalledFolderInNewTab=true
+OpenNewTabAfterLastTab=true
 RememberOpenedTabs=false
 ShowFullPath=true
+ShowStatusBar=FullWidth
+ShowToolTips=true
+ShowZoomSlider=true
 Version=202
 ViewPropsTimestamp=2022,9,30,17,24,53.091
+
+[IconsMode]
+IconSize=64
+PreviewSize=256
+TextWidthIndex=0
+
+[InformationPanel]
+dateFormat=ShortFormat
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false
@@ -24,7 +49,9 @@ DisplayPort-2 HDMI-A-0 DVI-D-0 Width 1920x1080=413
 
 [MainWindow]
 MenuBar=Disabled
-ToolBarsMovable=Disabled
+
+[Notification Messages]
+warnAboutRisksBeforeActingAsAdmin=false
 
 [PreviewSettings]
 Plugins=appimagethumbnail,audiothumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,svgthumbnail
