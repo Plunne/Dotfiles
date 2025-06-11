@@ -1,28 +1,31 @@
 #!/bin/sh
 
-apps_dir() {
-    cd ~/.apps
-}
-
 ########################
 #
 # Applications
 #
 ########################
 
+install_calculatine() {
+    git clone https://github.com/Plunne/Calculatine.git ~/.config/calculatine
+    cd ~/.config/calculatine/os/linux
+    ./calculatine.sh
+}
+
 install_nvim() {
     sudo pacman -S base-devel cmake unzip ninja tree-sitter curl
-    git clone https://gitlab.com/Plunne/neovim.git
-    cd neovim
+    cd ~/.config/nvim
     sudo make install
-    apps_dir
+}
+
+install_ranger() {
+    git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
 }
 
 install_st() {
-    git clone https://gitlab.com/Plunne/st.git
-    cd st
+    git clone https://github.com/Plunne/St.git ~/.config/St
+    cd ~/.config/st
     sudo make install clean
-    apps_dir
 }
 
 install_spicetify() {
@@ -34,7 +37,8 @@ install_spicetify() {
 }
 
 install_betterdiscord() {
-    ./betterdiscord/BetterDiscord-Linux.AppImage
+    cd ~/.local/share/applications
+    ./BetterDiscord-Linux.AppImage
 }
 
 ########################
@@ -43,7 +47,9 @@ install_betterdiscord() {
 #
 ########################
 
+install_calculatine
 install_nvim
-install_st
-install_spicetify
-install_betterdiscord
+install_ranger
+#install_st
+#install_spicetify
+#install_betterdiscord

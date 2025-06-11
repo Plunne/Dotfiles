@@ -17,7 +17,7 @@ Select the theme by setting this powerful global variable.
 
 --]]--------------------------------------------------------
 
-theme_name = "feather-light"
+theme_name = "feather-dark"
 
 --[[--------------------------------------------------------        
 
@@ -37,7 +37,7 @@ editor_cmd      = terminal .. " -e " .. "nvim"
 fm_cmd          = terminal .. " -e " .. "ranger"
 rofi_launcher   = "rofi -no-lazy-grab -show drun -theme " .. theme_name
 rofi_calc       = "rofi -show calc -no-show-match -no-sort -terse -modi calc"
-calc            = "qalculate-gtk"
+calc            = terminal .. " -e " .. "calculatine"
 
 -- Brightness
 brightness_up   = "brightnessctl set 5%+"

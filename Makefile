@@ -27,13 +27,16 @@ PkgUpdate = sudo pacman -Syu
 
 # Main Apps
 Terminal = konsole
-Editor = emacs visual-studio-code-bin
+Editor = less emacs visual-studio-code-bin
 Browser = firefox
-FileManager = ranger rofi-emoji ueberzug dolphin dolphin-plugins kde-cli-tools kompare
+FM_CLI = ranger rofi-emoji ueberzug
+FM_GUI = dolphin dolphin-plugins kde-cli-tools kompare archlinux-xdg-menu
+FileManager = $(FM_CLI) $(FM_GUI)
 Archiver = ark
 #PdfViewer = zathura zathura-pdf-poppler
-ImageViewer = sxiv
-VideoViewer = haruna
+MusicPlayer = elisa
+ImageViewer = gwenview #sxiv
+VideoViewer = vlc
 Screenshot = flameshot dbus
 MAIN_APPS = \
 	+= $(Terminal) \
@@ -48,11 +51,11 @@ MAIN_APPS = \
 # System
 Sysinfos = neofetch
 Sysmonitor = htop
-Audio = alsa-utils pulseaudio-alsa playerctl
+Audio = alsa-utils pulseaudio pulseaudio-alsa playerctl
 Archives = gzip zip unzip unrar
 Filetypes = gvfs exfat-utils ntfs-3g udiskie
 Network = network-manager-applet net-tools
-Polkit = polkit-kde-agent
+Polkit = polkit-kde-agent kio-admin
 Printer = cups cups-pdf system-config-printer brother-mfc-j6920dw lib32-glibc
 SYSTEM = \
 	+= $(Sysinfos) \
@@ -73,13 +76,13 @@ SOFTWARES = $(Office) $(GFX)
 AVR = avr-gcc avr-libc avrdude avr-gdb # (Personnal because I'm programming AVR uControlers)
 Arduino = arduino
 Kicad = kicad kicad-library kicad-library-3d
-QtCreator = qtcreator qt5-doc qt5-examples qt5-base # I Love Qt
-Python = python-pip
+QtCreator = qtcreator qt6-doc qt6-examples qt6-base qt6-tools # I Love Qt
+Python = python-pip ipython
 STM32 = arm-none-eabi-gcc arm-none-eabi-gdb arm-none-eabi-binutils arm-none-eabi-newlib stlink
 DEV = $(AVR) $(Arduino) $(Kicad) $(QtCreator) $(Python) $(STM32)
 
 # Misc
-MISC = discord spotify
+MISC = discord spotify github-cli
 
 #####################
 #     VARIABLES     #
@@ -111,7 +114,7 @@ wm: xorg awesome
 
 # Xorg
 xorg:
-	$(PkgInstall) xf86-video-amdgpu xorg-server xorg-xinit xorg-xrandr xsel lxappearance qt5ct breeze breeze-gtk breeze-icons
+	$(PkgInstall) xf86-video-amdgpu xorg-server xorg-xinit xorg-xrandr xsel lxappearance qt6ct-kde breeze breeze-gtk breeze-icons
 
 # Window Managers
 awesome:

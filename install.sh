@@ -22,11 +22,11 @@
 #################
 
 setup() {
-    	misc_fnkeys
-    	zsh
-    	dotfiles
-    	install_apps
-    	clean
+    misc_fnkeys
+    zsh
+    dotfiles
+    install_apps
+    clean
 }
 
 ###############
@@ -35,10 +35,9 @@ setup() {
 
 yay() {
 	echo -e "\n***** INSTALL YAY *****\n"
-    	git clone https://aur.archlinux.org/yay.git ~/yay
-    	cd ~/yay
+    git clone https://aur.archlinux.org/yay.git ~/yay
+    cd ~/yay
 	makepkg -si
-    	cd ~
 }
 
 #################
@@ -69,7 +68,7 @@ zsh() {
 ####################
 
 dotfiles() {
-    	cp -rvpf ~/.gitlab/plunne_dotfiles/. ~
+    cp -rvpf ~/Dotfiles/. ~
 	echo "dotfiles are copied"
 }
 
@@ -78,8 +77,8 @@ dotfiles() {
 ####################
 
 install_apps() {
-    	~/.scripts/apps.sh
-	echo "apps installed"
+    ~/.scripts/apps.sh
+    echo "apps installed"
 }
 
 
@@ -88,9 +87,9 @@ install_apps() {
 #################
 
 clean() {
-	rm -rf ~/Makefile
-    	rm -rf ~/install.sh
-    	rm -rf ~/README.md
+    rm -rf ~/Makefile
+    rm -rf ~/install.sh
+    rm -rf ~/README.md
 }
 
 ################
@@ -102,7 +101,7 @@ case $1 in
         setup
     ;;
     yay)
-	    yay
+	yay
     ;;
     sys)
         misc_fnkeys
