@@ -30,7 +30,7 @@ return function(scr)
 
     return modules.new_dual(scr,
         beautiful.bg_modules_brightness,
-        beautiful.border_modules,
+        beautiful.bg_modules_brightness_icon,
         brightness_icon,
         beautiful.bg_modules_brightness_icon,
         beautiful.fg_modules_brightness_icon,

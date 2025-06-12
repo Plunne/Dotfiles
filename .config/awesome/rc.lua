@@ -41,6 +41,7 @@ run.daemons({
     "flameshot",
     "xrdb .Xressources",
     "sh -c ~/.apps/OpenTabletDriver/bin/OpenTabletDriver.Daemon",
+    "XDG_MENU_PREFIX=arch- kbuildsycoca6 --noincremental"
 })
 
 --[[--------------------------------------------------------
@@ -103,7 +104,7 @@ Apply some rules for multiple apps : `rules.Multiple(apps, props)`
 rules.All()
 rules.Titlebars(true)
 rules.NoTitlebars({"firefox", "LibreWolf", "codium", "discord", "Spotify", "spotify", "Ankama Launcher", "com-ankamagames-wakfu-client-WakfuClient"})
-rules.Multiple({"arandr", "Qalculate-gtk", "dolphin"}, { floating = true })
+rules.Multiple({"arandr", "Qalculate-gtk"}, { floating = true })
 rules.Multiple({"discord", "Spotify", "spotify"}, { screen = screen3 })
 
 --[[--------------------------------------------------------

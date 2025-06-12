@@ -34,7 +34,7 @@ return function(scr)
 
     return modules.new_dual(scr,
         beautiful.bg_modules_memory,
-        beautiful.border_modules,
+        beautiful.bg_modules_memory_icon,
         memory_icon,
         beautiful.bg_modules_memory_icon,
         beautiful.fg_modules_memory_icon,

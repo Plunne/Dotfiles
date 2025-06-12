@@ -29,7 +29,7 @@ return function(scr)
 
     return modules.new_dual(scr,
         beautiful.bg_modules_volume,
-        beautiful.border_modules,
+        beautiful.bg_modules_volume_icon,
         volume_icon,
         beautiful.bg_modules_volume_icon,
         beautiful.fg_modules_volume_icon,

@@ -7,8 +7,8 @@
 ########################
 
 install_calculatine() {
-    git clone https://github.com/Plunne/Calculatine.git ~/.config/calculatine
-    cd ~/.config/calculatine/os/linux
+    git clone https://github.com/Plunne/Calculatine.git ~/.config/Calculatine
+    cd ~/.config/Calculatine/os/linux
     ./calculatine.sh
 }
 

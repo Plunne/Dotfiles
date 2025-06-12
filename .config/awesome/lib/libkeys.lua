@@ -41,7 +41,7 @@ function bind(mod, key, g, d, action)
 end
 
 function bindApp(mod, key, d, app)      
-    return awful.key( mod, key, function() awful.spawn.easy_async_with_shell(app) end, { description=d, group="Apps" })
+    return awful.key( mod, key, function() awful.spawn.with_shell(app) end, { description=d, group="Apps" })
 end
 
 function bindCtl(key, d, action)       
@@ -73,7 +73,7 @@ function clickMod(mod, click, action)
 end
 
 function clickShell(click, app)      
-    return awful.button( {}, click, function() awful.spawn.easy_async_with_shell(app) end )
+    return awful.button( {}, click, function() awful.spawn.with_shell(app) end )
 end
 
 --[[--------------------------------------------------------

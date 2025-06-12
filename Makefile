@@ -53,8 +53,8 @@ Sysinfos = neofetch
 Sysmonitor = htop
 Audio = alsa-utils pulseaudio pulseaudio-alsa playerctl
 Archives = gzip zip unzip unrar
-Filetypes = gvfs exfat-utils ntfs-3g udiskie
-Network = network-manager-applet net-tools
+Filetypes = gvfs exfat-utils ntfs-3g cifs-utils udiskie kio-fuse
+Network = network-manager-applet net-tools samba smbclient
 Polkit = polkit-kde-agent kio-admin
 Printer = cups cups-pdf system-config-printer brother-mfc-j6920dw lib32-glibc
 SYSTEM = \
@@ -70,7 +70,8 @@ SYSTEM = \
 # Softwares
 Office = libreoffice-still
 GFX = krita
-SOFTWARES = $(Office) $(GFX)
+VFX = kdenlive
+SOFTWARES = $(Office) $(GFX) $(VFX)
 
 # Dev
 AVR = avr-gcc avr-libc avrdude avr-gdb # (Personnal because I'm programming AVR uControlers)

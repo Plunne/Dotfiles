@@ -38,7 +38,7 @@ return function(scr)
 
     return modules.new_dual(scr,
         beautiful.bg_modules_date,
-        beautiful.border_modules,
+        beautiful.bg_modules_date_icon,
         date_icon,
         beautiful.bg_modules_date_icon,
         beautiful.fg_modules_date_icon,

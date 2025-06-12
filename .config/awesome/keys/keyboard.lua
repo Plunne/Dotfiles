@@ -57,7 +57,7 @@ keyboard.init = function() awful.keyboard.append_global_keybindings({
 ------------------
 bindApp(super,          enter,  "Terminal",                     terminal),
 bindApp(super,          "b",    "Browser",                      browser),
-bindApp(super,          "c",    "Calulator",                    calc),
+bindApp(super,          "c",    "Calculatine",                    calc),
 bindApp(super,          "e",    "Editor",                       editor),
 bindApp(super,          "p",    "File Manager",                 filemanager),
 bindApp(alt,            space,  "Launcher",                     rofi_launcher),
