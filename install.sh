@@ -51,6 +51,13 @@ misc_fnkeys() {
 	sudo mkinitcpio -p linux-lts
 }
 
+misc_dolphinOpenWith() {
+    echo -e "\n***** MISC DOLPHIN OPEN WITH *****"
+    mkdir $HOME/.config/menus/
+    curl -L https://raw.githubusercontent.com/KDE/plasma-workspace/master/menu/desktop/plasma-applications.menu -o $HOME/.config/menus/applications.menu
+    # run kbuildsycoca6
+}
+
 ###############
 #     ZSH     #
 ###############

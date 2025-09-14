@@ -41,7 +41,7 @@ run.daemons({
     "flameshot",
     "xrdb .Xressources",
     "sh -c ~/.apps/OpenTabletDriver/bin/OpenTabletDriver.Daemon",
-    "XDG_MENU_PREFIX=arch- kbuildsycoca6 --noincremental"
+    "kbuildsycoca6"
 })
 
 --[[--------------------------------------------------------
