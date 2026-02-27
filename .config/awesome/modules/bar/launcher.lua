@@ -22,20 +22,29 @@ BAR LAUNCHER
 
 return function(scr) 
 
-    return modules.new(scr, 4, nil, nil, 0, 4, 2, 2, nil, 0, 4, wibox.widget {
+    return modules.new(scr,
+    	beautiful.menu_bar_gap,
+		nil,
+		nil,
+		0, beautiful.menu_bar_gap, 1, 1,
+		nil,
+		0,
+		0,
+		wibox.widget
+		{
 
-        awful.widget.button {
-            screen  = scr,
-            image   = beautiful.awesome_icon,
-            buttons = require("keys.mouse").menu_mouse(),
+			awful.widget.button {
+			screen  = scr,
+			image   = beautiful.awesome_icon,
+			buttons = require("keys.mouse").menu_mouse(),
 
-        },
-        shape  = modules.rounded(beautiful.rounded_modules),
-        shape_clip = true,
-        shape_border_color = nil,
-        widget = wibox.container.background
-
-    })
+			},
+			shape  = beautiful.menu_shape,
+			shape_clip = true,
+			shape_border_color = nil,
+			widget = wibox.container.background
+		}
+    )
 
 end
 

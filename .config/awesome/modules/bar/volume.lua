@@ -28,6 +28,7 @@ BAR VOLUME
 return function(scr)
 
     return modules.new_dual(scr,
+		beautiful.volume_bar_gap,
         beautiful.bg_modules_volume,
         beautiful.bg_modules_volume_icon,
         volume_icon,

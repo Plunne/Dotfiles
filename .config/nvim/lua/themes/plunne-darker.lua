@@ -8,20 +8,20 @@ cmd("colorscheme default")
 
 local colors = {
         ['main'] = '#9783b1',
-        ['red'] = '#c56259',
-        ['wine'] = '#af0000',
-        ['green'] = '#008700',
-        ['olive'] = '#98c379',
         ['orange'] = '#c07a30',
         ['yellow'] = '#d7af5f',
         ['gold'] = '#af875f',
         ['blue'] = '#4090ff',
-        ['ocean'] = '#005f87',
         ['marine'] = "#005faf",
+        ['ocean'] = '#005f87',
+        ['teal'] = '#1abc9c',
+        ['cyan'] = '#7dcfff',
+        ['green'] = '#008700',
+        ['olive'] = '#98c379',
+        ['red'] = '#c56259',
+        ['wine'] = '#af0000',
         ['cherry'] = '#d70087',
         ['purple'] = '#8871a6',
-        ['cyan'] = '#7dcfff',
-        ['teal'] = '#1abc9c',
         ['dark'] = '#342942',
         ['dark-grey'] = '#503f65',
         ['mid-grey'] = '#6c5689',
@@ -91,6 +91,7 @@ hi('TSConstant', 'purple', '', none)
 hi('TSConstBuiltin', Value, '', none)
 
 local Statement = 'yellow'
+hi('Statement', Statement, '', none)
 hi('TSStatement', Statement, '', none)
 hi('TSConditional', 'teal', '', bold)
 hi('TSRepeat', 'teal', '', bold)
@@ -201,6 +202,7 @@ hi('jsoncKeywordMatch', 'blue', '', none)
 hi('jsoncBraces', 'cherry', '', none)
 
 -- Lua
+hi('@Keyword.lua', Statement, '', none)
 hi('luaTSKeyword', 'cherry', '', italic)
 hi('luaTSFuncBuiltin', 'purple', '', none)
 hi('luaTSProperty', 'purple', '', none)

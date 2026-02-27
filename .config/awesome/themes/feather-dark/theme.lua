@@ -54,53 +54,59 @@ theme.wallpaper = wall_path.."1196934.jpg"
 
 -- Fonts
 theme.fontname  = "JetBrainsMono NerdFont " -- let the last space IMPORTANT!
-theme.font      = theme.fontname .. 12
+theme.font      = theme.fontname .. 11
 
 -- Config
-theme.bar_size      = dpi(32)
-theme.useless_gap   = dpi(4)
-theme.border_width  = dpi(0)
+theme.bar_size      	= dpi(38)
+theme.useless_gap   	= dpi(4)
+theme.border_width  	= dpi(0)
+theme.rounded_corners	= dpi(8)
 theme.maximized_hide_border = true
 
 -- Colors
-theme.color01       = "#9783B1"
-theme.color02       = "#6C5689"
-theme.color03       = "#5E4A77"
-theme.color_dark    = "#503F65"
+theme.color01       = "#9783b1"
+theme.color02       = "#6c5689"
+theme.color03       = "#5e4a77"
+theme.color_dark    = "#503f65"
 theme.color_darker  = "#342942"
-theme.color_black   = "#1E1826"
+theme.color_black   = "#251d2f"
 theme.color_light   = "#c4b8d3"
 theme.color_urgent  = "#ff6c6b"
-theme.color_gold    = "#da8548"
+theme.color_orange  = "#da8548"
+theme.color_gold    = "#af875f"
 theme.color_cherry  = "#d70087"
+theme.color_wine  	= "#af0000"
 theme.color_olive   = "#98be65"
+theme.color_teal   	= "#1abc9c"
 theme.color_cyan    = "#7dcfff"
 theme.color_dark_transparent    = theme.color_dark .. "e5"
 theme.color_darker_transparent  = theme.color_darker .. "e5"
 theme.color_black_transparent   = theme.color_black .. "e5"
 
 -- Bar
-theme.bg_bar    = theme.color_darker
-
--- Focus
-theme.bg_focus      = theme.color01
-theme.fg_focus      = theme.color_light
-theme.bg_normal     = theme.color03
-theme.fg_normal     = theme.color01
-theme.bg_minimize   = theme.color_darker
-theme.fg_minimize   = theme.color01
-theme.bg_urgent     = theme.color_urgent
-theme.fg_urgent     = theme.color_light
+theme.bg_bar    = theme.color_darker_transparent
 
 -- Modules
-theme.modules_font      = theme.fontname .. 12
-theme.bg_modules        = theme.color_darker
-theme.bg_modules_icon   = theme.color02
-theme.fg_modules_icon   = theme.color_darker
-theme.bg_modules_text   = theme.color_darker
-theme.fg_modules_text   = theme.color02
-theme.border_modules    = theme.bg_modules_icon
-theme.rounded_modules   = 4
+theme.modules_font      = theme.font
+theme.border_modules    = theme.color_dark_transparent
+theme.fg_modules        = theme.color_light
+theme.bg_modules        = theme.color_black_transparent
+theme.fg_modules_text   = theme.color01
+theme.bg_modules_text   = theme.bg_modules
+theme.fg_modules_icon   = theme.bg_modules
+theme.bg_modules_icon   = theme.border_modules
+theme.rounded_modules   = 38
+theme.modules_bar_gap   = 6
+
+-- Focus
+theme.fg_focus      = theme.bg_modules
+theme.bg_focus      = theme.color01
+theme.fg_normal     = theme.fg_modules_text
+theme.bg_normal     = theme.bg_modules
+theme.fg_minimize   = theme.border_modules
+theme.bg_minimize   = theme.bg_normal
+theme.fg_urgent     = theme.color_light
+theme.bg_urgent     = theme.color_urgent
 
 -- Brightness
 theme.brightness_icon_font          = theme.modules_font
@@ -109,11 +115,29 @@ theme.bg_modules_brightness         = theme.bg_modules_icon
 theme.bg_modules_brightness_icon    = theme.bg_modules_icon
 theme.fg_modules_brightness_icon    = theme.fg_modules_icon
 theme.bg_modules_brightness_text    = theme.bg_modules_text
-theme.fg_modules_brightness_text    = theme.color_gold
+theme.fg_modules_brightness_text    = theme.color_orange
+theme.brightness_bar_gap 			= theme.modules_bar_gap
 
 -- Clock
-theme.clock_font            = theme.fontname .. 14
+theme.clock_font            = "JetBrainsMono NerdFont "
+theme.clock_size            = 18
+theme.clock_hour_format    	= "%I"
+theme.clock_hour_font      	= theme.clock_font .. "ExtraBold " .. theme.clock_size
+theme.clock_hour_fg      	= theme.color_light
+theme.clock_minutes_format  = "%M"
+theme.clock_minutes_font    = theme.clock_font .. "Regular " .. theme.clock_size
+theme.clock_minutes_fg    	= theme.color01
+theme.clock_seconds_format  = "%S"
+theme.clock_seconds_font    = theme.clock_font .. "Regular ".. theme.clock_size
+theme.clock_seconds_fg    	= theme.color_light
+theme.clock_am_pm_format    = "%p"
+theme.clock_am_pm_font    	= theme.clock_font .. "Regular " .. theme.clock_size
+theme.clock_am_pm_fg    	= theme.color_teal
+theme.clock_sep_format    	= ":"
+theme.clock_sep_font    	= theme.clock_font .. "ExtraBold " .. 11
+theme.clock_sep_fg    		= theme.color_teal
 theme.fg_modules_clock      = theme.color01
+theme.clock_bar_gap 		= theme.modules_bar_gap
 
 -- Date
 theme.date_icon = " "
@@ -124,7 +148,8 @@ theme.bg_modules_date       = theme.bg_modules_icon
 theme.bg_modules_date_icon  = theme.bg_modules_icon
 theme.fg_modules_date_icon  = theme.fg_modules_icon
 theme.bg_modules_date_text  = theme.bg_modules_text
-theme.fg_modules_date_text  = theme.color_cherry
+theme.fg_modules_date_text  = theme.color_teal
+theme.date_bar_gap 			= theme.modules_bar_gap
 
 -- Datetime
 theme.datetime_icon = " "
@@ -136,6 +161,7 @@ theme.bg_modules_datetime_icon  = theme.bg_modules_icon
 theme.fg_modules_datetime_icon  = theme.fg_modules_icon
 theme.bg_modules_datetime_text  = theme.bg_modules_text
 theme.fg_modules_datetime_text  = theme.color_cherry
+theme.datetime_bar_gap 			= theme.modules_bar_gap
 
 -- Memory
 theme.memory_icon = "﬙ "
@@ -146,6 +172,7 @@ theme.bg_modules_memory_icon    = theme.bg_modules_icon
 theme.fg_modules_memory_icon    = theme.fg_modules_icon
 theme.bg_modules_memory_text    = theme.bg_modules_text
 theme.fg_modules_memory_text    = theme.color_cyan
+theme.memory_bar_gap 			= theme.modules_bar_gap
 
 -- Volume
 theme.volume_icon_font          = theme.modules_font
@@ -155,43 +182,58 @@ theme.bg_modules_volume_icon    = theme.bg_modules_icon
 theme.fg_modules_volume_icon    = theme.fg_modules_icon
 theme.bg_modules_volume_text    = theme.bg_modules_text
 theme.fg_modules_volume_text    = theme.color_olive
+theme.volume_bar_gap 			= theme.modules_bar_gap
+
+-- Layoutbox
+theme.layoutbox_bar_gap 	= theme.modules_bar_gap
 
 -- Taglist
 theme.taglist_font          = theme.fontname .. 12
-theme.taglist_bg            = theme.color02
-theme.taglist_fg_focus      = theme.color01
-theme.taglist_bg_focus      = theme.color_darker
-theme.taglist_fg_empty      = theme.color_darker
-theme.taglist_bg_empty      = theme.color_02
-theme.taglist_fg_occupied   = theme.color_darker
-theme.taglist_bg_occupied   = theme.color02
-theme.taglist_fg_urgent     = theme.color_darker
-theme.taglist_bg_urgent     = theme.color02
-theme.taglist_border        = theme.taglist_bg
+theme.taglist_fg            = theme.fg_normal
+theme.taglist_bg            = theme.bg_normal
+theme.taglist_fg_focus      = theme.fg_focus
+theme.taglist_bg_focus      = theme.bg_focus
+theme.taglist_fg_occupied   = theme.taglist_fg
+theme.taglist_bg_occupied   = theme.taglist_bg
+theme.taglist_fg_empty      = theme.taglist_fg
+theme.taglist_bg_empty      = theme.taglist_fg
+theme.taglist_fg_urgent     = theme.taglist_fg
+theme.taglist_bg_urgent     = theme.taglist_bg
+theme.taglist_border        = theme.border_modules
+theme.taglist_rounded       = theme.rounded_modules
 theme.taglist_spacing       = dpi(1)
+theme.taglist_bar_gap 		= theme.modules_bar_gap
 theme.taglist_shape         = modules.rounded(theme.rounded_modules)
 
 -- Tasklist
 theme.tasklist_font         = theme.fontname .. 10
 theme.tasklist_bg           = theme.color01
-theme.tasklist_fg_focus     = theme.color_darker
-theme.tasklist_bg_focus     = theme.color01
-theme.tasklist_fg_normal    = theme.color_darker
-theme.tasklist_bg_normal    = theme.color02
-theme.tasklist_fg_minimize  = theme.color02
-theme.tasklist_bg_minimize  = theme.bg_bar
+theme.tasklist_fg_focus     = theme.fg_focus
+theme.tasklist_bg_focus     = theme.bg_focus
+theme.tasklist_fg_normal    = theme.fg_normal
+theme.tasklist_bg_normal    = theme.bg_normal
+theme.tasklist_fg_minimize  = theme.fg_minimize
+theme.tasklist_bg_minimize  = theme.bg_minimize
 theme.tasklist_fg_urgent    = theme.color_light
 theme.tasklist_bg_urgent    = theme.bg_modules
+theme.tasklist_rounded 		= 4
 theme.tasklist_spacing      = dpi(6)
-theme.tasklist_shape        = modules.rounded(theme.rounded_modules)
+theme.tasklist_bar_gap 		= 4
+theme.tasklist_shape        = modules.rounded(theme.tasklist_rounded)
 theme.tasklist_shape_border_width           = dpi(1)
-theme.tasklist_shape_border_color           = theme.color02
-theme.tasklist_shape_border_color_focus     = theme.color01
-theme.tasklist_shape_border_color_minimized = theme.color03
+theme.tasklist_shape_border_color           = theme.border_modules
+theme.tasklist_shape_border_color_focus     = theme.border_modules
+theme.tasklist_shape_border_color_minimized = theme.border_modules
+
+-- Tagsklist
+theme.tagsklist_bg      = theme.bg_normal
+theme.tagsklist_border  = theme.border_modules
+theme.tagsklist_rounded = theme.rounded_modules
+theme.tagsklist_bar_gap = theme.modules_bar_gap
 
 -- Menu
 theme.menu_submenu_icon = theme_path.."submenu.png"
-theme.menu_height       = dpi(32)
+theme.menu_height       = dpi(38)
 theme.menu_width        = dpi(200)
 theme.menu_font         = theme.fontname .. 10
 theme.menu_fg_normal    = theme.color01
@@ -199,13 +241,16 @@ theme.menu_bg_normal    = theme.color_darker_transparent
 theme.menu_fg_focus     = theme.color_darker
 theme.menu_bg_focus     = theme.color01
 theme.menu_border_width = dpi(0)
-theme.menu_border_color = theme.color_dark
+theme.menu_border_color = theme.border_modules
+theme.menu_bar_gap 		= theme.modules_bar_gap
+theme.menu_shape    	= modules.rounded(4)
 
 -- Systray
 theme.bg_systray            = theme.bg_modules
 theme.systray_border        = theme.border_modules
 theme.systray_rounded       = theme.rounded_modules
 theme.systray_icon_spacing  = dpi(8)
+theme.systray_bar_gap 		= theme.modules_bar_gap
 
 -- Notifications
 theme.notification_font         = theme.fontname .. 10
@@ -214,7 +259,7 @@ theme.notification_bg           = theme.color_black_transparent
 theme.notification_opacity      = 1
 theme.notification_margin       = 20
 theme.notification_spacing      = 10
-theme.notification_shape        = modules.rounded(8)
+theme.notification_shape        = modules.rounded(theme.rounded_corners)
 theme.notification_max_width    = 500
 theme.notification_border_width = 1
 theme.notification_border_color = theme.color_darker
@@ -231,9 +276,9 @@ theme.bg_notify_middle_bar  = theme.color_dark
 
 -- Panel
 theme.bg_panel      = theme.color_black_transparent
-theme.panel_x       = 3840 - 656 - (theme.useless_gap * 2)
+theme.panel_x       = 1920 - 656 - (theme.useless_gap * 2) -- 3840 - 656 - (theme.useless_gap * 2)
 theme.panel_y       = theme.bar_size + theme.useless_gap * 2
-theme.panel_rounded = 8
+theme.panel_rounded = theme.rounded_corners
 
 -- Calendar
 theme.panel_calendar_font           = theme.fontname .. 10
@@ -284,7 +329,7 @@ theme.hotkeys_opacity       = 0.95
 theme.hotkeys_border_width  = dpi(0)
 theme.hotkeys_border_color  = theme.color01
 theme.hotkeys_group_margin  = 80
-theme.hotkeys_shape         = modules.rounded(8)
+theme.hotkeys_shape         = modules.rounded(theme.rounded_corners)
 
 -- Titlebar
 theme.titlebar_font         = theme.fontname .. 10
@@ -362,7 +407,7 @@ theme.layout_cornerse   = layouts_path .. "cornerse.png"
 
 -- Awesome Icon
 theme.awesome_icon = theme_assets.awesome_icon(
-    theme.menu_height, theme.color01, theme.color_dark
+    theme.menu_height, theme.color01, theme.bg_bar
 )
 
 -- Icon theme

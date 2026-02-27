@@ -1,4 +1,5 @@
 local awful = require("awful")
+local beautiful = require("beautiful")
 local modules = require("lib.libmodules")
 
 --[[--------------------------------------------------------
@@ -16,23 +17,32 @@ require("lib.libkeys")
 
 --[[--------------------------------------------------------
 
-BAR LAUNCHER
+BAR LAYOUTBOX
 
 --]]--------------------------------------------------------
 
 return function(scr)
     
-    return modules.new(scr, 4, nil, nil, 4, 0, 2, 2, nil, 0, 0, awful.widget.layoutbox {
-        
-        screen = scr,
-        buttons = {
-            click(left_click,   function () awful.layout.inc( 1) end),
-            click(right_click,  function () awful.layout.inc(-1) end),
-            click(scroll_up,    function () awful.layout.inc(-1) end),
-            click(scroll_down,  function () awful.layout.inc( 1) end)
-        }
+    return modules.new(scr,
+    	beautiful.layoutbox_bar_gap,
+		nil,
+		nil,
+		beautiful.layoutbox_bar_gap, 0, 1, 1,
+		nil,
+		0,
+		0,
+		awful.widget.layoutbox {
+			
+			screen = scr,
+			buttons = {
+				click(left_click,   function () awful.layout.inc( 1) end),
+				click(right_click,  function () awful.layout.inc(-1) end),
+				click(scroll_up,    function () awful.layout.inc(-1) end),
+				click(scroll_down,  function () awful.layout.inc( 1) end)
+			}
 
-    })
+		}
+    )
 
 end
 

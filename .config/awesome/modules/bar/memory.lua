@@ -33,6 +33,7 @@ BAR MEMORY
 return function(scr)
 
     return modules.new_dual(scr,
+	beautiful.memory_bar_gap,
         beautiful.bg_modules_memory,
         beautiful.bg_modules_memory_icon,
         memory_icon,

@@ -24,8 +24,16 @@ return function(scr)
     local mysystray = wibox.widget.systray()
     mysystray.set_screen(scr)
 
-    return modules.new(scr, 4, beautiful.bg_systray, nil, 8, 8, 4, 4, beautiful.systray_border, 1, beautiful.systray_rounded, mysystray)
-
+    return modules.new(scr,
+    	beautiful.systray_bar_gap,
+		beautiful.bg_systray,
+		nil,
+		12, 12, 4, 4,
+		beautiful.systray_border,
+		1,
+		beautiful.systray_rounded,
+		mysystray
+    )
 end
 
 --[[--------------------------------------------------------

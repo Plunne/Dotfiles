@@ -63,8 +63,8 @@ return function(scr)
                 mymemory,
                 myvolume,
                 mydate,
-                mysystray,
                 myclock,
+                mysystray,
                 mylauncher
             }
         }

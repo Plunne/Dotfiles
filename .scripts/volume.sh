@@ -1,27 +1,73 @@
 #!/bin/sh
 
+################
+#     Mute     #
+################
+
+function vol_mute {
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ 1
+}
+
+function vol_unmute {
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ 0
+}
+
+function vol_toggle {
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+}
+
+###############
+#     Set     #
+###############
+
+volume_limit=1.00
+
+function vol_up {
+    vol_unmute
+    wpctl set-volume -l $volume_limit @DEFAULT_AUDIO_SINK@ 1%+
+}
+
+function vol_down {
+    vol_unmute
+    wpctl set-volume -l $volume_limit @DEFAULT_AUDIO_SINK@ 1%-
+}
+
+###############
+#     Get     #
+###############
+
 function get_volume {
-    amixer -D pulse get Master | grep '%' | head -n 1 | awk -F'[' '{print $2}' | awk -F'%' '{print $1}'
+    wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk -F '.' '{print $2}'
 }
 
 function get_muted {
-    amixer -D pulse get Master | grep '%' | head -n 1 | awk -F'[' '{print $3}' | awk -F']' '{print $1}'
+    wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk -F '[' '{print $2}' | awk -F ']' '{print $1}'
 }
 
-volume=`get_volume`
-muted=`get_muted`
+function get_full {
+    wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk -F ' ' '{print $2}' | awk -F '.' '{print $1}'
+}
 
-if [ "$muted" = "off" ]; then
+##################
+#     Volume     #
+##################
+
+volume=`get_full``get_volume`
+muted=`get_muted`
+full=`get_full`
+
+if [ "$muted" = "MUTED" ]; then
     icon_text="婢"
     level_text="muted"
 else
-    if [ "$volume" = "0" ]; then
+    if [ "$volume" = "000" ]; then
         icon_text="婢"
-        level_text="$volume%"
-    else    
+        level_text="0%"
+    else
+	volume=$(sed 's/^0*//' <<< $volume)
         if [  "$volume" -lt "33" ]; then
             icon_text="奄"
-            level_text="$volume%"
+	    level_text="$volume%"
         else
             if [ "$volume" -lt "66" ]; then
                 icon_text="奔"
@@ -29,20 +75,34 @@ else
             else
                 icon_text="墳"
                 level_text="$volume%"
-            fi
+	    fi
         fi
     fi
 fi
 
+###################
+#     Options     #
+###################
+
 case $1 in
     icon)
-	    echo -n "$icon_text "
-    ;;
+	echo -n "$icon_text "
+    	;;
     level)
         echo -n "$level_text"
 	;;
     num)
         echo -n "$volume"
     ;;
+    up)
+        vol_up
+    ;;
+    down)
+        vol_down
+    ;;
+    toggle)
+        vol_toggle
+    ;;
 esac
 
+# EOF

@@ -12,14 +12,14 @@
  ***************************************************************************************/
 
 configuration {
-	icon-theme: 			"Flatery";
-    show-icons:             true;
+    icon-theme: 			"Flatery-Dark";
+    show-icons:    			true;
     display-drun: 			" ";
     display-window: 		" ";
     display-run: 			" ";
     display-ssh: 			" ";
     display-emoji: 			" ";
-	display-calc: 			" ";
+    display-calc: 			" ";
     drun-display-format:    "{name}";
     disable-history:        false;
     fullscreen:             true;
@@ -31,7 +31,7 @@ configuration {
 @theme "/dev/null"
 
 * {
-    font: "JetBrainsMono NerdFont 12";
+    font: "JetBrainsMono NerdFont 11";
 
     background-color: transparent;
 
@@ -39,13 +39,14 @@ configuration {
     padding:    0px;
     spacing:    0px;
 
-    color01:    #9783b1;
-    color02:    #6c5689;
-    color03:    #5e4a77;
-    color-dark:    #503f65;
-    color-darker:    #342942;
-    color-black:    #1e1826;
+    color01:    	#9783b1;
+    color02:    	#6c5689;
+    color03:    	#5e4a77;
+    color-dark:    	#503f65;
+    color-darker:   #342942;
+    color-black:    #251d2f;
     color-light:    #c4b8d3;
+    color-teal:    	#1abc9c;
     color-dark-transparent:     #503f65e5;
     color-darker-transparent:   #342942e5;
     color-black-transparent:    #1e1826e5;
@@ -53,15 +54,17 @@ configuration {
 }
 
 window {
-    background-color:   @color-darker;
+    background-color:   @color-black-transparent;
     location:           center;
     width:              580;
-    y-offset:           -100;
-    border-radius:      4px;
+    y-offset:           0;
+    border:       		1px;
+    border-radius:      8px;
+    border-color:       @color-dark-transparent;
 }
 
 inputbar {
-    background-color:   @color01;
+    background-color:   @color-darker-transparent;
     padding:            18px 30px;
     spacing:            16px;
     children:           [ prompt, entry ];
@@ -69,22 +72,22 @@ inputbar {
 
 prompt {
     font:               "JetBrainsMono NerdFont 20";
-    text-color:         @color-dark;
+    text-color:         @color01;
     vertical-align:     0.5;
 }
 
 entry {
     font:               "JetBrainsMono NerdFont 14";
-    text-color:         @color-dark;
+    text-color:         @color01;
     placeholder:        "Search";
-    placeholder-color:  @color02;
+    placeholder-color:  @color-dark-transparent;
     vertical-align:     0.5;
 }
 
 message {
     text-color:         @color-dark;
     border-color:       @color01;
-    background-color:   @color01;
+    background-color:   @color-black-transparent;
 }
 
 textbox {
@@ -99,7 +102,7 @@ listview {
 }
 
 element {
-    text-color:         @color02;
+    text-color:         @color01;
     padding:            6px;
     spacing:            20px;
 }
@@ -109,7 +112,7 @@ element normal active {
 }
 
 element selected normal, element selected active {
-    text-color:         @color-light;
+    text-color:         @color-teal;
 }
 
 element-icon {

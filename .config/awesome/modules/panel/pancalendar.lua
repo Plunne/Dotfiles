@@ -23,7 +23,7 @@ local styles = {}
 
 styles.month   = {}
 
-styles.header  = {  markup      = function(t) return '<span font="'.. beautiful.panel_calendar_header_font .. '">' .. t .. '</span>' end,
+styles.header  = {  markup      = function(t) return '<span font="'.. beautiful.panel_calendar_header_font .. '"> ' .. t .. '</span>' end,
                     fg_color    = beautiful.fg_panel_calendar_header
 }
 

@@ -48,8 +48,10 @@ hi('Normal', 'light', '', none)
 hi('Comment', 'mid-grey', '', italic)
 hi('Visual', 'dark', 'main', none)
 
--- Ponctuation
-hi('TSPunctDelimiter', 'light-grey', '', none)
+-- Punctuation
+local Delimiter = 'light-grey'
+hi('Delimiter', Delimiter, '', none)
+hi('TSPunctDelimiter', Delimiter, '', none)
 hi('TSPunctBracket', 'light-grey', '', none)
 
 -- Search
@@ -69,7 +71,8 @@ hi('StatusLine', '', '', none)
 hi('StatusLineNC', '', '', none)
 
 --  General Coding
-local General = 'light'
+local General = 'main'
+hi('Identifier', General, '', none)
 hi('TSIdentifier', General, '', none)
 hi('TSVariable', General, '', none)
 hi('TSField', General, '', none)
@@ -77,32 +80,42 @@ hi('TSParameter', General, '', none)
 hi('TSProperty', General, '', none)
 
 local Function = 'blue'
+hi('Function', Function, '', none)
 hi('TSFunction', Function, '', none)
 hi('TSFuncBuiltin', Function, '', none)
 hi('TSMethod', Function, '', none)
 hi('TSConstructor', 'cyan', '', none)
 
-local Value = 'orange'
-hi('TSCharacter', 'olive', '', none)
-hi('TSString', 'olive', '', none)
+local String = 'olive'
+hi('String', String, '', none)
+hi('TSString', String, '', none)
+hi('TSCharacter', String, '', none)
 hi('TSStringEscape', 'marine', '', none)
+
+local Value = 'orange'
+hi('Constant', Value, '', none)
+hi('TSConstant', 'purple', '', none)
 hi('TSNumber', Value, '', none)
 hi('TSBoolean', Value, '', italic)
-hi('TSConstant', 'purple', '', none)
 hi('TSConstBuiltin', Value, '', none)
 
-local Statement = 'yellow'
+local Operator = 'teal'
+hi('Operator', Operator, '', none)
+hi('TSOperator', Operator, '', none)
+
+local Statement = 'teal'
+hi('Statement', Statement, '', bold)
 hi('TSStatement', Statement, '', none)
 hi('TSConditional', 'teal', '', bold)
 hi('TSRepeat', 'teal', '', bold)
 hi('TSLabel', Statement, '', bold)
-hi('TSOperator', 'teal', '', none)
 hi('TSKeyword', Statement, '', italic)
 hi('TSKeywordFunction', Statement, '', bold)
 hi('TSKeywordReturn', Statement, '', bold)
 hi('TSException', Statement, '', bold)
 
 local Preproc = 'purple'
+hi('Preproc', Preproc, '', none)
 hi('TSPreproc', Preproc, '', none)
 hi('TSInclude', Preproc, '', none)
 hi('TSMacro', Preproc, '', none)
@@ -111,7 +124,9 @@ hi('TSFuncMacro', Preproc, '', none)
 hi('TSPreCondit', Preproc, '', none)
 
 local Type = 'teal'
+hi('Type', Type, '', italic)
 hi('TSType', Type, '', italic)
+hi('Title', Type, '', bold)
 hi('TSStorageClass', Type, '', bold)
 hi('TSStructure', Type, '', italic)
 hi('TSTypedef', Type, '', bold)
@@ -119,6 +134,7 @@ hi('TSVariableBuiltin', Type, '', italic)
 hi('TSNamespace', Type, '', italic)
 
 local Special = 'blue'
+hi('Special', Special, '', none)
 hi('TSSpecial', Special, '', none)
 hi('TSSpecialChar', Special, '', none)
 hi('TSTag', Special, '', none)
@@ -138,9 +154,18 @@ hi('Global', 'light', '', bold)
 
 -- Git
 hi('DiffAdd', 'green', '', none)
-hi('DiffDelete', 'red', '', none)
+hi('DiffDelete', 'wine', '', none)
 hi('DiffChange', 'blue', '', none)
 hi('DiffModified', 'blue', '', none)
+hi('GitSignsAdd', 'green', '', none)
+hi('GitSignsAddNr', 'green', '', none)
+hi('GitSignsAddLn', 'green', '', none)
+hi('GitSignsDelete', 'wine', '', none)
+hi('GitSignsDeleteNr', 'wine', '', none)
+hi('GitSignsDeleteLn', 'wine', '', none)
+hi('GitSignsChange', 'blue', '', none)
+hi('GitSignsChangeNr', 'blue', '', none)
+hi('GitSignsChangeLn', 'blue', '', none)
 
 -- Pmenu
 hi('Pmenu', 'light', 'dark-grey', none)
@@ -191,7 +216,7 @@ hi('htmlTSTag', 'purple', '', none)
 hi('htmlTSTagAttribute', 'cherry', '', none)
 
 -- Ini
-hi('dosiniHeader', 'cherry', '', bold)
+hi('dosiniHeader', 'teal', '', bold)
 hi('dosiniLabel', 'light-grey', '', none)
 hi('dosiniValue', 'olive', '', none)
 
@@ -247,6 +272,13 @@ hi('markdownCode', 'orange', '', none)
 hi('markdownCodeBlock', 'orange', '', none)
 hi('markdownCodeDelimiter', 'light-grey', '', none)
 
+-- Nix
+hi('nixAttributeSet', Function, '', none)
+hi('nixAttributeAssignment', Operator, '', none)
+hi('nixAttributeDefinition', Delimiter, '', none)
+hi('nixStringDelimiter', String, '', none)
+hi('nixListBracket', Function, '', none)
+
 -- Php
 hi('phpTSVariable', 'cherry', '', bold)
 hi('phpTSKeyword', 'cherry', '', italic)
@@ -256,6 +288,10 @@ hi('phpTSKeywordFunction', 'purple', '', bold)
 hi('pythonTSInclude', 'orange', '', bold)
 hi('pythonTSKeywordFunction', 'purple', '', bold)
 hi('pythonTSField', 'blue', '', none)
+
+-- Toml
+hi('tomlTable', 'teal', '', bold)
+hi('tomlDotInKey', 'orange', '', bold)
 
 -- Yaml
 hi('yamlTSField', 'purple', '', none)

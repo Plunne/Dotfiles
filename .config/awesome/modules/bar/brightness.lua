@@ -29,6 +29,7 @@ BAR BRIGHTNESS
 return function(scr)
 
     return modules.new_dual(scr,
+	beautiful.brightness_bar_gap,
         beautiful.bg_modules_brightness,
         beautiful.bg_modules_brightness_icon,
         brightness_icon,

@@ -7,11 +7,11 @@ export PATH=$PATH:~/.platformio/penv/bin:~/.emacs.d/bin:/bin/gdb
 
 # APPS
 export TERMINAL="konsole"
-export EDITOR="vim"
-export VISUAL="vim"
+export EDITOR="nvim"
+export VISUAL="nvim"
 export READER="firefox"
 export IMAGE="sxiv"
-export VIDEO="haruna"
+export VIDEO="vlc"
 export PAGER="less"
 export BROWSER="firefox"
 export WM="awesome"
@@ -22,7 +22,7 @@ export XDG_CACHE_HOME=${XDG_CACHE_HOME:="$HOME/.cache"}
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:="$HOME/.config"}
 
 # QT
-export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_QPA_PLATFORMTHEME=qt6ct
 
 # LANG
 export LC_ALL=en_US.UTF-8

@@ -17,7 +17,7 @@ Select the theme by setting this powerful global variable.
 
 --]]--------------------------------------------------------
 
-theme_name = "feather-white"
+theme_name = "feather-dark"
 
 --[[--------------------------------------------------------        
 
@@ -29,10 +29,10 @@ differents applications like terminal, file manager, etc.
 --]]--------------------------------------------------------
 
 -- Apps
-terminal        = "konsole"
+terminal        = "alacritty"
 browser         = "firefox"
 editor          = "~/.scripts/emacsclient.sh"
-filemanager     = "dolphin"
+filemanager     = "pcmanfm"
 editor_cmd      = terminal .. " -e " .. "nvim"
 fm_cmd          = terminal .. " -e " .. "ranger"
 rofi_launcher   = "rofi -no-lazy-grab -show drun -theme " .. theme_name
@@ -40,13 +40,13 @@ rofi_calc       = "rofi -show calc -no-show-match -no-sort -terse -modi calc"
 calc            = terminal .. " -e " .. "calculatine"
 
 -- Brightness
-brightness_up   = "brightnessctl set 5%+"
-brightness_down = "brightnessctl set 5%-"
+brightness_up   = "~/.scripts/brightness.sh up"
+brightness_down = "~/.scripts/brightness.sh down"
 
 -- Volume
-volume_up       = "amixer sset Master unmute && amixer set Master 2%+"
-volume_down     = "amixer sset Master unmute && amixer set Master 2%-"
-volume_toggle   = "amixer set Master toggle"
+volume_up       = "~/.scripts/volume.sh up"
+volume_down     = "~/.scripts/volume.sh down"
+volume_toggle   = "~/.scripts/volume.sh toggle"
 
 player_toggle   = "playerctl play-pause"
 player_next     = "playerctl next"
@@ -67,12 +67,13 @@ I created a variable for each monitor I use.
 --]]--------------------------------------------------------
 
 -- Screens that I use
-screen1 = "DisplayPort-2"   -- Primary
-screen2 = "DVI-D-0"         -- Right
-screen3 = "HDMI-A-0"        -- Left
+screen1 = "Virtual-1"   -- Primary
+--screen1 = "DisplayPort-2"   -- Primary
+--screen2 = "DVI-D-0"         -- Right
+--screen3 = "HDMI-A-0"        -- Left
 
 -- Screen that will display notifications
-notiscreen = screen3
+notiscreen = screen1
 
 --[[--------------------------------------------------------        
 

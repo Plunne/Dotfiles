@@ -56,7 +56,7 @@ local function get_tag_tasklist(in_scr, in_tag)
                 top = 2,
                 bottom = 2,
                 left  = -6,
-                right = 6,
+                right = 8,
                 widget = wibox.container.margin,
 			},
 			layout = wibox.layout.stack,
@@ -78,38 +78,47 @@ TAGSKLIST
 
 return function(scr)
 	
-	return modules.new(scr, 4, beautiful.taglist_bg, nil, 1, 1, 1, 1, beautiful.taglist_border, 1, beautiful.rounded_modules, awful.widget.taglist {
-
-		screen = scr,
-		filter = awful.widget.taglist.filter.noempty,
-		buttons = require("keys.mouse").taglist_mouse(),
-		widget_template = {
-			{
+	return modules.new(
+		scr,
+		beautiful.tagsklist_bar_gap,
+		beautiful.tagsklist_bg,
+		nil,
+		2, 2, 2, 2,
+		beautiful.tagsklist_border,
+		1,
+		beautiful.tagsklist_rounded,
+		awful.widget.taglist
+		{
+			screen = scr,
+			filter = awful.widget.taglist.filter.noempty,
+			buttons = require("keys.mouse").taglist_mouse(),
+			widget_template = {
 				{
-					-- tag
 					{
-						id = "text_role",
-						widget = wibox.widget.textbox,
-						align = "center"
-					},
-					-- tasklist
-					{
-						id = "tasklist_placeholder",
+						-- tag
+						{
+							id = "text_role",
+							widget = wibox.widget.textbox,
+							align = "center"
+						},
+						-- tasklist
+						{
+							id = "tasklist_placeholder",
+							layout = wibox.layout.fixed.horizontal,
+						},
 						layout = wibox.layout.fixed.horizontal,
 					},
-					layout = wibox.layout.fixed.horizontal,
+					id = "background_role",
+					widget = wibox.container.background
 				},
-				id = "background_role",
-				widget = wibox.container.background
-			},
-			layout = wibox.layout.fixed.horizontal,
+				layout = wibox.layout.fixed.horizontal,
 
-			create_callback = function(self, tag, index, _)
-				self:get_children_by_id("tasklist_placeholder")[1]:add(get_tag_tasklist(scr, scr.tags[tag.index]))
-			end
-		}
-    })
-
+				create_callback = function(self, tag, index, _)
+					self:get_children_by_id("tasklist_placeholder")[1]:add(get_tag_tasklist(scr, scr.tags[tag.index]))
+				end
+			}
+    	}
+	)
 end
 
 --[[--------------------------------------------------------

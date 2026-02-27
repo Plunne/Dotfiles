@@ -37,6 +37,7 @@ BAR DATE
 return function(scr)
 
     return modules.new_dual(scr,
+	beautiful.date_bar_gap,
         beautiful.bg_modules_date,
         beautiful.bg_modules_date_icon,
         date_icon,

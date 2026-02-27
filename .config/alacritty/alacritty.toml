@@ -1,0 +1,72 @@
+############################
+#     Plunne Alacritty     #
+############################
+
+[window]
+opacity = 0.9
+blur = false
+padding = { x = 15, y = 15 }
+decorations_theme_variant = "Dark" # "Light" "None"
+
+[colors.primary]
+background = "#0f0c13"
+foreground = "#9783b1"
+
+[colors.normal]
+black	= "#342942"
+red	= "#ff6c6b"
+green	= "#1abc9c"
+yellow	= "#ecbe7b"
+blue	= "#7a619a"
+magenta	= "#51afef"
+cyan	= "#7dcfff"
+white 	= "#c4b8d3"
+
+[colors.bright]
+black	= "#342942"
+red	= "#ff6c6b"
+green	= "#1abc9c"
+yellow	= "#ecbe7b"
+blue	= "#7a619a"
+magenta	= "#51afef"
+cyan	= "#7dcfff"
+white 	= "#c4b8d3"
+
+[font]
+size = 11.75
+normal 		= { family = "GeistMonoNerdFont", style = "Medium" }
+bold 		= { family = "GeistMonoNerdFont", style = "Black" }
+italic 		= { family = "JetBrainsMono Nerd Font", style = "Italic" }
+bold_italic 	= { family = "GeistMonoNerdFont", style = "Bold Italic" }
+offset 		= { x = 0, y = 0 }
+glyph_offset 	= { x = 0, y = 0 }
+builtin_box_drawing = true
+
+[cursor]
+style = { shape = "Beam", blinking = "Always" }
+thickness = 0.2
+blink_interval = 750
+unfocused_hollow = false
+
+[scrolling]
+history = 10000
+multiplier = 10
+
+
+#########
+# Other #
+#########
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+save_to_clipboard = true
+
+############
+# Keybinds #
+############
+
+[keyboard]
+bindings = [
+    { key = "C", mods = "Control", action = "Copy" },
+    { key = "V", mods = "Control", action = "Paste" }
+]

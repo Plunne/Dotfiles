@@ -1,65 +1,61 @@
 local cmd = vim.cmd
+local opt = vim.opt
+local o = vim.o
+local b = vim.bo
 local g = vim.g
-
-local scopes = {o = vim.o, b = vim.bo, w = vim.wo}
-
-local function opt(scope, key, value)
-    scopes[scope][key] = value
-    if scope ~= "o" then
-        scopes["o"][key] = value
-    end
-end
+local w = vim.wo
 
 ---------------------
 --     Settings    --
 ---------------------
 
+local indent = 4
+
 -- cmd
-cmd("set noshowmode")
-cmd("set nowrap")
 cmd("au BufNewFile,BufRead /*.rasi setf css")
--- opt
-opt("o", "background", "dark")
-opt("o", "encoding", "utf-8")
-opt("o", "fileencoding", "utf-8")
-opt("o", "syntax", "enable")
-opt("o", "syntax", "on")
-opt("o", "mouse", "a")
-opt("o", "title", true)
-opt("o", "cursorline", true)
-opt("o", "termguicolors", true)
-opt("w", "number", true)
-opt("o", "numberwidth", 3)
-opt("o", "cmdheight", 1)
-opt("o", "history", 1000)
-opt("w", "signcolumn", "yes")
-opt("o", "updatetime", 250)             -- update interval for gitsigns 
-opt("o", "clipboard", "unnamedplus")
+
+o.showmode = false
+o.wrap = false
+w.relativenumber = true
+o.background = "dark"
+o.encoding = "utf-8"
+o.fileencoding = "utf-8"
+o.syntax = "enable"
+o.syntax = "on"
+o.mouse = "a"
+o.title = true
+o.cursorline = true
+o.termguicolors = true
+w.number = true
+o.numberwidth = 3
+o.cmdheight = 1
+o.history = 1000
+w.signcolumn = "yes"
+o.updatetime = 250            -- update interval for gitsigns 
+o.clipboard = "unnamedplus"
 -- scroll
-opt("o", "scrolloff", 1)
-opt("o", "sidescrolloff", 10)
+o.scrolloff = 1
+o.sidescrolloff = 10
 -- split
-opt("o", "splitright", true)
-opt("o", "splitbelow", true)
+o.splitright = true
+o.splitbelow = true
 -- search
-opt("o", "hlsearch", true)
-opt("o", "incsearch", true)
-opt("o", "ignorecase", true)
-opt("o", "smartcase", true)
+o.hlsearch = true
+o.incsearch = true
+o.ignorecase = true
+o.smartcase = true
 -- indent
-opt("b", "autoindent", true)
-opt("b", "tabstop", 4)
-opt("b", "expandtab", false)
-opt("b", "shiftwidth", 4)
-opt("o", "shiftround", true)
-opt("o", "smarttab", true)
+b.autoindent = true
+b.tabstop = indent
+b.expandtab = false
+b.shiftwidth = indent
+o.shiftround = true
+o.smarttab = true
 -- g
 g.mapleader = " "
 g.auto_save = 0
 g.one_nvim_transparent_bg = true
-
 -- blankline
-local indent = 4
 g.indentLine_enabled = 1
 g.indent_blankline_char = "▎"
 g.indent_blankline_filetype_exclude = {"help", "terminal"}

@@ -38,7 +38,7 @@ MODULES
 
 --]]--------------------------------------------------------
 
-modules.new = function(scr, margin_bar, module_bg, module_fg, l, r, t, b, border_col, border_w, round, module_widget)
+modules.new = function(scr, bar_gap, module_bg, module_fg, l, r, t, b, border_col, border_w, round, module_widget)
     
     return wibox.widget {
 
@@ -56,20 +56,20 @@ modules.new = function(scr, margin_bar, module_bg, module_fg, l, r, t, b, border
             shape_border_color = border_col,
             widget = wibox.container.background
         },
-        left = margin_bar * 0.75,
-        right = margin_bar * 0.75,
-        top = margin_bar,
-        bottom = margin_bar,
+        left = bar_gap * 0.75,
+        right = bar_gap * 0.75,
+        top = bar_gap,
+        bottom = bar_gap,
         widget = wibox.container.margin
     }
 end
 
-modules.new_dual = function(scr, module_color, border_color, module_icon, bg_icon, fg_icon, module_text, bg_text, fg_text, shortcuts)
+modules.new_dual = function(scr, bar_gap, module_color, border_color, module_icon, bg_icon, fg_icon, module_text, bg_text, fg_text, shortcuts)
 
-    return modules.new(scr, 4, module_color, nil, 0, 0, 0, 0, border_color, 1, beautiful.rounded_modules,
+    return modules.new(scr, bar_gap, module_color, nil, 0, 0, 0, 0, border_color, 1, beautiful.rounded_modules,
     wibox.widget {
-        modules.new(scr, 1, bg_icon, fg_icon, 6, 0, 0, 0, nil, 0, beautiful.rounded_modules, module_icon),
-        modules.new(scr, 1, bg_text, fg_text, 6, 6, 0, 0, nil, 0, beautiful.rounded_modules, module_text),
+        modules.new(scr, 1, bg_icon, fg_icon, 10, 0, 0, 2, nil, 0, beautiful.rounded_modules, module_icon),
+        modules.new(scr, 1, bg_text, fg_text, 10, 10, 0, 2, nil, 0, beautiful.rounded_modules, module_text),
         buttons = shortcuts,
         layout  = wibox.layout.align.horizontal
     })

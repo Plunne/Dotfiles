@@ -22,11 +22,11 @@
 #################
 
 setup() {
-    misc_fnkeys
-    zsh
+    # misc_fnkeys
+    # zsh
     dotfiles
-    install_apps
-    clean
+    # install_apps
+    # clean
 }
 
 ###############
