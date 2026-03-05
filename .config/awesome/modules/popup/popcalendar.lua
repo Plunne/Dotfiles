@@ -23,21 +23,21 @@ local styles = {}
 
 styles.month   = {}
 
-styles.header  = {  markup      = function(t) return '<span font="'.. beautiful.panel_calendar_header_font .. '"> ' .. t .. '</span>' end,
-                    fg_color    = beautiful.fg_panel_calendar_header
+styles.header  = {  markup      = function(t) return '<span font="'.. beautiful.panel_calendar_header_font .. '"> ' .. t .. ' </span>' end,
+                    fg_color    = beautiful.panel_calendar_header_fg
 }
 
 styles.weekday = {  markup      = function(t) return '<span font="'.. beautiful.panel_calendar_weekday_font .. '"> ' .. t .. ' </span>' end,
-                    fg_color    = beautiful.fg_panel_calendar_weekday
+                    fg_color    = beautiful.panel_calendar_weekday_fg
 }
 
 styles.normal  = {  markup      = function(t) return '<span font="'.. beautiful.panel_calendar_normal_font .. '"> ' .. t .. ' </span>' end,
 }
 
 styles.focus   = {  markup      = function(t) return '<span font="'.. beautiful.panel_calendar_focus_font .. '"> ' .. t .. ' </span>' end,
-                    fg_color    = beautiful.fg_panel_calendar_focus,
-                    bg_color    = beautiful.bg_panel_calendar_focus,
-                    shape       = modules.circle()
+                    fg_color    = beautiful.panel_calendar_focus_fg,
+                    bg_color    = beautiful.panel_calendar_focus_bg,
+                    shape       = beautiful.panel_calendar_focus_shape
 }
 
 --[[--------------------------------------------------------
@@ -61,7 +61,7 @@ local function decorate_cell(widget, flag, date)
     -- Change bg color for weekends
     local d = { year=date.year, month=(date.month or 1), day=(date.day or 1) }
     local weekday = tonumber(os.date("%w", os.time(d)))
-    local default_fg = (weekday==0 or weekday==6) and beautiful.fg_panel_calendar_weekend or beautiful.fg_panel_calendar_week
+    local default_fg = (weekday==0 or weekday==6) and beautiful.panel_calendar_weekend_fg or beautiful.panel_calendar_week_fg
 
     local ret = wibox.widget {
         {
@@ -81,13 +81,14 @@ end
 
 --[[--------------------------------------------------------
 
-PANCALENDAR
+POPCALENDAR
 
 --]]--------------------------------------------------------
 
-local pancalendar = wibox.widget {
+return wibox.widget {
     date     = os.date("*t"),
     fn_embed = decorate_cell,
+    week_numbers = true,
     widget   = wibox.widget.calendar.month
 }
 
@@ -96,5 +97,3 @@ local pancalendar = wibox.widget {
 EOF
 
 --]]--------------------------------------------------------
-
-return pancalendar

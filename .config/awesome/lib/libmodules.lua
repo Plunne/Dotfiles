@@ -32,6 +32,10 @@ modules.rounded = function(round)
     return function(cr, w, h) return gears.shape.rounded_rect(cr, w, h, round) end
 end
 
+modules.rounded_tl = function(round)
+    return function(cr, w, h) return gears.shape.partially_rounded_rect(cr, w, h, true, false, false, false, round) end
+end
+
 --[[--------------------------------------------------------
 
 MODULES
@@ -66,10 +70,10 @@ end
 
 modules.new_dual = function(scr, bar_gap, module_color, border_color, module_icon, bg_icon, fg_icon, module_text, bg_text, fg_text, shortcuts)
 
-    return modules.new(scr, bar_gap, module_color, nil, 0, 0, 0, 0, border_color, 1, beautiful.rounded_modules,
+    return modules.new(scr, bar_gap, module_color, nil, 0, 0, 0, 0, border_color, 1, beautiful.modules_rounded,
     wibox.widget {
-        modules.new(scr, 1, bg_icon, fg_icon, 10, 0, 0, 2, nil, 0, beautiful.rounded_modules, module_icon),
-        modules.new(scr, 1, bg_text, fg_text, 10, 10, 0, 2, nil, 0, beautiful.rounded_modules, module_text),
+        modules.new(scr, 1, bg_icon, fg_icon, 10, 0, 0, 2, nil, 0, beautiful.modules_rounded, module_icon),
+        modules.new(scr, 1, bg_text, fg_text, 10, 10, 0, 2, nil, 0, beautiful.modules_rounded, module_text),
         buttons = shortcuts,
         layout  = wibox.layout.align.horizontal
     })

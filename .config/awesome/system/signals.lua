@@ -56,7 +56,7 @@ local function set_corners_radius(c,r)
 end
 
 local function set_window_corners(c)
-	if c.width == c.screen.geometry.width and not c.floating then
+	if c.maximized or c.fullscreen or (c.width == c.screen.geometry.width and not c.floating) then
 		set_corners_radius(c, 0)
 	else
 		set_corners_radius(c, beautiful.rounded_corners)
@@ -65,7 +65,7 @@ end
 
 client.connect_signal("property::fullscreen",		function(c) set_window_corners(c) end)
 client.connect_signal("property::maximized",		function(c) set_window_corners(c) end)
-client.connect_signal("property::width",		function(c) set_window_corners(c) end)
+client.connect_signal("property::width",			function(c) set_window_corners(c) end)
 client.connect_signal("property::floating", 		function(c) set_window_corners(c) end)
 
 --[[--------------------------------------------------------

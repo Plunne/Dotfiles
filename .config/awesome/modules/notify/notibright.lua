@@ -15,12 +15,12 @@ local notify = require("lib.libnotify")
 local notibright = {}
 
 -- Setup modules
-local notibright_icon = notify.set_icon('~/.scripts/brightness.sh icon')
-local notibright_level = notify.set_level('~/.scripts/brightness.sh level')
-local notibright_bar = notify.set_bar('~/.scripts/brightness.sh num')
+local notibright_icon = notify.get_icon('~/.scripts/brightness.sh icon')
+local notibright_level = notify.get_level('~/.scripts/brightness.sh level')
+local notibright_slider = notify.get_slider('~/.scripts/brightness.sh num')
 
 -- Notification Module
-local noti = notify.middle(notibright_icon, notibright_level, notibright_bar)
+local noti = notify.middle(notibright_icon, notibright_level, notibright_slider)
 
 -- Init timer
 local timer = notify.set_timer(noti, 2)

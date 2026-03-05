@@ -26,7 +26,7 @@ return function(scr)
     	beautiful.menu_bar_gap,
 		nil,
 		nil,
-		0, beautiful.menu_bar_gap, 1, 1,
+		0, beautiful.menu_bar_gap, 2, 2,
 		nil,
 		0,
 		0,

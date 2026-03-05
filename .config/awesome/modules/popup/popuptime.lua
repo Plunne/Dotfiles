@@ -15,18 +15,18 @@ local wibox = require("wibox")
 
 --[[--------------------------------------------------------
 
-PANUPTIME
+POPUPTIME
 
 --]]--------------------------------------------------------
 
-local panuptime = wibox.widget {
+return wibox.widget {
     {
         font = beautiful.panel_uptime_font,
         align = 'center',
         valign = 'center',
         widget = awful.widget.watch('uptime -p' , 0.1)
     },
-    fg = beautiful.fg_panel_uptime,
+    fg = beautiful.panel_uptime_fg,
     widget = wibox.container.background
 }
 
@@ -35,5 +35,3 @@ local panuptime = wibox.widget {
 EOF
 
 --]]--------------------------------------------------------
-
-return panuptime

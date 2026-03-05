@@ -16,8 +16,8 @@ local modules = require("lib.libmodules")
 local volume_icon = awful.widget.watch('sh -c \'~/.scripts/volume.sh icon\'' , 0.1)
 local volume_text = awful.widget.watch('sh -c \'~/.scripts/volume.sh level\'' , 0.1)
 
-volume_icon.font = beautiful.modules_volume_icon_font
-volume_text.font = beautiful.modules_volume_text_font
+volume_icon.font = beautiful.volume_icon_font
+volume_text.font = beautiful.volume_text_font
 
 --[[--------------------------------------------------------
 
@@ -29,14 +29,14 @@ return function(scr)
 
     return modules.new_dual(scr,
 		beautiful.volume_bar_gap,
-        beautiful.bg_modules_volume,
-        beautiful.bg_modules_volume_icon,
+        beautiful.volume_bg,
+        beautiful.volume_icon_bg,
         volume_icon,
-        beautiful.bg_modules_volume_icon,
-        beautiful.fg_modules_volume_icon,
+        beautiful.volume_icon_bg,
+        beautiful.volume_icon_fg,
         volume_text,
-        beautiful.bg_modules_volume_text,
-        beautiful.fg_modules_volume_text,
+        beautiful.volume_text_bg,
+        beautiful.volume_text_fg,
         require("keys.mouse").volume_mouse())
     
 end

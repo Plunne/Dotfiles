@@ -24,40 +24,52 @@ return function(scr)
 
     return modules.new(scr,
     	beautiful.tasklist_bar_gap,
-	"#00000000",
-	nil,
-	0, 0, 0, 0,
-	nil,
-	0,
-	beautiful.tasklist_rounded,
-	awful.widget.tasklist
-	{
-	    screen   = scr,
-	    filter   = awful.widget.tasklist.filter.currenttags,
-	    buttons  = require("keys.mouse").tasklist_mouse(),
-	    layout = { max_widget_size = 250, layout = wibox.layout.flex.horizontal },
-	    widget_template = {
+		"#00000000",
+		nil,
+		0, 0, 0, 0,
+		nil,
+		0,
+		beautiful.tasklist_rounded,
+		awful.widget.tasklist
 		{
-			{
-			{
-				{{ id = 'icon_role', widget = wibox.widget.imagebox }, margins = 2, widget = wibox.container.margin},
-							{{ id = 'text_role', widget = wibox.widget.textbox 	}, margins= { left = 6 }, widget = wibox.container.margin},
-				layout = wibox.layout.fixed.horizontal,
+			screen   = scr,
+			filter   = awful.widget.tasklist.filter.currenttags,
+			buttons  = require("keys.mouse").tasklist_mouse(),
+			base_layout = {
+				spacing = beautiful.tasklist_bar_spacing,
+				layout = wibox.layout.flex.horizontal,
 			},
-			valign = 'center',
-			halign = 'left',
-			widget = wibox.container.place,
-			},
-			top = 4,
-			bottom = 4,
-			left  = 8,
-			right = 16,
-			widget = wibox.container.margin,
-		},
-		id     = 'background_role',
-		widget = wibox.container.background,
-	    }
-	}
+			widget_template = {
+				{
+					{
+						{
+							{
+								{ id = 'icon_role', widget = wibox.widget.imagebox },
+								margins = { left = beautiful.tasklist_icon_spacing },
+								widget = wibox.container.margin
+							},
+							{
+								{ id = 'text_role', widget = wibox.widget.textbox },
+								margins = { left = beautiful.tasklist_text_spacing },
+								widget = wibox.container.margin
+							},
+							layout = wibox.layout.fixed.horizontal,
+						},
+						valign = 'center',
+						halign = beautiful.tasklist_alignment,
+						forced_width = beautiful.tasklist_max_size,
+						widget = wibox.container.place,
+					},
+					top = beautiful.tasklist_margin_top,
+					bottom = beautiful.tasklist_margin_bottom,
+					left  = beautiful.tasklist_margin_left,
+					right = beautiful.tasklist_margin_right,
+					widget = wibox.container.margin,
+				},
+				id     = 'background_role',
+				widget = wibox.container.background,
+			}
+		}
     )
 
 end

@@ -22,7 +22,7 @@ LOGOUT BUTTON
 --]]--------------------------------------------------------
 
 local logout_button = wibox.widget {
-    markup = '<span foreground="' .. beautiful.fg_panel_powermenu_logout .. '">  </span>',
+    markup = '<span foreground="' .. beautiful.panel_powermenu_logout_fg .. '">  </span>',
     font = beautiful.panel_powermenu_logout_font,
     align = 'center',
     valign = 'center',
@@ -37,7 +37,7 @@ RESTART BUTTON
 --]]--------------------------------------------------------
 
 local restart_button = wibox.widget {
-    markup = '<span foreground="' .. beautiful.fg_panel_powermenu_restart .. '">  </span>',
+    markup = '<span foreground="' .. beautiful.panel_powermenu_restart_fg .. '">  </span>',
     font = beautiful.panel_powermenu_restart_font,
     align = 'center',
     valign = 'center',
@@ -52,7 +52,7 @@ POWER BUTTON
 --]]--------------------------------------------------------
 
 local power_button = wibox.widget {
-    markup = '<span foreground="' .. beautiful.fg_panel_powermenu_poweroff .. '">  </span>',
+    markup = '<span foreground="' .. beautiful.panel_powermenu_poweroff_fg .. '">  </span>',
     font = beautiful.panel_powermenu_poweroff_font,
     align = 'center',
     valign = 'center',
@@ -62,11 +62,11 @@ local power_button = wibox.widget {
 
 --[[--------------------------------------------------------
 
-PANPOWERMENU
+POPPOWERMENU
 
 --]]--------------------------------------------------------
 
-local panpowermenu = wibox.widget {
+return wibox.widget {
     logout_button,
     restart_button,
     power_button, 
@@ -78,5 +78,3 @@ local panpowermenu = wibox.widget {
 EOF
 
 --]]--------------------------------------------------------
-
-return panpowermenu

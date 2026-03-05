@@ -43,7 +43,7 @@ UPDATE PROGRESSBAR
 
 --]]--------------------------------------------------------
 
-notify.update_progressbar = function(w, out)
+notify.update_slider = function(w, out)
     local val = tonumber(out)
     w.value = val
 end
@@ -54,33 +54,33 @@ MODULES
 
 --]]--------------------------------------------------------
 
--- Set icon
-notify.set_icon = function(cmd) 
+-- Get icon
+notify.get_icon = function(cmd) 
     return awful.widget.watch('sh -c \'' .. cmd .. '\'', 0.1, function(widget, stdout) widget:set_text(stdout:gsub("[\n]+$", "")) end)
 end
 
--- Set level
-notify.set_level = function(cmd)
+-- Get level
+notify.get_level = function(cmd)
     return awful.widget.watch('sh -c \'' .. cmd .. '\'', 0.1, function(widget, stdout) widget:set_text(stdout:gsub("[\n]+$", "")) end)
 end
 
--- Set progress bar
-notify.set_bar = function(cmd)
+-- Get slider
+notify.get_slider = function(cmd)
 
-    local bar = wibox.widget {
-        color               = beautiful.fg_notify_middle_bar,
-        background_color    = beautiful.bg_notify_middle_bar,
+    local slider = wibox.widget {
+        color               = beautiful.notify_slider_fg,
+        background_color    = beautiful.notify_slider_bg,
         max_value           = 100,
         value               = 30,
-        forced_height       = beautiful.notify_bar_size,
-        forced_width        = 170,
-        shape               = modules.rounded(beautiful.notify_bar_rounded),
-        bar_shape           = modules.rounded(beautiful.notify_bar_rounded),
+        forced_height       = beautiful.notify_slider_height,
+        forced_width        = beautiful.notify_slider_width,
+        shape               = modules.rounded(beautiful.notify_slider_rounded),
+        bar_shape           = modules.rounded(beautiful.notify_slider_rounded),
         widget = wibox.widget.progressbar
     }
-    awful.widget.watch('sh -c \''..cmd..'\'', 0.1, function(_, stdout) notify.update_progressbar(bar, stdout:gsub("[\n]+$", "")) end)
+    awful.widget.watch('sh -c \''..cmd..'\'', 0.1, function(_, stdout) notify.update_slider(slider, stdout:gsub("[\n]+$", "")) end)
 
-    return bar
+    return slider
 end
 
 --[[--------------------------------------------------------
@@ -90,30 +90,34 @@ NOTIFY
 --]]--------------------------------------------------------
 
 -- Middle
-notify.middle = function(icon, num, bar)
+notify.middle = function(icon, num, slider)
     
     return awful.popup {
         screen = awful.screen.focused(),
-        fg = beautiful.fg_notify_middle,
-        bg = beautiful.bg_notify_middle,
+        fg = beautiful.notify_fg,
+        bg = beautiful.notify_bg,
         ontop = true,
         visible = false,
-        shape = beautiful.notification_shape,
+        shape = beautiful.notify_shape,
         placement = awful.placement.centered,
         widget = {
             {
                 {
                     {
                         font = beautiful.notify_icon_font,
+						fg = beautiful.notify_icon_fg,
+						bg = beautiful.notify_icon_bg,
                         align = 'center',
                         valign = 'center',
                         widget = icon
                     },
                     widget = wibox.container.margin(self, 14, -30, 0, 0),
                 },
-                bar,
+                slider,
                 {
                     font = beautiful.notify_text_font,
+					fg = beautiful.notify_text_fg,
+					bg = beautiful.notify_text_bg,
                     align = 'center',
                     valign = 'center',
                     widget = num

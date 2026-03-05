@@ -16,6 +16,7 @@ Import all modules required for the Mouse configuration.
 
 local awful = require("awful")
 local panel = require("custom.panel")
+local calentime = require("custom.calentime")
 local hotkeys_popup = require("awful.hotkeys_popup")
 
 --[[--------------------------------------------------------
@@ -38,10 +39,21 @@ Function used to close popups everywhere outside of them.
 
 --]]--------------------------------------------------------
 
-local function hide_popup()
 
-    mymainmenu:hide()
-    panel.visible = false
+local function hide_popups(hide_except)
+
+	local popups_to_hide = {
+
+		menu 		= function() mymainmenu:hide() end,
+		panel 		= function() panel.visible = false end,
+		calentime 	= function() calentime.visible = false end,
+	}
+
+	for pop, hide in pairs(popups_to_hide) do
+		if pop ~= hide_except then
+			hide()
+		end
+	end
 
 end
 
@@ -65,7 +77,7 @@ Main mouse bindings function. This is where I set all my general mouse bindings.
 
 mouse.init = function() awful.mouse.append_global_mousebindings({
 
-    click(left_click, function() hide_popup() end),
+    click(left_click, function() hide_popups() end),
     click(right_click, function() mymainmenu:toggle() end)
 
 })end
@@ -78,12 +90,12 @@ Bindings used for clients interactions.
 
 --]]--------------------------------------------------------
 
-mouse.clientbuttons = function() 
+mouse.clientbuttons = function()
 
     client.connect_signal("request::default_mousebindings", function()
         awful.mouse.append_client_mousebindings({
             
-            click(left_click,               function() hide_popup() end),
+            click(left_click,               function() hide_popups() end),
             click(left_click,               function(c) c:activate { context = "mouse_click" } end),
             clickMod(super, left_click,     function(c) c:activate { context = "mouse_click", action = "mouse_move"  } end),
             clickMod(super, right_click,    function(c) c:activate { context = "mouse_click", action = "mouse_resize"} end)
@@ -91,6 +103,20 @@ mouse.clientbuttons = function()
     end)
 
 end
+
+--[[--------------------------------------------------------
+
+BAR BUTTONS
+
+Bindings used for the bar.
+
+--]]--------------------------------------------------------
+
+mouse.bar_mouse = function() return {
+
+    click(left_click, function() hide_popups() end)
+
+}end
 
 --[[--------------------------------------------------------
 
@@ -103,7 +129,7 @@ Bindings used for taglist interactions.
 mouse.taglist_mouse = function() return {
 
     -- Hide popups
-    click(left_click, function() hide_popup() end),
+    click(left_click, function() hide_popups() end),
     
     -- Switch/Toggle desktop
     click(left_click,   function(t) t:view_only() end),	
@@ -144,7 +170,7 @@ Bindings used for tasklist interactions.
 mouse.tasklist_mouse = function() return {
 
     -- Hide popups
-    click(left_click, function() hide_popup() end),
+    click(left_click, function() hide_popups() end),
 
     -- Toggle window
     click(left_click,
@@ -215,8 +241,10 @@ Bindings used for the mainmenu.
 
 mouse.menu_mouse = function() return {
 
-    click(left_click, function() panel.visible = false end),
-    click(left_click, function() mymainmenu:toggle() end)
+    click(left_click, function()
+		hide_popups("menu")
+		mymainmenu:toggle()
+	end)
 
 }end
 
@@ -230,8 +258,27 @@ Bindings used for the panel.
 
 mouse.panel_mouse = function() return {
 
-    click(left_click, function() mymainmenu:hide() end),
-    click(left_click, function() panel.visible = not panel.visible end)
+    click(left_click, function() 
+		hide_popups("panel")
+		panel.visible = not panel.visible
+	end)
+
+}end
+
+--[[--------------------------------------------------------
+
+CALENTIME BUTTONS
+
+Bindings used for calentime.
+
+--]]--------------------------------------------------------
+
+mouse.calentime_mouse = function() return {
+
+    click(left_click, function() 
+		hide_popups("calentime")
+		calentime.visible = not calentime.visible
+	end)
 
 }end
 

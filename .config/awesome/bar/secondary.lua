@@ -37,7 +37,7 @@ return function(scr)
         screen = scr,
         position = "top",
         height = beautiful.bar_size,
-        bg = beautiful.bg_bar,
+        bg = beautiful.bar_bg,
         widget = {
 
             layout = wibox.layout.align.horizontal,

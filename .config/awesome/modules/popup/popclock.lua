@@ -19,7 +19,7 @@ HOUR
 --]]--------------------------------------------------------
 
 local hour = wibox.widget {
-        format = '<span foreground="' .. beautiful.fg_panel_clock_hour .. '">%H</span>',
+        format = '<span foreground="' .. beautiful.panel_clock_hour_fg .. '">%H</span>',
         font = beautiful.panel_clock_hour_font,
         align = 'center',
         valign = 'center',
@@ -34,7 +34,7 @@ local hour = wibox.widget {
 --]]--------------------------------------------------------
 
 local sep = wibox.widget {
-    markup = '<span foreground="' .. beautiful.fg_panel_clock_sep .. '">:</span>',
+    markup = '<span foreground="' .. beautiful.panel_clock_sep_fg .. '">:</span>',
     font = beautiful.panel_clock_sep_font,
     align = 'center',
     valign = 'center',
@@ -48,23 +48,23 @@ MINUTES
 --]]--------------------------------------------------------
 
 local min = wibox.widget {
-    format = '<span foreground="' .. beautiful.fg_panel_clock_min .. '">%M</span>',
-    font = beautiful.panel_clock_min_font,
+    format = '<span foreground="' .. beautiful.panel_clock_minutes_fg .. '">%M</span>',
+    font = beautiful.panel_clock_minutes_font,
     refresh = 1,
     widget = wibox.widget.textclock
 }
 
 --[[--------------------------------------------------------
 
-PANCLOCK
+POPCLOCK
 
 --]]--------------------------------------------------------
 
-local panclock = wibox.widget {
+return wibox.widget {
     hour,
     sep,
     min,
-    layout = wibox.layout.fixed.horizontal
+    layout = wibox.layout.fixed.horizontal,
 }
 
 --[[--------------------------------------------------------
@@ -72,5 +72,3 @@ local panclock = wibox.widget {
 EOF
 
 --]]--------------------------------------------------------
-
-return panclock

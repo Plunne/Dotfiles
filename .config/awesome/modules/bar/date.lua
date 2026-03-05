@@ -25,8 +25,8 @@ local date_text = wibox.widget {
     widget = wibox.widget.textclock
 }
 
-date_icon.font = beautiful.modules_date_icon_font
-date_text.font = beautiful.modules_date_text_font
+date_icon.font = beautiful.date_icon_font
+date_text.font = beautiful.date_text_font
 
 --[[--------------------------------------------------------
 
@@ -37,16 +37,16 @@ BAR DATE
 return function(scr)
 
     return modules.new_dual(scr,
-	beautiful.date_bar_gap,
-        beautiful.bg_modules_date,
-        beautiful.bg_modules_date_icon,
+		beautiful.date_bar_gap,
+        beautiful.date_bg,
+        beautiful.date_icon_bg,
         date_icon,
-        beautiful.bg_modules_date_icon,
-        beautiful.fg_modules_date_icon,
+        beautiful.date_icon_bg,
+        beautiful.date_icon_fg,
         date_text,
-        beautiful.bg_modules_date_text,
-        beautiful.fg_modules_date_text,
-        require("keys.mouse").panel_mouse())
+        beautiful.date_text_bg,
+        beautiful.date_text_fg,
+        require("keys.mouse").calentime_mouse())
     
 end
 

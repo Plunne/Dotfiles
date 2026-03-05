@@ -21,8 +21,8 @@ local memory_icon = wibox.widget {
 
 local memory_text = awful.widget.watch('sh -c \'~/.scripts/system_monitor.sh ram\'' , 1)
 
-memory_icon.font = beautiful.modules_memory_icon_font
-memory_text.font = beautiful.modules_memory_text_font
+memory_icon.font = beautiful.memory_icon_font
+memory_text.font = beautiful.memory_text_font
 
 --[[--------------------------------------------------------
 
@@ -33,15 +33,15 @@ BAR MEMORY
 return function(scr)
 
     return modules.new_dual(scr,
-	beautiful.memory_bar_gap,
-        beautiful.bg_modules_memory,
-        beautiful.bg_modules_memory_icon,
+		beautiful.memory_bar_gap,
+        beautiful.memory_bg,
+        beautiful.memory_icon_bg,
         memory_icon,
-        beautiful.bg_modules_memory_icon,
-        beautiful.fg_modules_memory_icon,
+        beautiful.memory_icon_bg,
+        beautiful.memory_icon_fg,
         memory_text,
-        beautiful.bg_modules_memory_text,
-        beautiful.fg_modules_memory_text,
+        beautiful.memory_text_bg,
+        beautiful.memory_text_fg,
         nil)
     
 end

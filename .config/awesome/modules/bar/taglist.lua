@@ -23,20 +23,19 @@ return function(scr)
 
     return modules.new(scr,
     	beautiful.taglist_bar_gap,
-	beautiful.taglist_bg,
-	nil,
-	1, 1, 1, 1,
-	beautiful.taglist_border,
-	1,
-	beautiful.taglist_rounded,
-	awful.widget.taglist
-	{
-            screen = scr,
-            filter = awful.widget.taglist.filter.noempty,
-            buttons = require("keys.mouse").taglist_mouse()
-        }
-    )
-
+		beautiful.taglist_bg,
+		nil,
+		1, 1, 1, 1,
+		beautiful.taglist_border,
+		beautiful.taglist_border_size,
+		beautiful.taglist_rounded,
+		awful.widget.taglist
+		{
+			screen = scr,
+			filter = awful.widget.taglist.filter.noempty,
+			buttons = require("keys.mouse").taglist_mouse()
+		}
+	)
 end
 
 --[[--------------------------------------------------------

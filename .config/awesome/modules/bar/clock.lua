@@ -40,15 +40,6 @@ local clock_seconds = wibox.widget
 		widget 	= wibox.widget.textclock
 }
 
-local clock_am_pm = wibox.widget
-{ 
-		format 	= '<span foreground="' .. beautiful.clock_am_pm_fg .. '">' .. beautiful.clock_am_pm_format .. '</span>',
-		font 	= beautiful.clock_am_pm_font,
-		refresh = 1,
-		buttons = require("keys.mouse").panel_mouse(),
-		widget 	= wibox.widget.textclock
-}
-
 local clock_sep = wibox.widget
 {
 		format 	= '<span foreground="' .. beautiful.clock_sep_fg .. '">' .. beautiful.clock_sep_format .. '</span>',
@@ -70,8 +61,8 @@ return function(scr)
 	    scr,
 	    beautiful.clock_bar_gap,
 	    nil,
-	    beautiful.fg_modules_clock,
-	    6, 6, 0, 0,
+	    beautiful.clock_hour_fg,
+	    beautiful.clock_spacing_left, beautiful.clock_spacing_right, 0, 0,
 	    nil,
 	    0,
 	    0,
@@ -79,8 +70,7 @@ return function(scr)
 	    	clock_hour,
 			clock_sep,
 			clock_minutes,
-			clock_am_pm,
-			layout = wibox.layout.align.horizontal,
+			layout = wibox.layout.align.horizontal
 		}
 	)
 end

@@ -20,11 +20,11 @@ FILTER TAG w/ TASKLIST
 
 --]]--------------------------------------------------------
 
-local function filter_tag_with_tasklist(in_tag)
+local function filter_tag_with_tasklist(tag)
 
 	return function(c)
 		for _, i in ipairs(c:tags()) do	-- for each tag
-			if i == in_tag then			-- if tag found
+			if i == tag then			-- if tag found
 				return true				-- return true
 			end
 		end
@@ -39,12 +39,12 @@ GET TAG's TASKLIST
 
 --]]--------------------------------------------------------
 
-local function get_tag_tasklist(in_scr, in_tag)
+local function get_tag_tasklist(scr, tag)
 
 	return awful.widget.tasklist({
 
-		screen = in_scr,
-		filter = filter_tag_with_tasklist(in_tag),
+		screen = scr,
+		filter = filter_tag_with_tasklist(tag),
 		buttons = require("keys.mouse").tasklist_mouse(),
 		widget_template = {
 			{
@@ -53,11 +53,11 @@ local function get_tag_tasklist(in_scr, in_tag)
 					id = "clienticon",
 					widget = awful.widget.clienticon
 				},
-                top = 2,
-                bottom = 2,
-                left  = -6,
-                right = 8,
-                widget = wibox.container.margin,
+                top 	= beautiful.tagsklist_icons_padding_vertical,
+                bottom 	= beautiful.tagsklist_icons_padding_vertical,
+                left  	= beautiful.tagsklist_icons_padding_horizontal,
+                right 	= beautiful.tagsklist_icons_padding_horizontal,
+                widget 	= wibox.container.margin,
 			},
 			layout = wibox.layout.stack,
 
@@ -78,14 +78,16 @@ TAGSKLIST
 
 return function(scr)
 	
-	return modules.new(
-		scr,
+	return modules.new(scr,
 		beautiful.tagsklist_bar_gap,
 		beautiful.tagsklist_bg,
 		nil,
-		2, 2, 2, 2,
+		beautiful.tagsklist_padding,
+		beautiful.tagsklist_padding,
+		beautiful.tagsklist_padding,
+		beautiful.tagsklist_padding,
 		beautiful.tagsklist_border,
-		1,
+		beautiful.tagsklist_border_size,
 		beautiful.tagsklist_rounded,
 		awful.widget.taglist
 		{
@@ -97,14 +99,30 @@ return function(scr)
 					{
 						-- tag
 						{
-							id = "text_role",
-							widget = wibox.widget.textbox,
-							align = "center"
+							{
+								id = "text_role",
+								widget = wibox.widget.textbox,
+								align = "center"
+							},
+							left  	= beautiful.tagsklist_tag_margin, -- tag distance to left
+							right 	= beautiful.tagsklist_tag_margin, -- tag distance too right
+							top 	= 0,
+							bottom 	= 0,
+							widget = wibox.container.margin,
 						},
-						-- tasklist
+						-- tasks
 						{
-							id = "tasklist_placeholder",
-							layout = wibox.layout.fixed.horizontal,
+							{
+								id = "tasklist_placeholder",
+								layout = wibox.layout.fixed.horizontal,
+							},
+							paddings      = {
+								left   = beautiful.tagsklist_tasks_padding, -- tasks distance to tag (shall always be less than 0)
+								right  = beautiful.tagsklist_tag_margin, -- tasks padding to right (shall always be equal to tag right margin)
+								top    = 0,
+								bottom = 0,
+							},
+							widget = wibox.container.border,
 						},
 						layout = wibox.layout.fixed.horizontal,
 					},

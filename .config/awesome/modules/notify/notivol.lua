@@ -15,12 +15,12 @@ local notify = require("lib.libnotify")
 local notivol = {}
 
 -- Setup modules
-local notivol_icon = notify.set_icon('~/.scripts/volume.sh icon')
-local notivol_level = notify.set_level('~/.scripts/volume.sh level')
-local notivol_bar = notify.set_bar('~/.scripts/volume.sh num')
+local notivol_icon = notify.get_icon('~/.scripts/volume.sh icon')
+local notivol_level = notify.get_level('~/.scripts/volume.sh level')
+local notivol_bar = notify.get_slider('~/.scripts/volume.sh num')
 
 -- Notification Module
-local noti = notify.middle(notivol_icon, notivol_level, notivol_bar)
+local noti = notify.middle(notivol_icon, notivol_level, notivol_slider)
 
 -- Init timer
 local timer = notify.set_timer(noti, 2)
