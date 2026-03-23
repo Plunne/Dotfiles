@@ -115,13 +115,14 @@ require('lualine').setup {
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {
+	  -- 'NvimTree',
       statusline = {},
       winbar = {},
     },
     ignore_focus = {},
     always_divide_middle = true,
     always_show_tabline = true,
-    globalstatus = false,
+    globalstatus = true,
     refresh = {
       statusline = 1000,
       tabline = 1000,
@@ -221,6 +222,22 @@ require('lualine').setup {
     },
 	-- ARModule Format
     lualine_y = {
+		{
+			'lsp_status',
+			icon = '', -- f013
+			symbols = {
+				-- Standard unicode symbols to cycle through for LSP progress:
+				spinner = { '⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏' },
+				-- Standard unicode symbol for when LSP is done:
+				done = '✓',
+				-- Delimiter inserted between LSP names:
+				separator = ' ',
+			},
+			-- List of LSP names to ignore (e.g., `null-ls`):
+			ignore_lsp = {},
+			-- Display the LSP name
+			show_name = true,
+		},
 		{
 			'fileformat',
 			padding  	= { left = 1,  	right = 0 }

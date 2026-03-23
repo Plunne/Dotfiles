@@ -57,6 +57,18 @@ require("lazy").setup({
         opts = { -- set to setup table
         },
     },
+    {
+	"mason-org/mason.nvim",
+	opts = {
+	    ui = {
+		icons = {
+		    package_installed = "✓",
+		    package_pending = "➜",
+		    package_uninstalled = "✗"
+	    	}
+	    }
+	}
+    }
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.

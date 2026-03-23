@@ -1,16 +1,10 @@
-vim.o.termguicolors = true
-
 local color00 = "#9783b1"
 local color01 = "#503f65"
 local color02 = "#342942"
-local transparent = "#00000000"
 
-require "bufferline".setup {
+require("bufferline").setup {
 
     options = {
-        
-        -- Numbers
-        --numbers = function(opts) return string.format('%s', opts.id) end,
         
         -- Tabs
         close_command = "Bdelete! %d",
@@ -19,57 +13,66 @@ require "bufferline".setup {
         middle_mouse_command = nil,
         
         -- Style
-        indicator_icon = "▎",
+		themable = true,
+        indicator_icon = " ",
+		show_tab_indicators = false,
         buffer_close_icon = "",
-        modified_icon = "",
+        modified_icon = "",
         close_icon = "",
         left_trunc_marker = "",
         right_trunc_marker = "",
-        max_name_length = 14,
-        max_prefix_length = 13,
-        tab_size = 18,
+        max_name_length = 24,
+        max_prefix_length = 4,
+        tab_size = 24,
         enforce_regular_tabs = true,
         view = "multiwindow",
         show_buffer_close_icons = true,
-        offsets = {{filetype = "NvimTree", text = "", text_align = "left"}},
-        separator_style = "thin"
+        offsets = {{ filetype = "NvimTree", highlight = "Directory", separator = true, text_align = "left" }},
+        separator_style = { '|', '|' }
     },
 
     highlights = {
 
         -- Background
-        background = { guifg = color01, guibg = transparent },
+        background = { fg = color01, bg = nil },
 
         -- Buffers
-        buffer_selected = { guifg = color00, guibg = transparent, gui = "bold" },
-        buffer_visible = { guifg = color00, guibg = transparent },
+        buffer_selected = { fg = color00, bg = nil, bold = true, italic = false },
+        buffer_visible = { fg = color00, bg = nil },
 
         -- Close buttons
-        close_button = { guifg = color01, guibg = transparent },
-        close_button_visible = { guifg = color00, guibg = transparent },
-        close_button_selected = { guifg = color00, guibg = transparent },
+        close_button = { fg = color01, bg = nil },
+        close_button_visible = { fg = color00, bg = nil },
+        close_button_selected = { fg = color00, bg = nil },
         
         -- Fill
-        fill = { guifg = transparent, guibg = transparent },
+        fill = { fg = nil, bg = nil },
         
         -- Indicator
-        indicator_selected = { guifg = color00, guibg = transparent },
+        indicator_selected = { fg = color00, bg = nil },
 
         -- Modified
-        modified = { guifg = color01, guibg = transparent },
-        modified_visible = { guifg = color00, guibg = transparent },
-        modified_selected = { guifg = color00, guibg = transparent },
+        modified = { fg = color01, bg = nil },
+        modified_visible = { fg = color00, bg = nil },
+        modified_selected = { fg = color00, bg = nil },
 
         -- Separators
-        separator = { guifg = color01, guibg = transparent },
-        separator_visible = { guifg = color00, guibg = transparent },
-        separator_selected = { guifg = color01, guibg = transparent },
+        separator = { fg = color01, bg = nil },
+        separator_visible = { fg = color00, bg = nil },
+        separator_selected = { fg = color01, bg = nil },
         
-        -- Tabs
-        tab = { guifg = color01, guibg = transparent },
-        tab_selected = { guifg = color00, guibg = transparent },
-        tab_close = { guifg = color00, guibg = transparent } 
-    }
+        -- Tab Separators
+        tab_separator = { fg = color01, bg = nil },
+        tab_separator_selected = { fg = color01, bg = nil },
+
+        -- Offset Separator
+		offset_separator = { fg = color01, bg = nil },
+        
+		-- Tabs
+        tab = { fg = color01, bg = nil },
+        tab_selected = { fg = color00, bg = nil },
+        tab_close = { fg = color00, bg = nil } 
+    };
 }
 
 local opt = {silent = true}

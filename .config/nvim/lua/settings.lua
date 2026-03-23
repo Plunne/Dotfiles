@@ -45,7 +45,7 @@ o.incsearch = true
 o.ignorecase = true
 o.smartcase = true
 -- indent
-b.autoindent = true
+b.autoindent = false
 b.tabstop = indent
 b.expandtab = false
 b.shiftwidth = indent

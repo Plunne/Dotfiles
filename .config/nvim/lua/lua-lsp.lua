@@ -1,30 +1,31 @@
 local lsps = {
-    { "rust_analyzer" },
-    { "gopls" },
-    { "ts_ls" },
+    { "lua_ls",
+		{
+			cmd = { 'lua-language-server'},
+			filetypes = { 'lua' },
+			root_markers = {
+				".emmyrc.json",
+				".luarc.json",
+				".luarc.jsonc",
+				".luacheckrc",
+				".stylua.toml",
+				"stylua.toml",
+				"selene.toml",
+				"selene.yml",
+				".git"
+			}
+		}
+	},
+    { "bashls" },
+    { "ccls" },
     { "cssls" },
-    { "lua_ls" },
-    { "hls" },
-    {
-        "clangd",
-        {
-            init_options = {
-                -- im using this standard since i want the compiler to
-                -- know about true, false, etc - see
-                -- https://xnacly.me/posts/2025/clangd-lsp/
-                fallbackFlags = { '--std=c23' }
-            },
-        }
-    },
-    -- my custom sql language server
-    {
-        "sqleibniz",
-        {
-            cmd = { '/usr/bin/sqleibniz', '--lsp' },
-            filetypes = { "sql" },
-            root_markers = { "leibniz.lua" }
-        }
-    },
+    { "html" },
+    { "jsonls" },
+    { "pylsp" },
+    { "sqllsp" },
+    { "vimls" },
+    { "yamls" },
+    { "rust_analyzer" },
 }
 
 for _, lsp in pairs(lsps) do
