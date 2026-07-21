@@ -1,10 +1,13 @@
 #!/bin/sh
 
 typeset -U PATH path
-path=("$HOME/.scripts" "$path[@]")
+path=(
+	"$HOME/.scripts"
+	"$HOME/.local/bin"
+	$path)
 
 # APPS
-export TERMINAL="konsole"
+export TERMINAL="alacritty"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export READER="firefox"
