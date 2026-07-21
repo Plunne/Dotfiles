@@ -8,8 +8,8 @@
 
 install_calculatine() {
     git clone https://github.com/Plunne/Calculatine.git ~/.config/Calculatine
-    cd ~/.config/Calculatine/os/linux
-    ./calculatine.sh
+    cd ~/.config/Calculatine
+    ./Calculatine/os/linux/calculatine.sh
 }
 
 install_nvim() {
