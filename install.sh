@@ -27,6 +27,7 @@ setup() {
 	p10k
     dotfiles
     install_apps
+	clean
 }
 
 #################
@@ -82,6 +83,7 @@ install_apps() {
 clean() {
     rm -rf ~/install.sh
     rm -rf ~/README.md
+    rm -rf ~/.git
 }
 
 ################
