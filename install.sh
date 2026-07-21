@@ -22,22 +22,11 @@
 #################
 
 setup() {
-    # misc_fnkeys
-    # zsh
+    misc_fnkeys
+	misc_dolphinOpenWith
+	p10k
     dotfiles
-    # install_apps
-    # clean
-}
-
-###############
-#     Yay     #
-###############
-
-yay() {
-	echo -e "\n***** INSTALL YAY *****\n"
-    git clone https://aur.archlinux.org/yay.git ~/yay
-    cd ~/yay
-	makepkg -si
+    install_apps
 }
 
 #################
@@ -58,15 +47,12 @@ misc_dolphinOpenWith() {
     # run kbuildsycoca6
 }
 
-###############
-#     ZSH     #
-###############
+################
+#     P10K     #
+################
 
-zsh() {
-	echo -e "\n***** INSTALL ZSH *****\n"
-	sudo pacman -S zsh
-	chsh -s /bin/zsh $USER
-	sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+p10k() {
+	echo -e "\n***** INSTALL P10K *****\n"
 	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 }
 
@@ -94,7 +80,6 @@ install_apps() {
 #################
 
 clean() {
-    rm -rf ~/Makefile
     rm -rf ~/install.sh
     rm -rf ~/README.md
 }
@@ -107,13 +92,15 @@ case $1 in
     setup)
         setup
     ;;
-    yay)
-	yay
-    ;;
-    sys)
+    fnkeys)
         misc_fnkeys
-        zsh
     ;;
+	dolphin)
+		misc_dolphinOpenWith
+    ;;
+	p10k)
+		p10k
+	;;
     dots)
         dotfiles
     ;;
