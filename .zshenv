@@ -3,8 +3,6 @@
 typeset -U PATH path
 path=("$HOME/.scripts" "$path[@]")
 
-export PATH=$PATH:~/.platformio/penv/bin:~/.emacs.d/bin:/bin/gdb
-
 # APPS
 export TERMINAL="konsole"
 export EDITOR="nvim"
@@ -26,9 +24,6 @@ export QT_QPA_PLATFORMTHEME=qt6ct
 
 # LANG
 export LC_ALL=en_US.UTF-8
-
-# MbedOS
-export MBED_GCC_ARM_PATH=/usr/bin/arm-none-eabi-gcc
 
 # LF_ICONS
 export LF_ICONS="\
