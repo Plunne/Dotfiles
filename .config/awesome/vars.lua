@@ -32,7 +32,7 @@ differents applications like terminal, file manager, etc.
 terminal        = "alacritty"
 browser         = "firefox"
 editor          = "~/.scripts/emacsclient.sh"
-filemanager     = "pcmanfm"
+filemanager     = "dolphin"
 editor_cmd      = terminal .. " -e " .. "nvim"
 fm_cmd          = terminal .. " -e " .. "ranger"
 rofi_launcher   = "rofi -no-lazy-grab -show drun -theme " .. theme_name
