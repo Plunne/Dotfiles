@@ -85,9 +85,9 @@ add_desktop("3",  screen1,    l.tile,   		1,      0.6,    false,  false,  nil)
 add_desktop("4",  screen2,    l.max,    		1,      0.7,    false,  true,   nil)
 add_desktop("5",  screen2,    l.tile,   		1,      0.6,    false,  false,  nil)
 add_desktop("6",  screen2,    l.tile,   		1,      0.5,    false,  false,  nil)
-add_desktop("7",  screen3,    l.tile,   		0,      0.5,    false,  true,   nil)
+add_desktop("7",  screen3,    l.tile,   		0,      0.5,    false,  false,   nil)
 add_desktop("8",  screen3,    l.tile,   		0,      0.5,    false,  false,  nil)
-add_desktop("9",  screen3,    l.tile.bottom,   	1,      0.6,    false,  false,  nil)
+add_desktop("9",  screen3,    l.tile.bottom,   	1,      0.6,    false,  true,  nil)
 
 --[[--------------------------------------------------------
 
@@ -117,7 +117,7 @@ Launch app at startup : `run.app(myapp, mytag)`
 
 run.sh("~/.scripts/monitors.sh triple")
 run.app("firefox", "4")
---run.app("viscord", " 9 ")
+run.app("discord", " 9 ")
 --run.sh("~/.scripts/emacsdaemon.sh")
 
 --[[--------------------------------------------------------
