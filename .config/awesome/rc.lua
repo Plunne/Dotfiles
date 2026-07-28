@@ -55,39 +55,39 @@ Uncomment the layouts you want to use.
 set_layouts({
     l.floating,
     l.tile,
-    --l.tile.left,
-    --l.tile.bottom,
-    l.tile.top,
-    --l.fair,
-    --l.fair.horizontal,
-    --l.spiral,
-    --l.spiral.dwindle,
+    l.tile.bottom,
+    l.tile.left,
+    -- l.tile.top,
+    -- l.fair,
+    -- l.fair.horizontal,
+    -- l.spiral,
+    -- l.spiral.dwindle,
     l.max,
-    --l.max.fullscreen,
-    --l.magnifier,
-    --l.corner.nw,
-    --l.corner.ne,
-    --l.corner.sw,
-    --l.corner.se,
+    -- l.max.fullscreen,
+    -- l.magnifier,
+    -- l.corner.nw,
+    -- l.corner.ne,
+    -- l.corner.sw,
+    -- l.corner.se,
 })
 
 --[[--------------------------------------------------------
 
 DESKTOPS
 
-To set a desktop use : `add_desktop(name, screen, layout, ratio, gap, selected, icon_path)`
+To set a desktop use : `add_desktop(name, screen, layout, master, ratio, gap, selected, icon_path)`
 
 --]]--------------------------------------------------------
 
-add_desktop("1",  screen1,    l.tile,         0.5,    false,  true,   nil)
-add_desktop("2",  screen1,    l.tile,         0.5,    false,  false,  nil)
-add_desktop("3",  screen1,    l.tile,         0.6,    false,  false,  nil)
-add_desktop("4",  screen2,    l.max,          0.7,    false,  false,   nil)
-add_desktop("5",  screen2,    l.tile,         0.6,    false,  false,  nil)
-add_desktop("6",  screen2,    l.tile,         0.5,    false,  false,  nil)
-add_desktop("7",  screen3,    l.tile,         0.5,    false,  false,  nil)
-add_desktop("8",  screen3,    l.tile,         0.5,    false,  false,  nil)
-add_desktop("9",  screen3,    l.max,          0.5,    false,  false,   nil)
+add_desktop("1",  screen1,    l.tile, 	1,      0.5,    false,  true,   nil)
+add_desktop("2",  screen1,    l.tile,   1,      0.5,    false,  false,  nil)
+add_desktop("3",  screen1,    l.tile,   1,      0.6,    false,  false,  nil)
+add_desktop("4",  screen2,    l.max,    1,      0.7,    false,  true,   nil)
+add_desktop("5",  screen2,    l.tile,   1,      0.6,    false,  false,  nil)
+add_desktop("6",  screen2,    l.tile,   1,      0.5,    false,  false,  nil)
+add_desktop("7",  screen3,    l.tile,   0,      0.5,    false,  true,   nil)
+add_desktop("8",  screen3,    l.tile,   0,      0.5,    false,  false,  nil)
+add_desktop("9",  screen3,    l.max,    1,      0.5,    false,  false,  nil)
 
 --[[--------------------------------------------------------
 
@@ -115,7 +115,7 @@ Launch app at startup : `run.app(myapp, mytag)`
 
 --]]--------------------------------------------------------
 
-run.sh("~/.scripts/monitors.sh vm")
+run.sh("~/.scripts/monitors.sh triple")
 run.app("firefox", "4")
 --run.app("viscord", " 9 ")
 --run.sh("~/.scripts/emacsdaemon.sh")
@@ -128,6 +128,6 @@ Load bars for each screens.
 
 --]]--------------------------------------------------------
 
-require("bar.primary")      (screen[screen1])
--- require("bar.secondary")    (screen[screen2])
--- require("bar.secondary")    (screen[screen3])
+require("bar.primary")(screen[screen1])
+require("bar.secondary")(screen[screen2])
+require("bar.secondary")(screen[screen3])

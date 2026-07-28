@@ -30,13 +30,14 @@ DESKTOPS
 
 --]]--------------------------------------------------------
 
-function add_desktop(name, scr, lay, ratio, gap, sel, icon)
+function add_desktop(name, scr, lay, master, ratio, gap, sel, icon)
         
     awful.tag.add(
         name,
         {
             screen              = scr,
             layout              = lay,
+			master_count 		= master,
             master_width_factor = ratio,
             gap_single_client   = gap,
             selected            = sel,

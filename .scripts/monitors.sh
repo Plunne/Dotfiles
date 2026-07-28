@@ -8,9 +8,9 @@
 # Displays
 
 Monitor_VM=Virtual-1
-Monitor_Main=DisplayPort-2
-Monitor_Right=DVI-D-0
-Monitor_Left=HDMI-A-0
+Monitor_Main=DisplayPort-0
+Monitor_Right=DisplayPort-1
+Monitor_Left=HDMI-A-1
 
 # Setup
 
@@ -23,7 +23,7 @@ screen_m() {
 }
 
 screen_r() {
-    xrandr --output $Monitor_Right --right-of $Monitor_Main --rate 144
+    xrandr --output $Monitor_Right --right-of $Monitor_Main --rate 144 --rotate right
 }
 
 screen_l() {

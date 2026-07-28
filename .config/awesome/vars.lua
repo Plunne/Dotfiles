@@ -67,10 +67,10 @@ I created a variable for each monitor I use.
 --]]--------------------------------------------------------
 
 -- Screens that I use
-screen1 = "Virtual-1"   -- Primary
---screen1 = "DisplayPort-2"   -- Primary
---screen2 = "DVI-D-0"         -- Right
---screen3 = "HDMI-A-0"        -- Left
+-- screen1 = "Virtual-1" -- Primary
+screen1 = "DisplayPort-0"   -- Primary
+screen2 = "HDMI-A-1"        -- Left
+screen3 = "DisplayPort-1"   -- Right
 
 -- Screen that will display notifications
 notiscreen = screen1

@@ -17,16 +17,16 @@ local wibox = require("wibox")
 return function(scr)
 
     -- Modules
-    local mylayoutbox = require("modules.bar.layoutbox")(scr)
-    local mytaglist = require("modules.bar.taglist")(scr)
-    local mytasklist = require("modules.bar.tasklist")(scr)
-    local mytagsklist = require("modules.bar.tagsklist")(scr)
-    local mymemory = require("modules.bar.memory")(scr)
-    local myvolume = require("modules.bar.volume")(scr)
-    local mylight = require("modules.bar.brightness")(scr)
-    local mydate = require("modules.bar.date")(scr)
-    local myclock = require("modules.bar.clock")(scr)
-    local mylauncher = require("modules.bar.launcher")(scr)
+    local layoutbox = require("modules.bar.layoutbox")(scr)
+    local taglist = require("modules.bar.taglist")(scr)
+    local tasklist = require("modules.bar.tasklist")(scr)
+    local tagsklist = require("modules.bar.tagsklist")(scr)
+    local memory = require("modules.bar.memory")(scr)
+    local volume = require("modules.bar.volume")(scr)
+    local light = require("modules.bar.brightness")(scr)
+    local date = require("modules.bar.date")(scr)
+    local clock = require("modules.bar.clock")(scr)
+    local launcher = require("modules.bar.launcher")(scr)
 
     -------------------
     --     PANEL     --
@@ -46,24 +46,25 @@ return function(scr)
             --     Left widgets    --
             -------------------------
             {   layout = wibox.layout.fixed.horizontal,
-                mylayoutbox,
-                mytagsklist
+                layoutbox,
+                tagsklist,
             },
             -------------------------
             --    Middle widgets   --
             -------------------------   
-            {   layout = wibox.layout.flex.horizontal,   
-                mytasklist
+            {   layout = wibox.layout.fixed.horizontal,   
+                tasklist,
+				buttons = require("keys.mouse").bar_mouse(),
             },
             -------------------------
             --    Right widgets    --
             -------------------------
             {   layout = wibox.layout.fixed.horizontal,
-                mymemory,
-                myvolume,
-                mydate,
-                myclock,
-                mylauncher
+                memory,
+                volume,
+                date,
+                clock,
+                launcher,
             }
         }
     }
