@@ -79,15 +79,15 @@ To set a desktop use : `add_desktop(name, screen, layout, master, ratio, gap, se
 
 --]]--------------------------------------------------------
 
-add_desktop("1",  screen1,    l.tile, 	1,      0.5,    false,  true,   nil)
-add_desktop("2",  screen1,    l.tile,   1,      0.5,    false,  false,  nil)
-add_desktop("3",  screen1,    l.tile,   1,      0.6,    false,  false,  nil)
-add_desktop("4",  screen2,    l.max,    1,      0.7,    false,  true,   nil)
-add_desktop("5",  screen2,    l.tile,   1,      0.6,    false,  false,  nil)
-add_desktop("6",  screen2,    l.tile,   1,      0.5,    false,  false,  nil)
-add_desktop("7",  screen3,    l.tile,   0,      0.5,    false,  true,   nil)
-add_desktop("8",  screen3,    l.tile,   0,      0.5,    false,  false,  nil)
-add_desktop("9",  screen3,    l.max,    1,      0.5,    false,  false,  nil)
+add_desktop("1",  screen1,    l.tile, 			1,      0.5,    false,  true,   nil)
+add_desktop("2",  screen1,    l.tile,   		1,      0.5,    false,  false,  nil)
+add_desktop("3",  screen1,    l.tile,   		1,      0.6,    false,  false,  nil)
+add_desktop("4",  screen2,    l.max,    		1,      0.7,    false,  true,   nil)
+add_desktop("5",  screen2,    l.tile,   		1,      0.6,    false,  false,  nil)
+add_desktop("6",  screen2,    l.tile,   		1,      0.5,    false,  false,  nil)
+add_desktop("7",  screen3,    l.tile,   		0,      0.5,    false,  true,   nil)
+add_desktop("8",  screen3,    l.tile,   		0,      0.5,    false,  false,  nil)
+add_desktop("9",  screen3,    l.tile.bottom,   	1,      0.6,    false,  false,  nil)
 
 --[[--------------------------------------------------------
 
